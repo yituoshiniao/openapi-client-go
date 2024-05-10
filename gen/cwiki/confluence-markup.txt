@@ -1,0 +1,299 @@
+h1. goods-center-logic API
+
+goods-center-logic服务文档
+
+*Version:* 1.0
+
+----
+
+{expand:Table of Contents - Click to expand}
+{toc:printable=true|style=square|minLevel=2|maxLevel=3|type=list|outline=false|include=.*}
+{expand}
+
+h2. Endpoints
+
+
+h3. v1CommonGenerateIdGet
+{panel:title=v1CommonGenerateIdGet|borderStyle=solid|borderColor=#003b6f|titleBGColor=#003b6f|titleColor=#a6b8c7|bgColor=#ffffff}
+    *Summary:* 雪花ID生成
+    *Description:* 生成id-描述
+
+	|| HttpMethod | {status:colour=Yellow|title=get|subtle=false} |
+    || Protocol | {noformat:nopanel=true}http{noformat} |
+    || Path | {noformat:nopanel=true}/v1/common/generateId{noformat} |
+    || Base Path | {noformat:nopanel=true}http://127.0.0.1:3013/goodsCenterLogic{noformat} |
+    || Produces | {noformat:nopanel=true}*/* {noformat} |
+----
+h4. Parameters
+h5. Path Parameters
+        ||Name||Description||Type||Required||Default||Pattern||Enum||Example||
+        |id |ID | Integer | (/) |null |  |  |
+
+
+h5. Header Parameters
+        ||Name||Description||Type||Required||Default||Pattern||Enum||Example||
+        |Authorization |认证信息 eg:xxxx-xxxx-xxxx-xxx | String | (x) |null |  |  |
+
+h5. Query Parameters
+        ||Name||Description||Type||Required||Default||Pattern||Enum||Example||
+        |num |生成id数量 1-1000 | Integer | (/) |null |  |  |
+----
+h4. Responses
+
+    	|| Status Code | {status:colour=Green|title=200|subtle=false} |
+    	|| Message | 请求成功 |
+    	|| Response Type | internal_api_http_servicev1.HttpGenerateIDResponse |
+    	|| Response Model | [internal_api_http_servicev1.HttpGenerateIDResponse Model|#internal_api_http_servicev1.HttpGenerateIDResponseModelAnchor|Jump to model] |
+    	|| Response Schema | {code:collapse=true}{
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/internal_api_http_servicev1.HttpGenerateIDResponse"
+      }
+    }
+  }
+}{code} |
+       
+
+{panel}
+
+
+
+h3. v1ExampleGetGet
+{panel:title=v1ExampleGetGet|borderStyle=solid|borderColor=#003b6f|titleBGColor=#003b6f|titleColor=#a6b8c7|bgColor=#ffffff}
+    *Summary:* get接口示例
+    *Description:* get接口示例
+
+	|| HttpMethod | {status:colour=Yellow|title=get|subtle=false} |
+    || Protocol | {noformat:nopanel=true}http{noformat} |
+    || Path | {noformat:nopanel=true}/v1/exampleGet{noformat} |
+    || Base Path | {noformat:nopanel=true}http://127.0.0.1:3013/goodsCenterLogic{noformat} |
+    || Produces | {noformat:nopanel=true}*/* {noformat} |
+----
+h4. Parameters
+
+
+
+h5. Query Parameters
+        ||Name||Description||Type||Required||Default||Pattern||Enum||Example||
+        |create_time |create_time | Integer | (/) |null |  |  ||query_id |query_id | String | (/) |null |  |  ||user_id |user_id 用户id | String | (/) |null |  |  |
+----
+h4. Responses
+
+    	|| Status Code | {status:colour=Green|title=200|subtle=false} |
+    	|| Message | 请求成功 |
+    	|| Response Type | internal_api_http_dto.ExampleGetResponse |
+    	|| Response Model | [internal_api_http_dto.ExampleGetResponse Model|#internal_api_http_dto.ExampleGetResponseModelAnchor|Jump to model] |
+    	|| Response Schema | {code:collapse=true}{
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/internal_api_http_dto.ExampleGetResponse"
+      }
+    }
+  }
+}{code} |
+       
+
+{panel}
+
+
+
+h3. v1ExampleGetOneGet
+{panel:title=v1ExampleGetOneGet|borderStyle=solid|borderColor=#003b6f|titleBGColor=#003b6f|titleColor=#a6b8c7|bgColor=#ffffff}
+    *Summary:* getOne接口示例
+    *Description:* getOne接口示例
+
+	|| HttpMethod | {status:colour=Yellow|title=get|subtle=false} |
+    || Protocol | {noformat:nopanel=true}http{noformat} |
+    || Path | {noformat:nopanel=true}/v1/exampleGetOne{noformat} |
+    || Base Path | {noformat:nopanel=true}http://127.0.0.1:3013/goodsCenterLogic{noformat} |
+    || Produces | {noformat:nopanel=true}*/* {noformat} |
+----
+h4. Parameters
+
+
+
+h5. Query Parameters
+        ||Name||Description||Type||Required||Default||Pattern||Enum||Example||
+        |create_time |create_time | Integer | (/) |null |  |  ||query_id |query_id | String | (/) |null |  |  ||user_id |user_id 用户id | String | (/) |null |  |  |
+----
+h4. Responses
+
+    	|| Status Code | {status:colour=Green|title=200|subtle=false} |
+    	|| Message | 请求成功 |
+    	|| Response Type | internal_api_http_dto.ExampleGetOneResponse |
+    	|| Response Model | [internal_api_http_dto.ExampleGetOneResponse Model|#internal_api_http_dto.ExampleGetOneResponseModelAnchor|Jump to model] |
+    	|| Response Schema | {code:collapse=true}{
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/internal_api_http_dto.ExampleGetOneResponse"
+      }
+    }
+  }
+}{code} |
+       
+
+{panel}
+
+
+
+h3. v1ExamplePostPost
+{panel:title=v1ExamplePostPost|borderStyle=solid|borderColor=#003b6f|titleBGColor=#003b6f|titleColor=#a6b8c7|bgColor=#ffffff}
+    *Summary:* post 接口 示例
+    *Description:* 
+ios购买项类型 &lt;a href&#x3D;&quot;https://developer.apple.com/documentation/appstoreconnectapi/list_all_in-app_purchases_for_an_app&quot;&gt; 详情&lt;/a&gt; &lt;/br&gt; 
+
+
+android订阅 &lt;a href&#x3D;&quot;https://developers.google.com/android-publisher/api-ref/rest/v3/monetization.subscriptions/list?hl&#x3D;zh-cn&quot;&gt; 详情&lt;/a&gt; &lt;/br&gt; 
+
+android非订阅&lt;a href&#x3D;&quot;https://developers.google.com/android-publisher/api-ref/rest/v3/inappproducts/list?hl&#x3D;zh-cn&quot;&gt; 详情&lt;/a&gt; &lt;/br&gt; 
+
+android订阅产品的类型&lt;a href&#x3D;&quot;https://developers.google.com/android-publisher/api-ref/rest/v3/inappproducts?hl&#x3D;zh-cn#PurchaseType&quot;&gt; 详情&lt;/a&gt; &lt;/br&gt;
+
+	|| HttpMethod | {status:colour=Yellow|title=post|subtle=false} |
+    || Protocol | {noformat:nopanel=true}http{noformat} |
+    || Path | {noformat:nopanel=true}/v1/examplePost{noformat} |
+    || Base Path | {noformat:nopanel=true}http://127.0.0.1:3013/goodsCenterLogic{noformat} |
+    || Produces | {noformat:nopanel=true}application/json {noformat} |
+----
+h4. Parameters
+
+h5. Body Parameter
+        ||Name||Description||Type||Required||Default||Pattern||Enum||Example||
+        |body |请求参数 | InternalApiHttpDtoExamplePostRequest | (/) | |  |  |
+
+
+----
+h4. Responses
+
+    	|| Status Code | {status:colour=Green|title=200|subtle=false} |
+    	|| Message | 请求成功 |
+    	|| Response Type | internal_api_http_dto.ExamplePostResponse |
+    	|| Response Model | [internal_api_http_dto.ExamplePostResponse Model|#internal_api_http_dto.ExamplePostResponseModelAnchor|Jump to model] |
+    	|| Response Schema | {code:collapse=true}{
+  "description" : "请求成功",
+  "headers" : {
+    "Token" : {
+      "description" : "token",
+      "schema" : {
+        "type" : "string"
+      }
+    },
+    "Token2" : {
+      "description" : "token2",
+      "schema" : {
+        "type" : "string"
+      }
+    },
+    "Location" : {
+      "description" : "/entity/1",
+      "schema" : {
+        "type" : "string"
+      }
+    }
+  },
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/internal_api_http_dto.ExamplePostResponse"
+      }
+    }
+  }
+}{code} |
+       
+
+{panel}
+
+
+{anchor:models}
+h2. Models
+
+        {anchor:InternalApiHttpDtoExampleGetOneResponseModelAnchor}
+        h3. InternalApiHttpDtoExampleGetOneResponse
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
+         |data |(/) |{noformat:nopanel=true}internal_api_http_dto.UserPortraitData{noformat} |  |  | null
+         |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
+         |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
+         
+        {anchor:InternalApiHttpDtoExampleGetResponseModelAnchor}
+        h3. InternalApiHttpDtoExampleGetResponse
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
+         |data |(/) |{noformat:nopanel=true}internal_api_http_dto.UserPortraitData{noformat} |  |  | null
+         |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
+         |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
+         
+        {anchor:InternalApiHttpDtoExamplePostRequestModelAnchor}
+        h3. InternalApiHttpDtoExamplePostRequest
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |app_id |(/) |{noformat:nopanel=true}String{noformat} | AppID 应用id |  | null
+         |c_ver |(/) |{noformat:nopanel=true}String{noformat} | CVer 客户端协议版本号 |  | null
+         |cmd_id |(/) |{noformat:nopanel=true}Integer{noformat} | CmdId 功能类型枚举:
+1 AUTH鉴权;
+2 QA 问答；
+4 总结SUMMARY;
+5 KEYWORDS 关键词；
+6 CLASSIFICATION 文档分类；
+7 RENAME  重命名；
+8 mindmap 思维导图； |  | 1
+         |fid |(/) |{noformat:nopanel=true}String{noformat} | Fid： 文档id |  | null
+         |ignore_feature_prompt |(x) |{noformat:nopanel=true}Integer{noformat} | IgnoreFeaturePrompt 是否忽略功能检查  1 是； 0 否； |  | null
+         |lang |(/) |{noformat:nopanel=true}String{noformat} | Lang 语言 |  | null
+         |question |(/) |{noformat:nopanel=true}String{noformat} | Question 问题 |  | null
+         |show_gpt_2 |(x) |{noformat:nopanel=true}String{noformat} | show_gpt_2 |  | null
+         |token |(/) |{noformat:nopanel=true}String{noformat} | Token 鉴权token |  | sdfsdsdfsd
+         
+        {anchor:InternalApiHttpDtoExamplePostResponseModelAnchor}
+        h3. InternalApiHttpDtoExamplePostResponse
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
+         |data |(/) |{noformat:nopanel=true}internal_api_http_dto.UserPortraitData{noformat} |  |  | null
+         |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
+         |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
+         
+        {anchor:InternalApiHttpDtoUserPortraitDataModelAnchor}
+        h3. InternalApiHttpDtoUserPortraitData
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |country |(x) |{noformat:nopanel=true}String{noformat} | 国家 |  | null
+         |last_login |(x) |{noformat:nopanel=true}String{noformat} | 上次登陆时间 |  | null
+         |user_id |(x) |{noformat:nopanel=true}String{noformat} | 用户id |  | null
+         |vip_info |(x) |{noformat:nopanel=true}Integer{noformat} | 是否为VIP，0/1 |  | null
+         
+        {anchor:InternalApiHttpServicev1HttpGenerateIDResponseModelAnchor}
+        h3. InternalApiHttpServicev1HttpGenerateIDResponse
+
+        
+
+        
+        ||Field Name||Required||Type||Description||Enum||Example||
+         |code |(/) |{noformat:nopanel=true}Integer{noformat} | code:  0 成功; 非0失败; |  | 1
+         |data |(/) |{noformat:nopanel=true}array[String]{noformat} | 生成id数组 |  | null
+         |msg |(/) |{noformat:nopanel=true}String{noformat} | 错误消息 |  | success
+         |traceId |(/) |{noformat:nopanel=true}String{noformat} | traceId |  | null
+         

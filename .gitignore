@@ -1,0 +1,12 @@
+.idea
+internal/app/main
+logs/
+api/*
+config/env.yaml
+config/*_local.yaml
+go.sum
+#dao
+.vscode
+test
+gen/go
+gen/lua
