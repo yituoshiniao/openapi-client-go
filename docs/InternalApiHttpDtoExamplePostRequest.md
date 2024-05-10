@@ -1,4 +1,4 @@
-# GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest
+# InternalApiHttpDtoExamplePostRequest
 
 ## Properties
 
@@ -16,209 +16,209 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest
+### NewInternalApiHttpDtoExamplePostRequest
 
-`func NewGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest(appId string, cVer string, cmdId int32, fid string, lang string, question string, token string, ) *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest`
+`func NewInternalApiHttpDtoExamplePostRequest(appId string, cVer string, cmdId int32, fid string, lang string, question string, token string, ) *InternalApiHttpDtoExamplePostRequest`
 
-NewGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest instantiates a new GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest object
+NewInternalApiHttpDtoExamplePostRequest instantiates a new InternalApiHttpDtoExamplePostRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequestWithDefaults
+### NewInternalApiHttpDtoExamplePostRequestWithDefaults
 
-`func NewGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequestWithDefaults() *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest`
+`func NewInternalApiHttpDtoExamplePostRequestWithDefaults() *InternalApiHttpDtoExamplePostRequest`
 
-NewGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequestWithDefaults instantiates a new GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest object
+NewInternalApiHttpDtoExamplePostRequestWithDefaults instantiates a new InternalApiHttpDtoExamplePostRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAppId
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetAppId() string`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetAppId() string`
 
 GetAppId returns the AppId field if non-nil, zero value otherwise.
 
 ### GetAppIdOk
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetAppIdOk() (*string, bool)`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetAppIdOk() (*string, bool)`
 
 GetAppIdOk returns a tuple with the AppId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAppId
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetAppId(v string)`
+`func (o *InternalApiHttpDtoExamplePostRequest) SetAppId(v string)`
 
 SetAppId sets AppId field to given value.
 
 
 ### GetCVer
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetCVer() string`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetCVer() string`
 
 GetCVer returns the CVer field if non-nil, zero value otherwise.
 
 ### GetCVerOk
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetCVerOk() (*string, bool)`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetCVerOk() (*string, bool)`
 
 GetCVerOk returns a tuple with the CVer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCVer
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetCVer(v string)`
+`func (o *InternalApiHttpDtoExamplePostRequest) SetCVer(v string)`
 
 SetCVer sets CVer field to given value.
 
 
 ### GetCmdId
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetCmdId() int32`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetCmdId() int32`
 
 GetCmdId returns the CmdId field if non-nil, zero value otherwise.
 
 ### GetCmdIdOk
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetCmdIdOk() (*int32, bool)`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetCmdIdOk() (*int32, bool)`
 
 GetCmdIdOk returns a tuple with the CmdId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCmdId
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetCmdId(v int32)`
+`func (o *InternalApiHttpDtoExamplePostRequest) SetCmdId(v int32)`
 
 SetCmdId sets CmdId field to given value.
 
 
 ### GetFid
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetFid() string`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetFid() string`
 
 GetFid returns the Fid field if non-nil, zero value otherwise.
 
 ### GetFidOk
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetFidOk() (*string, bool)`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetFidOk() (*string, bool)`
 
 GetFidOk returns a tuple with the Fid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFid
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetFid(v string)`
+`func (o *InternalApiHttpDtoExamplePostRequest) SetFid(v string)`
 
 SetFid sets Fid field to given value.
 
 
 ### GetIgnoreFeaturePrompt
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetIgnoreFeaturePrompt() int32`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetIgnoreFeaturePrompt() int32`
 
 GetIgnoreFeaturePrompt returns the IgnoreFeaturePrompt field if non-nil, zero value otherwise.
 
 ### GetIgnoreFeaturePromptOk
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetIgnoreFeaturePromptOk() (*int32, bool)`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetIgnoreFeaturePromptOk() (*int32, bool)`
 
 GetIgnoreFeaturePromptOk returns a tuple with the IgnoreFeaturePrompt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIgnoreFeaturePrompt
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetIgnoreFeaturePrompt(v int32)`
+`func (o *InternalApiHttpDtoExamplePostRequest) SetIgnoreFeaturePrompt(v int32)`
 
 SetIgnoreFeaturePrompt sets IgnoreFeaturePrompt field to given value.
 
 ### HasIgnoreFeaturePrompt
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) HasIgnoreFeaturePrompt() bool`
+`func (o *InternalApiHttpDtoExamplePostRequest) HasIgnoreFeaturePrompt() bool`
 
 HasIgnoreFeaturePrompt returns a boolean if a field has been set.
 
 ### GetLang
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetLang() string`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetLang() string`
 
 GetLang returns the Lang field if non-nil, zero value otherwise.
 
 ### GetLangOk
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetLangOk() (*string, bool)`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetLangOk() (*string, bool)`
 
 GetLangOk returns a tuple with the Lang field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLang
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetLang(v string)`
+`func (o *InternalApiHttpDtoExamplePostRequest) SetLang(v string)`
 
 SetLang sets Lang field to given value.
 
 
 ### GetQuestion
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetQuestion() string`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetQuestion() string`
 
 GetQuestion returns the Question field if non-nil, zero value otherwise.
 
 ### GetQuestionOk
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetQuestionOk() (*string, bool)`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetQuestionOk() (*string, bool)`
 
 GetQuestionOk returns a tuple with the Question field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuestion
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetQuestion(v string)`
+`func (o *InternalApiHttpDtoExamplePostRequest) SetQuestion(v string)`
 
 SetQuestion sets Question field to given value.
 
 
 ### GetShowGpt2
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetShowGpt2() string`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetShowGpt2() string`
 
 GetShowGpt2 returns the ShowGpt2 field if non-nil, zero value otherwise.
 
 ### GetShowGpt2Ok
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetShowGpt2Ok() (*string, bool)`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetShowGpt2Ok() (*string, bool)`
 
 GetShowGpt2Ok returns a tuple with the ShowGpt2 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShowGpt2
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetShowGpt2(v string)`
+`func (o *InternalApiHttpDtoExamplePostRequest) SetShowGpt2(v string)`
 
 SetShowGpt2 sets ShowGpt2 field to given value.
 
 ### HasShowGpt2
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) HasShowGpt2() bool`
+`func (o *InternalApiHttpDtoExamplePostRequest) HasShowGpt2() bool`
 
 HasShowGpt2 returns a boolean if a field has been set.
 
 ### GetToken
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetToken() string`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetToken() string`
 
 GetToken returns the Token field if non-nil, zero value otherwise.
 
 ### GetTokenOk
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetTokenOk() (*string, bool)`
+`func (o *InternalApiHttpDtoExamplePostRequest) GetTokenOk() (*string, bool)`
 
 GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetToken
 
-`func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetToken(v string)`
+`func (o *InternalApiHttpDtoExamplePostRequest) SetToken(v string)`
 
 SetToken sets Token field to given value.
 

@@ -844,7 +844,7 @@ ul.nav-tabs {
   <script>
     // Script section to load models into a JS Var
     var defs = {}
-    defs["github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponse"] = {
+    defs["_internal_api_http_dto.ExampleGetOneResponse"] = {
   "required" : [ "code", "data", "msg", "traceId" ],
   "type" : "object",
   "properties" : {
@@ -854,7 +854,7 @@ ul.nav-tabs {
       "example" : 1
     },
     "data" : {
-      "$ref" : "#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData"
+      "$ref" : "#/components/schemas/_internal_api_http_dto.UserPortraitData"
     },
     "msg" : {
       "type" : "string",
@@ -867,7 +867,7 @@ ul.nav-tabs {
     }
   }
 };
-    defs["github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponse"] = {
+    defs["_internal_api_http_dto.ExampleGetResponse"] = {
   "required" : [ "code", "data", "msg", "traceId" ],
   "type" : "object",
   "properties" : {
@@ -877,7 +877,7 @@ ul.nav-tabs {
       "example" : 1
     },
     "data" : {
-      "$ref" : "#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData"
+      "$ref" : "#/components/schemas/_internal_api_http_dto.UserPortraitData"
     },
     "msg" : {
       "type" : "string",
@@ -890,7 +890,7 @@ ul.nav-tabs {
     }
   }
 };
-    defs["github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostRequest"] = {
+    defs["_internal_api_http_dto.ExamplePostRequest"] = {
   "required" : [ "app_id", "c_ver", "cmd_id", "fid", "lang", "question", "token" ],
   "type" : "object",
   "properties" : {
@@ -934,7 +934,7 @@ ul.nav-tabs {
     }
   }
 };
-    defs["github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponse"] = {
+    defs["_internal_api_http_dto.ExamplePostResponse"] = {
   "required" : [ "code", "data", "msg", "traceId" ],
   "type" : "object",
   "properties" : {
@@ -944,7 +944,7 @@ ul.nav-tabs {
       "example" : 1
     },
     "data" : {
-      "$ref" : "#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData"
+      "$ref" : "#/components/schemas/_internal_api_http_dto.UserPortraitData"
     },
     "msg" : {
       "type" : "string",
@@ -957,7 +957,7 @@ ul.nav-tabs {
     }
   }
 };
-    defs["github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData"] = {
+    defs["_internal_api_http_dto.UserPortraitData"] = {
   "type" : "object",
   "properties" : {
     "country" : {
@@ -1569,7 +1569,7 @@ public class ExampleApiExample {
         String userId = userId_example; // String | user_id 用户id
 
         try {
-            github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponse result = apiInstance.v1ExampleGetGet(createTime, queryId, userId);
+            _internal_api_http_dto.ExampleGetResponse result = apiInstance.v1ExampleGetGet(createTime, queryId, userId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExampleApi#v1ExampleGetGet");
@@ -1610,7 +1610,7 @@ public class ExampleApiExample {
         String userId = userId_example; // String | user_id 用户id
 
         try {
-            github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponse result = apiInstance.v1ExampleGetGet(createTime, queryId, userId);
+            _internal_api_http_dto.ExampleGetResponse result = apiInstance.v1ExampleGetGet(createTime, queryId, userId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExampleApi#v1ExampleGetGet");
@@ -1636,7 +1636,7 @@ String *userId = userId_example; // user_id 用户id (default to null)
 [apiInstance v1ExampleGetGetWith:createTime
     queryId:queryId
     userId:userId
-              completionHandler: ^(github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponse output, NSError* error) {
+              completionHandler: ^(_internal_api_http_dto.ExampleGetResponse output, NSError* error) {
     if (output) {
         NSLog(@"%@", output);
     }
@@ -1692,7 +1692,7 @@ namespace Example
 
             try {
                 // get接口示例
-                github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponse result = apiInstance.v1ExampleGetGet(createTime, queryId, userId);
+                _internal_api_http_dto.ExampleGetResponse result = apiInstance.v1ExampleGetGet(createTime, queryId, userId);
                 Debug.WriteLine(result);
             } catch (Exception e) {
                 Debug.Print("Exception when calling ExampleApi.v1ExampleGetGet: " + e.Message );
@@ -1904,7 +1904,7 @@ user_id 用户id
   "content" : {
     "*/*" : {
       "schema" : {
-        "$ref" : "#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponse"
+        "$ref" : "#/components/schemas/_internal_api_http_dto.ExampleGetResponse"
       }
     }
   }
@@ -2004,7 +2004,7 @@ public class ExampleApiExample {
         String userId = userId_example; // String | user_id 用户id
 
         try {
-            github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponse result = apiInstance.v1ExampleGetOneGet(createTime, queryId, userId);
+            _internal_api_http_dto.ExampleGetOneResponse result = apiInstance.v1ExampleGetOneGet(createTime, queryId, userId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExampleApi#v1ExampleGetOneGet");
@@ -2045,7 +2045,7 @@ public class ExampleApiExample {
         String userId = userId_example; // String | user_id 用户id
 
         try {
-            github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponse result = apiInstance.v1ExampleGetOneGet(createTime, queryId, userId);
+            _internal_api_http_dto.ExampleGetOneResponse result = apiInstance.v1ExampleGetOneGet(createTime, queryId, userId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExampleApi#v1ExampleGetOneGet");
@@ -2071,7 +2071,7 @@ String *userId = userId_example; // user_id 用户id (default to null)
 [apiInstance v1ExampleGetOneGetWith:createTime
     queryId:queryId
     userId:userId
-              completionHandler: ^(github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponse output, NSError* error) {
+              completionHandler: ^(_internal_api_http_dto.ExampleGetOneResponse output, NSError* error) {
     if (output) {
         NSLog(@"%@", output);
     }
@@ -2127,7 +2127,7 @@ namespace Example
 
             try {
                 // getOne接口示例
-                github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponse result = apiInstance.v1ExampleGetOneGet(createTime, queryId, userId);
+                _internal_api_http_dto.ExampleGetOneResponse result = apiInstance.v1ExampleGetOneGet(createTime, queryId, userId);
                 Debug.WriteLine(result);
             } catch (Exception e) {
                 Debug.Print("Exception when calling ExampleApi.v1ExampleGetOneGet: " + e.Message );
@@ -2339,7 +2339,7 @@ user_id 用户id
   "content" : {
     "*/*" : {
       "schema" : {
-        "$ref" : "#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponse"
+        "$ref" : "#/components/schemas/_internal_api_http_dto.ExampleGetOneResponse"
       }
     }
   }
@@ -2444,10 +2444,10 @@ public class ExampleApiExample {
 
         // Create an instance of the API class
         ExampleApi apiInstance = new ExampleApi();
-        GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest body = ; // GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest | 
+        InternalApiHttpDtoExamplePostRequest body = ; // InternalApiHttpDtoExamplePostRequest | 
 
         try {
-            github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponse result = apiInstance.v1ExamplePostPost(body);
+            _internal_api_http_dto.ExamplePostResponse result = apiInstance.v1ExamplePostPost(body);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExampleApi#v1ExamplePostPost");
@@ -2463,7 +2463,7 @@ public class ExampleApiExample {
 
 final api_instance = DefaultApi();
 
-final GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest body = new GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest(); // GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest | 
+final InternalApiHttpDtoExamplePostRequest body = new InternalApiHttpDtoExamplePostRequest(); // InternalApiHttpDtoExamplePostRequest | 
 
 try {
     final result = await api_instance.v1ExamplePostPost(body);
@@ -2481,10 +2481,10 @@ try {
 public class ExampleApiExample {
     public static void main(String[] args) {
         ExampleApi apiInstance = new ExampleApi();
-        GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest body = ; // GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest | 
+        InternalApiHttpDtoExamplePostRequest body = ; // InternalApiHttpDtoExamplePostRequest | 
 
         try {
-            github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponse result = apiInstance.v1ExamplePostPost(body);
+            _internal_api_http_dto.ExamplePostResponse result = apiInstance.v1ExamplePostPost(body);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExampleApi#v1ExamplePostPost");
@@ -2502,11 +2502,11 @@ public class ExampleApiExample {
 
 // Create an instance of the API class
 ExampleApi *apiInstance = [[ExampleApi alloc] init];
-GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest *body = ; // 
+InternalApiHttpDtoExamplePostRequest *body = ; // 
 
 // post 接口 示例
 [apiInstance v1ExamplePostPostWith:body
-              completionHandler: ^(github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponse output, NSError* error) {
+              completionHandler: ^(_internal_api_http_dto.ExamplePostResponse output, NSError* error) {
     if (output) {
         NSLog(@"%@", output);
     }
@@ -2522,7 +2522,7 @@ GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest *body = ; //
 
 // Create an instance of the API class
 var api = new GinHttpApi.ExampleApi()
-var body = ; // {GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest} 
+var body = ; // {InternalApiHttpDtoExamplePostRequest} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -2554,11 +2554,11 @@ namespace Example
 
             // Create an instance of the API class
             var apiInstance = new ExampleApi();
-            var body = new GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest(); // GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest | 
+            var body = new InternalApiHttpDtoExamplePostRequest(); // InternalApiHttpDtoExamplePostRequest | 
 
             try {
                 // post 接口 示例
-                github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponse result = apiInstance.v1ExamplePostPost(body);
+                _internal_api_http_dto.ExamplePostResponse result = apiInstance.v1ExamplePostPost(body);
                 Debug.WriteLine(result);
             } catch (Exception e) {
                 Debug.Print("Exception when calling ExampleApi.v1ExamplePostPost: " + e.Message );
@@ -2575,7 +2575,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Create an instance of the API class
 $api_instance = new OpenAPITools\Client\Api\ExampleApi();
-$body = ; // GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest | 
+$body = ; // InternalApiHttpDtoExamplePostRequest | 
 
 try {
     $result = $api_instance->v1ExamplePostPost($body);
@@ -2593,7 +2593,7 @@ use WWW::OPenAPIClient::ExampleApi;
 
 # Create an instance of the API class
 my $api_instance = WWW::OPenAPIClient::ExampleApi->new();
-my $body = WWW::OPenAPIClient::Object::GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest->new(); # GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest | 
+my $body = WWW::OPenAPIClient::Object::InternalApiHttpDtoExamplePostRequest->new(); # InternalApiHttpDtoExamplePostRequest | 
 
 eval {
     my $result = $api_instance->v1ExamplePostPost(body => $body);
@@ -2613,7 +2613,7 @@ from pprint import pprint
 
 # Create an instance of the API class
 api_instance = openapi_client.ExampleApi()
-body =  # GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest | 
+body =  # InternalApiHttpDtoExamplePostRequest | 
 
 try:
     # post 接口 示例
@@ -2627,7 +2627,7 @@ except ApiException as e:
                               <pre class="prettyprint"><code class="language-rust">extern crate ExampleApi;
 
 pub fn main() {
-    let body = ; // GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest
+    let body = ; // InternalApiHttpDtoExamplePostRequest
 
     let mut context = ExampleApi::Context::default();
     let result = client.v1ExamplePostPost(body, &context).wait();
@@ -2663,7 +2663,7 @@ $(document).ready(function() {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostRequest"
+        "$ref" : "#/components/schemas/_internal_api_http_dto.ExamplePostRequest"
       }
     }
   },
@@ -2756,7 +2756,7 @@ $(document).ready(function() {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponse"
+        "$ref" : "#/components/schemas/_internal_api_http_dto.ExamplePostResponse"
       }
     }
   }

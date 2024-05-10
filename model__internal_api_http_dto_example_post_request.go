@@ -11,16 +11,16 @@ API version: 1.0
 package openapi
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
-// checks if the GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest{}
+// checks if the InternalApiHttpDtoExamplePostRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InternalApiHttpDtoExamplePostRequest{}
 
-// GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest struct for GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest
-type GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest struct {
+// InternalApiHttpDtoExamplePostRequest struct for InternalApiHttpDtoExamplePostRequest
+type InternalApiHttpDtoExamplePostRequest struct {
 	// AppID 应用id
 	AppId string `json:"app_id"`
 	// CVer 客户端协议版本号
@@ -41,14 +41,14 @@ type GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest struct 
 	Token string `json:"token"`
 }
 
-type _GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest
+type _InternalApiHttpDtoExamplePostRequest InternalApiHttpDtoExamplePostRequest
 
-// NewGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest instantiates a new GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest object
+// NewInternalApiHttpDtoExamplePostRequest instantiates a new InternalApiHttpDtoExamplePostRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest(appId string, cVer string, cmdId int32, fid string, lang string, question string, token string) *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest {
-	this := GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest{}
+func NewInternalApiHttpDtoExamplePostRequest(appId string, cVer string, cmdId int32, fid string, lang string, question string, token string) *InternalApiHttpDtoExamplePostRequest {
+	this := InternalApiHttpDtoExamplePostRequest{}
 	this.AppId = appId
 	this.CVer = cVer
 	this.CmdId = cmdId
@@ -59,16 +59,16 @@ func NewGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest(appI
 	return &this
 }
 
-// NewGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequestWithDefaults instantiates a new GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest object
+// NewInternalApiHttpDtoExamplePostRequestWithDefaults instantiates a new InternalApiHttpDtoExamplePostRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequestWithDefaults() *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest {
-	this := GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest{}
+func NewInternalApiHttpDtoExamplePostRequestWithDefaults() *InternalApiHttpDtoExamplePostRequest {
+	this := InternalApiHttpDtoExamplePostRequest{}
 	return &this
 }
 
 // GetAppId returns the AppId field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetAppId() string {
+func (o *InternalApiHttpDtoExamplePostRequest) GetAppId() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -79,7 +79,7 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 
 // GetAppIdOk returns a tuple with the AppId field value
 // and a boolean to check if the value has been set.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetAppIdOk() (*string, bool) {
+func (o *InternalApiHttpDtoExamplePostRequest) GetAppIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -87,12 +87,12 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 }
 
 // SetAppId sets field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetAppId(v string) {
+func (o *InternalApiHttpDtoExamplePostRequest) SetAppId(v string) {
 	o.AppId = v
 }
 
 // GetCVer returns the CVer field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetCVer() string {
+func (o *InternalApiHttpDtoExamplePostRequest) GetCVer() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -103,7 +103,7 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 
 // GetCVerOk returns a tuple with the CVer field value
 // and a boolean to check if the value has been set.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetCVerOk() (*string, bool) {
+func (o *InternalApiHttpDtoExamplePostRequest) GetCVerOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -111,12 +111,12 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 }
 
 // SetCVer sets field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetCVer(v string) {
+func (o *InternalApiHttpDtoExamplePostRequest) SetCVer(v string) {
 	o.CVer = v
 }
 
 // GetCmdId returns the CmdId field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetCmdId() int32 {
+func (o *InternalApiHttpDtoExamplePostRequest) GetCmdId() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -127,7 +127,7 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 
 // GetCmdIdOk returns a tuple with the CmdId field value
 // and a boolean to check if the value has been set.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetCmdIdOk() (*int32, bool) {
+func (o *InternalApiHttpDtoExamplePostRequest) GetCmdIdOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -135,12 +135,12 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 }
 
 // SetCmdId sets field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetCmdId(v int32) {
+func (o *InternalApiHttpDtoExamplePostRequest) SetCmdId(v int32) {
 	o.CmdId = v
 }
 
 // GetFid returns the Fid field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetFid() string {
+func (o *InternalApiHttpDtoExamplePostRequest) GetFid() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -151,7 +151,7 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 
 // GetFidOk returns a tuple with the Fid field value
 // and a boolean to check if the value has been set.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetFidOk() (*string, bool) {
+func (o *InternalApiHttpDtoExamplePostRequest) GetFidOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -159,12 +159,12 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 }
 
 // SetFid sets field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetFid(v string) {
+func (o *InternalApiHttpDtoExamplePostRequest) SetFid(v string) {
 	o.Fid = v
 }
 
 // GetIgnoreFeaturePrompt returns the IgnoreFeaturePrompt field value if set, zero value otherwise.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetIgnoreFeaturePrompt() int32 {
+func (o *InternalApiHttpDtoExamplePostRequest) GetIgnoreFeaturePrompt() int32 {
 	if o == nil || IsNil(o.IgnoreFeaturePrompt) {
 		var ret int32
 		return ret
@@ -174,7 +174,7 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 
 // GetIgnoreFeaturePromptOk returns a tuple with the IgnoreFeaturePrompt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetIgnoreFeaturePromptOk() (*int32, bool) {
+func (o *InternalApiHttpDtoExamplePostRequest) GetIgnoreFeaturePromptOk() (*int32, bool) {
 	if o == nil || IsNil(o.IgnoreFeaturePrompt) {
 		return nil, false
 	}
@@ -182,7 +182,7 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 }
 
 // HasIgnoreFeaturePrompt returns a boolean if a field has been set.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) HasIgnoreFeaturePrompt() bool {
+func (o *InternalApiHttpDtoExamplePostRequest) HasIgnoreFeaturePrompt() bool {
 	if o != nil && !IsNil(o.IgnoreFeaturePrompt) {
 		return true
 	}
@@ -191,12 +191,12 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ha
 }
 
 // SetIgnoreFeaturePrompt gets a reference to the given int32 and assigns it to the IgnoreFeaturePrompt field.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetIgnoreFeaturePrompt(v int32) {
+func (o *InternalApiHttpDtoExamplePostRequest) SetIgnoreFeaturePrompt(v int32) {
 	o.IgnoreFeaturePrompt = &v
 }
 
 // GetLang returns the Lang field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetLang() string {
+func (o *InternalApiHttpDtoExamplePostRequest) GetLang() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -207,7 +207,7 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 
 // GetLangOk returns a tuple with the Lang field value
 // and a boolean to check if the value has been set.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetLangOk() (*string, bool) {
+func (o *InternalApiHttpDtoExamplePostRequest) GetLangOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -215,12 +215,12 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 }
 
 // SetLang sets field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetLang(v string) {
+func (o *InternalApiHttpDtoExamplePostRequest) SetLang(v string) {
 	o.Lang = v
 }
 
 // GetQuestion returns the Question field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetQuestion() string {
+func (o *InternalApiHttpDtoExamplePostRequest) GetQuestion() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -231,7 +231,7 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 
 // GetQuestionOk returns a tuple with the Question field value
 // and a boolean to check if the value has been set.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetQuestionOk() (*string, bool) {
+func (o *InternalApiHttpDtoExamplePostRequest) GetQuestionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -239,12 +239,12 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 }
 
 // SetQuestion sets field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetQuestion(v string) {
+func (o *InternalApiHttpDtoExamplePostRequest) SetQuestion(v string) {
 	o.Question = v
 }
 
 // GetShowGpt2 returns the ShowGpt2 field value if set, zero value otherwise.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetShowGpt2() string {
+func (o *InternalApiHttpDtoExamplePostRequest) GetShowGpt2() string {
 	if o == nil || IsNil(o.ShowGpt2) {
 		var ret string
 		return ret
@@ -254,7 +254,7 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 
 // GetShowGpt2Ok returns a tuple with the ShowGpt2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetShowGpt2Ok() (*string, bool) {
+func (o *InternalApiHttpDtoExamplePostRequest) GetShowGpt2Ok() (*string, bool) {
 	if o == nil || IsNil(o.ShowGpt2) {
 		return nil, false
 	}
@@ -262,7 +262,7 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 }
 
 // HasShowGpt2 returns a boolean if a field has been set.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) HasShowGpt2() bool {
+func (o *InternalApiHttpDtoExamplePostRequest) HasShowGpt2() bool {
 	if o != nil && !IsNil(o.ShowGpt2) {
 		return true
 	}
@@ -271,12 +271,12 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ha
 }
 
 // SetShowGpt2 gets a reference to the given string and assigns it to the ShowGpt2 field.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetShowGpt2(v string) {
+func (o *InternalApiHttpDtoExamplePostRequest) SetShowGpt2(v string) {
 	o.ShowGpt2 = &v
 }
 
 // GetToken returns the Token field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetToken() string {
+func (o *InternalApiHttpDtoExamplePostRequest) GetToken() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -287,7 +287,7 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 
 // GetTokenOk returns a tuple with the Token field value
 // and a boolean to check if the value has been set.
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) GetTokenOk() (*string, bool) {
+func (o *InternalApiHttpDtoExamplePostRequest) GetTokenOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -295,19 +295,19 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Ge
 }
 
 // SetToken sets field value
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) SetToken(v string) {
+func (o *InternalApiHttpDtoExamplePostRequest) SetToken(v string) {
 	o.Token = v
 }
 
-func (o GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+func (o InternalApiHttpDtoExamplePostRequest) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
 }
 
-func (o GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) ToMap() (map[string]interface{}, error) {
+func (o InternalApiHttpDtoExamplePostRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["app_id"] = o.AppId
 	toSerialize["c_ver"] = o.CVer
@@ -325,7 +325,7 @@ func (o GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) ToM
 	return toSerialize, nil
 }
 
-func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) UnmarshalJSON(data []byte) (err error) {
+func (o *InternalApiHttpDtoExamplePostRequest) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -344,62 +344,64 @@ func (o *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Un
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
 	}
 
-	varGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest := _GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest{}
+	varInternalApiHttpDtoExamplePostRequest := _InternalApiHttpDtoExamplePostRequest{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
 	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest)
+	err = decoder.Decode(&varInternalApiHttpDtoExamplePostRequest)
 
 	if err != nil {
 		return err
 	}
 
-	*o = GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest(varGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest)
+	*o = InternalApiHttpDtoExamplePostRequest(varInternalApiHttpDtoExamplePostRequest)
 
 	return err
 }
 
-type NullableGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest struct {
-	value *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest
+type NullableInternalApiHttpDtoExamplePostRequest struct {
+	value *InternalApiHttpDtoExamplePostRequest
 	isSet bool
 }
 
-func (v NullableGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Get() *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest {
+func (v NullableInternalApiHttpDtoExamplePostRequest) Get() *InternalApiHttpDtoExamplePostRequest {
 	return v.value
 }
 
-func (v *NullableGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Set(val *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) {
+func (v *NullableInternalApiHttpDtoExamplePostRequest) Set(val *InternalApiHttpDtoExamplePostRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) IsSet() bool {
+func (v NullableInternalApiHttpDtoExamplePostRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) Unset() {
+func (v *NullableInternalApiHttpDtoExamplePostRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest(val *GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) *NullableGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest {
-	return &NullableGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest{value: val, isSet: true}
+func NewNullableInternalApiHttpDtoExamplePostRequest(val *InternalApiHttpDtoExamplePostRequest) *NullableInternalApiHttpDtoExamplePostRequest {
+	return &NullableInternalApiHttpDtoExamplePostRequest{value: val, isSet: true}
 }
 
-func (v NullableGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) MarshalJSON() ([]byte, error) {
+func (v NullableInternalApiHttpDtoExamplePostRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableInternalApiHttpDtoExamplePostRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

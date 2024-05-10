@@ -65,7 +65,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponse'
+                $ref: '#/components/schemas/_internal_api_http_dto.ExampleGetResponse'
           description: 请求成功
       summary: get接口示例
       tags:
@@ -97,7 +97,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponse'
+                $ref: '#/components/schemas/_internal_api_http_dto.ExampleGetOneResponse'
           description: 请求成功
       summary: getOne接口示例
       tags:
@@ -113,7 +113,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostRequest'
+              $ref: '#/components/schemas/_internal_api_http_dto.ExamplePostRequest'
         description: 请求参数
         required: true
       responses:
@@ -121,7 +121,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponse'
+                $ref: '#/components/schemas/_internal_api_http_dto.ExamplePostResponse'
           description: 请求成功
           headers:
             Token:
@@ -142,7 +142,7 @@ paths:
       x-codegen-request-body-name: body
 components:
   schemas:
-    github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetOneResponse:
+    _internal_api_http_dto.ExampleGetOneResponse:
       example:
         msg: success
         traceId: traceId
@@ -158,7 +158,7 @@ components:
           example: 1
           type: integer
         data:
-          $ref: '#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData'
+          $ref: '#/components/schemas/_internal_api_http_dto.UserPortraitData'
         msg:
           description: 错误消息
           example: success
@@ -172,7 +172,7 @@ components:
       - msg
       - traceId
       type: object
-    github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExampleGetResponse:
+    _internal_api_http_dto.ExampleGetResponse:
       example:
         msg: success
         traceId: traceId
@@ -188,7 +188,7 @@ components:
           example: 1
           type: integer
         data:
-          $ref: '#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData'
+          $ref: '#/components/schemas/_internal_api_http_dto.UserPortraitData'
         msg:
           description: 错误消息
           example: success
@@ -202,7 +202,7 @@ components:
       - msg
       - traceId
       type: object
-    github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostRequest:
+    _internal_api_http_dto.ExamplePostRequest:
       properties:
         app_id:
           description: AppID 应用id
@@ -250,7 +250,7 @@ components:
       - question
       - token
       type: object
-    github_com_yituoshiniao_gin-api-http_internal_api_http_dto.ExamplePostResponse:
+    _internal_api_http_dto.ExamplePostResponse:
       example:
         msg: success
         traceId: traceId
@@ -266,7 +266,7 @@ components:
           example: 1
           type: integer
         data:
-          $ref: '#/components/schemas/github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData'
+          $ref: '#/components/schemas/_internal_api_http_dto.UserPortraitData'
         msg:
           description: 错误消息
           example: success
@@ -280,7 +280,7 @@ components:
       - msg
       - traceId
       type: object
-    github_com_yituoshiniao_gin-api-http_internal_api_http_dto.UserPortraitData:
+    _internal_api_http_dto.UserPortraitData:
       example:
         country: country
         vip_info: 0

@@ -25,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "gitlab.intsig.net/cs-server2/openapi-client-go"
+	openapiclient "github.com/cs-server2/openapi-client-go"
 )
 
 func main() {

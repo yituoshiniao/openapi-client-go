@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## V1ExampleGetGet
 
-> GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExampleGetResponse V1ExampleGetGet(ctx).CreateTime(createTime).QueryId(queryId).UserId(userId).Execute()
+> InternalApiHttpDtoExampleGetResponse V1ExampleGetGet(ctx).CreateTime(createTime).QueryId(queryId).UserId(userId).Execute()
 
 get接口示例
 
@@ -27,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "gitlab.intsig.net/cs-server2/openapi-client-go"
+	openapiclient "github.com/cs-server2/openapi-client-go"
 )
 
 func main() {
@@ -42,7 +42,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExampleAPI.V1ExampleGetGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1ExampleGetGet`: GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExampleGetResponse
+	// response from `V1ExampleGetGet`: InternalApiHttpDtoExampleGetResponse
 	fmt.Fprintf(os.Stdout, "Response from `ExampleAPI.V1ExampleGetGet`: %v\n", resp)
 }
 ```
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExampleGetResponse**](GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExampleGetResponse.md)
+[**InternalApiHttpDtoExampleGetResponse**](InternalApiHttpDtoExampleGetResponse.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## V1ExampleGetOneGet
 
-> GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExampleGetOneResponse V1ExampleGetOneGet(ctx).CreateTime(createTime).QueryId(queryId).UserId(userId).Execute()
+> InternalApiHttpDtoExampleGetOneResponse V1ExampleGetOneGet(ctx).CreateTime(createTime).QueryId(queryId).UserId(userId).Execute()
 
 getOne接口示例
 
@@ -97,7 +97,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "gitlab.intsig.net/cs-server2/openapi-client-go"
+	openapiclient "github.com/cs-server2/openapi-client-go"
 )
 
 func main() {
@@ -112,7 +112,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExampleAPI.V1ExampleGetOneGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1ExampleGetOneGet`: GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExampleGetOneResponse
+	// response from `V1ExampleGetOneGet`: InternalApiHttpDtoExampleGetOneResponse
 	fmt.Fprintf(os.Stdout, "Response from `ExampleAPI.V1ExampleGetOneGet`: %v\n", resp)
 }
 ```
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExampleGetOneResponse**](GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExampleGetOneResponse.md)
+[**InternalApiHttpDtoExampleGetOneResponse**](InternalApiHttpDtoExampleGetOneResponse.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ No authorization required
 
 ## V1ExamplePostPost
 
-> GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostResponse V1ExamplePostPost(ctx).Body(body).Execute()
+> InternalApiHttpDtoExamplePostResponse V1ExamplePostPost(ctx).Body(body).Execute()
 
 post 接口 示例
 
@@ -167,11 +167,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "gitlab.intsig.net/cs-server2/openapi-client-go"
+	openapiclient "github.com/cs-server2/openapi-client-go"
 )
 
 func main() {
-	body := *openapiclient.NewGithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest("AppId_example", "CVer_example", int32(1), "Fid_example", "Lang_example", "Question_example", "sdfsdsdfsd") // GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest | 请求参数
+	body := *openapiclient.NewInternalApiHttpDtoExamplePostRequest("AppId_example", "CVer_example", int32(1), "Fid_example", "Lang_example", "Question_example", "sdfsdsdfsd") // InternalApiHttpDtoExamplePostRequest | 请求参数
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExampleAPI.V1ExamplePostPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1ExamplePostPost`: GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostResponse
+	// response from `V1ExamplePostPost`: InternalApiHttpDtoExamplePostResponse
 	fmt.Fprintf(os.Stdout, "Response from `ExampleAPI.V1ExamplePostPost`: %v\n", resp)
 }
 ```
@@ -196,11 +196,11 @@ Other parameters are passed through a pointer to a apiV1ExamplePostPostRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest**](GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostRequest.md) | 请求参数 | 
+ **body** | [**InternalApiHttpDtoExamplePostRequest**](InternalApiHttpDtoExamplePostRequest.md) | 请求参数 | 
 
 ### Return type
 
-[**GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostResponse**](GithubComYituoshiniaoGinApiHttpInternalApiHttpDtoExamplePostResponse.md)
+[**InternalApiHttpDtoExamplePostResponse**](InternalApiHttpDtoExamplePostResponse.md)
 
 ### Authorization
 
