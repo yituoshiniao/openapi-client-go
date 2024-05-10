@@ -1,4 +1,4 @@
-module github.com/cs-server2/openapi-client-go
+module github.com/yituoshiniao/openapi-client-go
 
 go 1.18
 
