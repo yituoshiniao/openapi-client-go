@@ -68,7 +68,7 @@ func (a *ExampleAPIService) V1ExampleGetGet(ctx context.Context) ApiV1ExampleGet
 }
 
 // Execute executes the request
-//  @return InternalApiHttpDtoExampleGetResponse
+//	@return	InternalApiHttpDtoExampleGetResponse
 func (a *ExampleAPIService) V1ExampleGetGetExecute(r ApiV1ExampleGetGetRequest) (*InternalApiHttpDtoExampleGetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -200,7 +200,7 @@ func (a *ExampleAPIService) V1ExampleGetOneGet(ctx context.Context) ApiV1Example
 }
 
 // Execute executes the request
-//  @return InternalApiHttpDtoExampleGetOneResponse
+//	@return	InternalApiHttpDtoExampleGetOneResponse
 func (a *ExampleAPIService) V1ExampleGetOneGetExecute(r ApiV1ExampleGetOneGetRequest) (*InternalApiHttpDtoExampleGetOneResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -326,7 +326,7 @@ func (a *ExampleAPIService) V1ExamplePostPost(ctx context.Context) ApiV1ExampleP
 }
 
 // Execute executes the request
-//  @return InternalApiHttpDtoExamplePostResponse
+//	@return	InternalApiHttpDtoExamplePostResponse
 func (a *ExampleAPIService) V1ExamplePostPostExecute(r ApiV1ExamplePostPostRequest) (*InternalApiHttpDtoExamplePostResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost

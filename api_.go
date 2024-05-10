@@ -65,7 +65,7 @@ func (a *DefaultApiService) V1CommonGenerateIdGet(ctx context.Context, id int32)
 }
 
 // Execute executes the request
-//  @return InternalApiHttpServicev1HttpGenerateIDResponse
+//	@return	InternalApiHttpServicev1HttpGenerateIDResponse
 func (a *DefaultApiService) V1CommonGenerateIdGetExecute(r ApiV1CommonGenerateIdGetRequest) (*InternalApiHttpServicev1HttpGenerateIDResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
