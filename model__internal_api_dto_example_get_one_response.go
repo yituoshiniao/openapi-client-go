@@ -16,28 +16,28 @@ import (
 	"fmt"
 )
 
-// checks if the InternalApiHttpDtoExampleGetResponse type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &InternalApiHttpDtoExampleGetResponse{}
+// checks if the InternalApiDtoExampleGetOneResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InternalApiDtoExampleGetOneResponse{}
 
-// InternalApiHttpDtoExampleGetResponse struct for InternalApiHttpDtoExampleGetResponse
-type InternalApiHttpDtoExampleGetResponse struct {
+// InternalApiDtoExampleGetOneResponse struct for InternalApiDtoExampleGetOneResponse
+type InternalApiDtoExampleGetOneResponse struct {
 	// code:  0 成功; 非0失败;
 	Code int32 `json:"code"`
-	Data InternalApiHttpDtoUserPortraitData `json:"data"`
+	Data InternalApiDtoUserPortraitData `json:"data"`
 	// 错误消息
 	Msg string `json:"msg"`
 	// traceId
 	TraceId string `json:"traceId"`
 }
 
-type _InternalApiHttpDtoExampleGetResponse InternalApiHttpDtoExampleGetResponse
+type _InternalApiDtoExampleGetOneResponse InternalApiDtoExampleGetOneResponse
 
-// NewInternalApiHttpDtoExampleGetResponse instantiates a new InternalApiHttpDtoExampleGetResponse object
+// NewInternalApiDtoExampleGetOneResponse instantiates a new InternalApiDtoExampleGetOneResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInternalApiHttpDtoExampleGetResponse(code int32, data InternalApiHttpDtoUserPortraitData, msg string, traceId string) *InternalApiHttpDtoExampleGetResponse {
-	this := InternalApiHttpDtoExampleGetResponse{}
+func NewInternalApiDtoExampleGetOneResponse(code int32, data InternalApiDtoUserPortraitData, msg string, traceId string) *InternalApiDtoExampleGetOneResponse {
+	this := InternalApiDtoExampleGetOneResponse{}
 	this.Code = code
 	this.Data = data
 	this.Msg = msg
@@ -45,16 +45,16 @@ func NewInternalApiHttpDtoExampleGetResponse(code int32, data InternalApiHttpDto
 	return &this
 }
 
-// NewInternalApiHttpDtoExampleGetResponseWithDefaults instantiates a new InternalApiHttpDtoExampleGetResponse object
+// NewInternalApiDtoExampleGetOneResponseWithDefaults instantiates a new InternalApiDtoExampleGetOneResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewInternalApiHttpDtoExampleGetResponseWithDefaults() *InternalApiHttpDtoExampleGetResponse {
-	this := InternalApiHttpDtoExampleGetResponse{}
+func NewInternalApiDtoExampleGetOneResponseWithDefaults() *InternalApiDtoExampleGetOneResponse {
+	this := InternalApiDtoExampleGetOneResponse{}
 	return &this
 }
 
 // GetCode returns the Code field value
-func (o *InternalApiHttpDtoExampleGetResponse) GetCode() int32 {
+func (o *InternalApiDtoExampleGetOneResponse) GetCode() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -65,7 +65,7 @@ func (o *InternalApiHttpDtoExampleGetResponse) GetCode() int32 {
 
 // GetCodeOk returns a tuple with the Code field value
 // and a boolean to check if the value has been set.
-func (o *InternalApiHttpDtoExampleGetResponse) GetCodeOk() (*int32, bool) {
+func (o *InternalApiDtoExampleGetOneResponse) GetCodeOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -73,14 +73,14 @@ func (o *InternalApiHttpDtoExampleGetResponse) GetCodeOk() (*int32, bool) {
 }
 
 // SetCode sets field value
-func (o *InternalApiHttpDtoExampleGetResponse) SetCode(v int32) {
+func (o *InternalApiDtoExampleGetOneResponse) SetCode(v int32) {
 	o.Code = v
 }
 
 // GetData returns the Data field value
-func (o *InternalApiHttpDtoExampleGetResponse) GetData() InternalApiHttpDtoUserPortraitData {
+func (o *InternalApiDtoExampleGetOneResponse) GetData() InternalApiDtoUserPortraitData {
 	if o == nil {
-		var ret InternalApiHttpDtoUserPortraitData
+		var ret InternalApiDtoUserPortraitData
 		return ret
 	}
 
@@ -89,7 +89,7 @@ func (o *InternalApiHttpDtoExampleGetResponse) GetData() InternalApiHttpDtoUserP
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *InternalApiHttpDtoExampleGetResponse) GetDataOk() (*InternalApiHttpDtoUserPortraitData, bool) {
+func (o *InternalApiDtoExampleGetOneResponse) GetDataOk() (*InternalApiDtoUserPortraitData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -97,12 +97,12 @@ func (o *InternalApiHttpDtoExampleGetResponse) GetDataOk() (*InternalApiHttpDtoU
 }
 
 // SetData sets field value
-func (o *InternalApiHttpDtoExampleGetResponse) SetData(v InternalApiHttpDtoUserPortraitData) {
+func (o *InternalApiDtoExampleGetOneResponse) SetData(v InternalApiDtoUserPortraitData) {
 	o.Data = v
 }
 
 // GetMsg returns the Msg field value
-func (o *InternalApiHttpDtoExampleGetResponse) GetMsg() string {
+func (o *InternalApiDtoExampleGetOneResponse) GetMsg() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -113,7 +113,7 @@ func (o *InternalApiHttpDtoExampleGetResponse) GetMsg() string {
 
 // GetMsgOk returns a tuple with the Msg field value
 // and a boolean to check if the value has been set.
-func (o *InternalApiHttpDtoExampleGetResponse) GetMsgOk() (*string, bool) {
+func (o *InternalApiDtoExampleGetOneResponse) GetMsgOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -121,12 +121,12 @@ func (o *InternalApiHttpDtoExampleGetResponse) GetMsgOk() (*string, bool) {
 }
 
 // SetMsg sets field value
-func (o *InternalApiHttpDtoExampleGetResponse) SetMsg(v string) {
+func (o *InternalApiDtoExampleGetOneResponse) SetMsg(v string) {
 	o.Msg = v
 }
 
 // GetTraceId returns the TraceId field value
-func (o *InternalApiHttpDtoExampleGetResponse) GetTraceId() string {
+func (o *InternalApiDtoExampleGetOneResponse) GetTraceId() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -137,7 +137,7 @@ func (o *InternalApiHttpDtoExampleGetResponse) GetTraceId() string {
 
 // GetTraceIdOk returns a tuple with the TraceId field value
 // and a boolean to check if the value has been set.
-func (o *InternalApiHttpDtoExampleGetResponse) GetTraceIdOk() (*string, bool) {
+func (o *InternalApiDtoExampleGetOneResponse) GetTraceIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -145,11 +145,11 @@ func (o *InternalApiHttpDtoExampleGetResponse) GetTraceIdOk() (*string, bool) {
 }
 
 // SetTraceId sets field value
-func (o *InternalApiHttpDtoExampleGetResponse) SetTraceId(v string) {
+func (o *InternalApiDtoExampleGetOneResponse) SetTraceId(v string) {
 	o.TraceId = v
 }
 
-func (o InternalApiHttpDtoExampleGetResponse) MarshalJSON() ([]byte, error) {
+func (o InternalApiDtoExampleGetOneResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -157,7 +157,7 @@ func (o InternalApiHttpDtoExampleGetResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o InternalApiHttpDtoExampleGetResponse) ToMap() (map[string]interface{}, error) {
+func (o InternalApiDtoExampleGetOneResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["code"] = o.Code
 	toSerialize["data"] = o.Data
@@ -166,7 +166,7 @@ func (o InternalApiHttpDtoExampleGetResponse) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 
-func (o *InternalApiHttpDtoExampleGetResponse) UnmarshalJSON(data []byte) (err error) {
+func (o *InternalApiDtoExampleGetOneResponse) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -191,53 +191,53 @@ func (o *InternalApiHttpDtoExampleGetResponse) UnmarshalJSON(data []byte) (err e
 		}
 	}
 
-	varInternalApiHttpDtoExampleGetResponse := _InternalApiHttpDtoExampleGetResponse{}
+	varInternalApiDtoExampleGetOneResponse := _InternalApiDtoExampleGetOneResponse{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
 	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varInternalApiHttpDtoExampleGetResponse)
+	err = decoder.Decode(&varInternalApiDtoExampleGetOneResponse)
 
 	if err != nil {
 		return err
 	}
 
-	*o = InternalApiHttpDtoExampleGetResponse(varInternalApiHttpDtoExampleGetResponse)
+	*o = InternalApiDtoExampleGetOneResponse(varInternalApiDtoExampleGetOneResponse)
 
 	return err
 }
 
-type NullableInternalApiHttpDtoExampleGetResponse struct {
-	value *InternalApiHttpDtoExampleGetResponse
+type NullableInternalApiDtoExampleGetOneResponse struct {
+	value *InternalApiDtoExampleGetOneResponse
 	isSet bool
 }
 
-func (v NullableInternalApiHttpDtoExampleGetResponse) Get() *InternalApiHttpDtoExampleGetResponse {
+func (v NullableInternalApiDtoExampleGetOneResponse) Get() *InternalApiDtoExampleGetOneResponse {
 	return v.value
 }
 
-func (v *NullableInternalApiHttpDtoExampleGetResponse) Set(val *InternalApiHttpDtoExampleGetResponse) {
+func (v *NullableInternalApiDtoExampleGetOneResponse) Set(val *InternalApiDtoExampleGetOneResponse) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableInternalApiHttpDtoExampleGetResponse) IsSet() bool {
+func (v NullableInternalApiDtoExampleGetOneResponse) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableInternalApiHttpDtoExampleGetResponse) Unset() {
+func (v *NullableInternalApiDtoExampleGetOneResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableInternalApiHttpDtoExampleGetResponse(val *InternalApiHttpDtoExampleGetResponse) *NullableInternalApiHttpDtoExampleGetResponse {
-	return &NullableInternalApiHttpDtoExampleGetResponse{value: val, isSet: true}
+func NewNullableInternalApiDtoExampleGetOneResponse(val *InternalApiDtoExampleGetOneResponse) *NullableInternalApiDtoExampleGetOneResponse {
+	return &NullableInternalApiDtoExampleGetOneResponse{value: val, isSet: true}
 }
 
-func (v NullableInternalApiHttpDtoExampleGetResponse) MarshalJSON() ([]byte, error) {
+func (v NullableInternalApiDtoExampleGetOneResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableInternalApiHttpDtoExampleGetResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableInternalApiDtoExampleGetOneResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

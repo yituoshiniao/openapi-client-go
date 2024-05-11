@@ -7,6 +7,75 @@ info:
 servers:
 - url: http://127.0.0.1:3013/goodsCenterLogic
 paths:
+  /asynq/v1/addAggTask:
+    get:
+      description: asynq-添加聚合任务
+      parameters:
+      - description: "环境变量,默认线上; sandbox 沙箱环境, production 生产环境"
+        in: query
+        name: env
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/_internal_api_dto.GroupDeliveryTaskAddResponse'
+          description: 请求成功
+      summary: asynq-添加聚合任务
+      tags:
+      - asynq
+  /asynq/v1/addTask:
+    get:
+      description: "asynq-异步任务,可通过： http://localhost:7013/monitoring/ 查看dashbord报表"
+      parameters:
+      - description: "环境变量,默认线上; sandbox 沙箱环境, production 生产环境"
+        in: query
+        name: env
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/_internal_api_dto.AsynqEmailDeliveryTaskAddResponse'
+          description: 请求成功
+      summary: asynq-add异步任务
+      tags:
+      - asynq
+  /auth/v1/token/generate:
+    get:
+      description: jwt-token生成及校验
+      parameters:
+      - description: "环境变量,默认线上; sandbox 沙箱环境, production 生产环境"
+        in: query
+        name: env
+        schema:
+          type: string
+      - description: UserID 用户id
+        in: query
+        name: userId
+        required: true
+        schema:
+          type: string
+      - description: UserName 用户名  example:张三
+        in: query
+        name: userName
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/_internal_api_dto.AppJwtTokenResponse'
+          description: 请求成功
+      summary: jwt-token生成及校验
+      tags:
+      - auth
   /v1/common/generateId:
     get:
       description: 生成id-描述
@@ -65,7 +134,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/_internal_api_http_dto.ExampleGetResponse'
+                $ref: '#/components/schemas/_internal_api_dto.ExampleGetResponse'
           description: 请求成功
       summary: get接口示例
       tags:
@@ -97,7 +166,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/_internal_api_http_dto.ExampleGetOneResponse'
+                $ref: '#/components/schemas/_internal_api_dto.ExampleGetOneResponse'
           description: 请求成功
       summary: getOne接口示例
       tags:
@@ -113,7 +182,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/_internal_api_http_dto.ExamplePostRequest'
+              $ref: '#/components/schemas/_internal_api_dto.ExamplePostRequest'
         description: 请求参数
         required: true
       responses:
@@ -121,7 +190,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/_internal_api_http_dto.ExamplePostResponse'
+                $ref: '#/components/schemas/_internal_api_dto.ExamplePostResponse'
           description: 请求成功
           headers:
             Token:
@@ -142,7 +211,48 @@ paths:
       x-codegen-request-body-name: body
 components:
   schemas:
-    _internal_api_http_dto.ExampleGetOneResponse:
+    _internal_api_dto.AppJwtTokenResponse:
+      example:
+        jwtPayload: "{}"
+        token: token
+      properties:
+        jwtPayload:
+          allOf:
+          - $ref: '#/components/schemas/_internal_module_auth_application_service.AuthPayload'
+          description: token payload 信息
+          type: object
+        token:
+          description: Token jwt token
+          type: string
+      type: object
+    _internal_api_dto.AsynqEmailDeliveryTaskAddResponse:
+      example:
+        msg: success
+        traceId: traceId
+        code: 1
+        data: "{}"
+      properties:
+        code:
+          description: "code:  0 成功; 非0失败;"
+          example: 1
+          type: integer
+        data:
+          description: 数据data
+          type: object
+        msg:
+          description: 错误消息
+          example: success
+          type: string
+        traceId:
+          description: traceId
+          type: string
+      required:
+      - code
+      - data
+      - msg
+      - traceId
+      type: object
+    _internal_api_dto.ExampleGetOneResponse:
       example:
         msg: success
         traceId: traceId
@@ -158,7 +268,7 @@ components:
           example: 1
           type: integer
         data:
-          $ref: '#/components/schemas/_internal_api_http_dto.UserPortraitData'
+          $ref: '#/components/schemas/_internal_api_dto.UserPortraitData'
         msg:
           description: 错误消息
           example: success
@@ -172,7 +282,7 @@ components:
       - msg
       - traceId
       type: object
-    _internal_api_http_dto.ExampleGetResponse:
+    _internal_api_dto.ExampleGetResponse:
       example:
         msg: success
         traceId: traceId
@@ -188,7 +298,7 @@ components:
           example: 1
           type: integer
         data:
-          $ref: '#/components/schemas/_internal_api_http_dto.UserPortraitData'
+          $ref: '#/components/schemas/_internal_api_dto.UserPortraitData'
         msg:
           description: 错误消息
           example: success
@@ -202,7 +312,7 @@ components:
       - msg
       - traceId
       type: object
-    _internal_api_http_dto.ExamplePostRequest:
+    _internal_api_dto.ExamplePostRequest:
       properties:
         app_id:
           description: AppID 应用id
@@ -250,7 +360,7 @@ components:
       - question
       - token
       type: object
-    _internal_api_http_dto.ExamplePostResponse:
+    _internal_api_dto.ExamplePostResponse:
       example:
         msg: success
         traceId: traceId
@@ -266,7 +376,7 @@ components:
           example: 1
           type: integer
         data:
-          $ref: '#/components/schemas/_internal_api_http_dto.UserPortraitData'
+          $ref: '#/components/schemas/_internal_api_dto.UserPortraitData'
         msg:
           description: 错误消息
           example: success
@@ -280,7 +390,34 @@ components:
       - msg
       - traceId
       type: object
-    _internal_api_http_dto.UserPortraitData:
+    _internal_api_dto.GroupDeliveryTaskAddResponse:
+      example:
+        msg: success
+        traceId: traceId
+        code: 1
+        data: "{}"
+      properties:
+        code:
+          description: "code:  0 成功; 非0失败;"
+          example: 1
+          type: integer
+        data:
+          description: 数据data
+          type: object
+        msg:
+          description: 错误消息
+          example: success
+          type: string
+        traceId:
+          description: traceId
+          type: string
+      required:
+      - code
+      - data
+      - msg
+      - traceId
+      type: object
+    _internal_api_dto.UserPortraitData:
       example:
         country: country
         vip_info: 0
@@ -299,6 +436,35 @@ components:
         vip_info:
           description: 是否为VIP，0/1
           type: integer
+      type: object
+    _internal_module_auth_application_service.AuthPayload:
+      properties:
+        aud:
+          type: string
+        audience:
+          description: Audience 当前时间
+          type: integer
+        exp:
+          type: integer
+        expiresAt:
+          description: ExpiresAt  token 过期时间
+          type: integer
+        iat:
+          type: integer
+        iss:
+          type: string
+        jti:
+          type: string
+        nbf:
+          type: integer
+        sub:
+          type: string
+        uid:
+          description: UID 用户id
+          type: string
+        username:
+          description: Username 用户名
+          type: string
       type: object
     internal_api_http_servicev1.HttpGenerateIDResponse:
       example:

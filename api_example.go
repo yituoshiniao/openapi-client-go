@@ -48,7 +48,7 @@ func (r ApiV1ExampleGetGetRequest) UserId(userId string) ApiV1ExampleGetGetReque
 	return r
 }
 
-func (r ApiV1ExampleGetGetRequest) Execute() (*InternalApiHttpDtoExampleGetResponse, *http.Response, error) {
+func (r ApiV1ExampleGetGetRequest) Execute() (*InternalApiDtoExampleGetResponse, *http.Response, error) {
 	return r.ApiService.V1ExampleGetGetExecute(r)
 }
 
@@ -68,13 +68,13 @@ func (a *ExampleAPIService) V1ExampleGetGet(ctx context.Context) ApiV1ExampleGet
 }
 
 // Execute executes the request
-//	@return	InternalApiHttpDtoExampleGetResponse
-func (a *ExampleAPIService) V1ExampleGetGetExecute(r ApiV1ExampleGetGetRequest) (*InternalApiHttpDtoExampleGetResponse, *http.Response, error) {
+//  @return InternalApiDtoExampleGetResponse
+func (a *ExampleAPIService) V1ExampleGetGetExecute(r ApiV1ExampleGetGetRequest) (*InternalApiDtoExampleGetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InternalApiHttpDtoExampleGetResponse
+		localVarReturnValue  *InternalApiDtoExampleGetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExampleAPIService.V1ExampleGetGet")
@@ -180,7 +180,7 @@ func (r ApiV1ExampleGetOneGetRequest) UserId(userId string) ApiV1ExampleGetOneGe
 	return r
 }
 
-func (r ApiV1ExampleGetOneGetRequest) Execute() (*InternalApiHttpDtoExampleGetOneResponse, *http.Response, error) {
+func (r ApiV1ExampleGetOneGetRequest) Execute() (*InternalApiDtoExampleGetOneResponse, *http.Response, error) {
 	return r.ApiService.V1ExampleGetOneGetExecute(r)
 }
 
@@ -200,13 +200,13 @@ func (a *ExampleAPIService) V1ExampleGetOneGet(ctx context.Context) ApiV1Example
 }
 
 // Execute executes the request
-//	@return	InternalApiHttpDtoExampleGetOneResponse
-func (a *ExampleAPIService) V1ExampleGetOneGetExecute(r ApiV1ExampleGetOneGetRequest) (*InternalApiHttpDtoExampleGetOneResponse, *http.Response, error) {
+//  @return InternalApiDtoExampleGetOneResponse
+func (a *ExampleAPIService) V1ExampleGetOneGetExecute(r ApiV1ExampleGetOneGetRequest) (*InternalApiDtoExampleGetOneResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InternalApiHttpDtoExampleGetOneResponse
+		localVarReturnValue  *InternalApiDtoExampleGetOneResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExampleAPIService.V1ExampleGetOneGet")
@@ -289,16 +289,16 @@ func (a *ExampleAPIService) V1ExampleGetOneGetExecute(r ApiV1ExampleGetOneGetReq
 type ApiV1ExamplePostPostRequest struct {
 	ctx context.Context
 	ApiService *ExampleAPIService
-	body *InternalApiHttpDtoExamplePostRequest
+	body *InternalApiDtoExamplePostRequest
 }
 
 // 请求参数
-func (r ApiV1ExamplePostPostRequest) Body(body InternalApiHttpDtoExamplePostRequest) ApiV1ExamplePostPostRequest {
+func (r ApiV1ExamplePostPostRequest) Body(body InternalApiDtoExamplePostRequest) ApiV1ExamplePostPostRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiV1ExamplePostPostRequest) Execute() (*InternalApiHttpDtoExamplePostResponse, *http.Response, error) {
+func (r ApiV1ExamplePostPostRequest) Execute() (*InternalApiDtoExamplePostResponse, *http.Response, error) {
 	return r.ApiService.V1ExamplePostPostExecute(r)
 }
 
@@ -326,13 +326,13 @@ func (a *ExampleAPIService) V1ExamplePostPost(ctx context.Context) ApiV1ExampleP
 }
 
 // Execute executes the request
-//	@return	InternalApiHttpDtoExamplePostResponse
-func (a *ExampleAPIService) V1ExamplePostPostExecute(r ApiV1ExamplePostPostRequest) (*InternalApiHttpDtoExamplePostResponse, *http.Response, error) {
+//  @return InternalApiDtoExamplePostResponse
+func (a *ExampleAPIService) V1ExamplePostPostExecute(r ApiV1ExamplePostPostRequest) (*InternalApiDtoExamplePostResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InternalApiHttpDtoExamplePostResponse
+		localVarReturnValue  *InternalApiDtoExamplePostResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExampleAPIService.V1ExamplePostPost")

@@ -1,4 +1,4 @@
-# InternalApiHttpDtoUserPortraitData
+# InternalApiDtoUserPortraitData
 
 ## Properties
 
@@ -11,120 +11,120 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewInternalApiHttpDtoUserPortraitData
+### NewInternalApiDtoUserPortraitData
 
-`func NewInternalApiHttpDtoUserPortraitData() *InternalApiHttpDtoUserPortraitData`
+`func NewInternalApiDtoUserPortraitData() *InternalApiDtoUserPortraitData`
 
-NewInternalApiHttpDtoUserPortraitData instantiates a new InternalApiHttpDtoUserPortraitData object
+NewInternalApiDtoUserPortraitData instantiates a new InternalApiDtoUserPortraitData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInternalApiHttpDtoUserPortraitDataWithDefaults
+### NewInternalApiDtoUserPortraitDataWithDefaults
 
-`func NewInternalApiHttpDtoUserPortraitDataWithDefaults() *InternalApiHttpDtoUserPortraitData`
+`func NewInternalApiDtoUserPortraitDataWithDefaults() *InternalApiDtoUserPortraitData`
 
-NewInternalApiHttpDtoUserPortraitDataWithDefaults instantiates a new InternalApiHttpDtoUserPortraitData object
+NewInternalApiDtoUserPortraitDataWithDefaults instantiates a new InternalApiDtoUserPortraitData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCountry
 
-`func (o *InternalApiHttpDtoUserPortraitData) GetCountry() string`
+`func (o *InternalApiDtoUserPortraitData) GetCountry() string`
 
 GetCountry returns the Country field if non-nil, zero value otherwise.
 
 ### GetCountryOk
 
-`func (o *InternalApiHttpDtoUserPortraitData) GetCountryOk() (*string, bool)`
+`func (o *InternalApiDtoUserPortraitData) GetCountryOk() (*string, bool)`
 
 GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCountry
 
-`func (o *InternalApiHttpDtoUserPortraitData) SetCountry(v string)`
+`func (o *InternalApiDtoUserPortraitData) SetCountry(v string)`
 
 SetCountry sets Country field to given value.
 
 ### HasCountry
 
-`func (o *InternalApiHttpDtoUserPortraitData) HasCountry() bool`
+`func (o *InternalApiDtoUserPortraitData) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
 
 ### GetLastLogin
 
-`func (o *InternalApiHttpDtoUserPortraitData) GetLastLogin() string`
+`func (o *InternalApiDtoUserPortraitData) GetLastLogin() string`
 
 GetLastLogin returns the LastLogin field if non-nil, zero value otherwise.
 
 ### GetLastLoginOk
 
-`func (o *InternalApiHttpDtoUserPortraitData) GetLastLoginOk() (*string, bool)`
+`func (o *InternalApiDtoUserPortraitData) GetLastLoginOk() (*string, bool)`
 
 GetLastLoginOk returns a tuple with the LastLogin field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastLogin
 
-`func (o *InternalApiHttpDtoUserPortraitData) SetLastLogin(v string)`
+`func (o *InternalApiDtoUserPortraitData) SetLastLogin(v string)`
 
 SetLastLogin sets LastLogin field to given value.
 
 ### HasLastLogin
 
-`func (o *InternalApiHttpDtoUserPortraitData) HasLastLogin() bool`
+`func (o *InternalApiDtoUserPortraitData) HasLastLogin() bool`
 
 HasLastLogin returns a boolean if a field has been set.
 
 ### GetUserId
 
-`func (o *InternalApiHttpDtoUserPortraitData) GetUserId() string`
+`func (o *InternalApiDtoUserPortraitData) GetUserId() string`
 
 GetUserId returns the UserId field if non-nil, zero value otherwise.
 
 ### GetUserIdOk
 
-`func (o *InternalApiHttpDtoUserPortraitData) GetUserIdOk() (*string, bool)`
+`func (o *InternalApiDtoUserPortraitData) GetUserIdOk() (*string, bool)`
 
 GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserId
 
-`func (o *InternalApiHttpDtoUserPortraitData) SetUserId(v string)`
+`func (o *InternalApiDtoUserPortraitData) SetUserId(v string)`
 
 SetUserId sets UserId field to given value.
 
 ### HasUserId
 
-`func (o *InternalApiHttpDtoUserPortraitData) HasUserId() bool`
+`func (o *InternalApiDtoUserPortraitData) HasUserId() bool`
 
 HasUserId returns a boolean if a field has been set.
 
 ### GetVipInfo
 
-`func (o *InternalApiHttpDtoUserPortraitData) GetVipInfo() int32`
+`func (o *InternalApiDtoUserPortraitData) GetVipInfo() int32`
 
 GetVipInfo returns the VipInfo field if non-nil, zero value otherwise.
 
 ### GetVipInfoOk
 
-`func (o *InternalApiHttpDtoUserPortraitData) GetVipInfoOk() (*int32, bool)`
+`func (o *InternalApiDtoUserPortraitData) GetVipInfoOk() (*int32, bool)`
 
 GetVipInfoOk returns a tuple with the VipInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVipInfo
 
-`func (o *InternalApiHttpDtoUserPortraitData) SetVipInfo(v int32)`
+`func (o *InternalApiDtoUserPortraitData) SetVipInfo(v int32)`
 
 SetVipInfo sets VipInfo field to given value.
 
 ### HasVipInfo
 
-`func (o *InternalApiHttpDtoUserPortraitData) HasVipInfo() bool`
+`func (o *InternalApiDtoUserPortraitData) HasVipInfo() bool`
 
 HasVipInfo returns a boolean if a field has been set.
 

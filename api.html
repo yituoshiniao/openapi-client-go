@@ -844,7 +844,23 @@ ul.nav-tabs {
   <script>
     // Script section to load models into a JS Var
     var defs = {}
-    defs["_internal_api_http_dto.ExampleGetOneResponse"] = {
+    defs["_internal_api_dto.AppJwtTokenResponse"] = {
+  "type" : "object",
+  "properties" : {
+    "jwtPayload" : {
+      "type" : "object",
+      "description" : "token payload 信息",
+      "allOf" : [ {
+        "$ref" : "#/components/schemas/_internal_module_auth_application_service.AuthPayload"
+      } ]
+    },
+    "token" : {
+      "type" : "string",
+      "description" : "Token jwt token"
+    }
+  }
+};
+    defs["_internal_api_dto.AsynqEmailDeliveryTaskAddResponse"] = {
   "required" : [ "code", "data", "msg", "traceId" ],
   "type" : "object",
   "properties" : {
@@ -854,7 +870,8 @@ ul.nav-tabs {
       "example" : 1
     },
     "data" : {
-      "$ref" : "#/components/schemas/_internal_api_http_dto.UserPortraitData"
+      "type" : "object",
+      "description" : "数据data"
     },
     "msg" : {
       "type" : "string",
@@ -867,7 +884,7 @@ ul.nav-tabs {
     }
   }
 };
-    defs["_internal_api_http_dto.ExampleGetResponse"] = {
+    defs["_internal_api_dto.ExampleGetOneResponse"] = {
   "required" : [ "code", "data", "msg", "traceId" ],
   "type" : "object",
   "properties" : {
@@ -877,7 +894,7 @@ ul.nav-tabs {
       "example" : 1
     },
     "data" : {
-      "$ref" : "#/components/schemas/_internal_api_http_dto.UserPortraitData"
+      "$ref" : "#/components/schemas/_internal_api_dto.UserPortraitData"
     },
     "msg" : {
       "type" : "string",
@@ -890,7 +907,30 @@ ul.nav-tabs {
     }
   }
 };
-    defs["_internal_api_http_dto.ExamplePostRequest"] = {
+    defs["_internal_api_dto.ExampleGetResponse"] = {
+  "required" : [ "code", "data", "msg", "traceId" ],
+  "type" : "object",
+  "properties" : {
+    "code" : {
+      "type" : "integer",
+      "description" : "code:  0 成功; 非0失败;",
+      "example" : 1
+    },
+    "data" : {
+      "$ref" : "#/components/schemas/_internal_api_dto.UserPortraitData"
+    },
+    "msg" : {
+      "type" : "string",
+      "description" : "错误消息",
+      "example" : "success"
+    },
+    "traceId" : {
+      "type" : "string",
+      "description" : "traceId"
+    }
+  }
+};
+    defs["_internal_api_dto.ExamplePostRequest"] = {
   "required" : [ "app_id", "c_ver", "cmd_id", "fid", "lang", "question", "token" ],
   "type" : "object",
   "properties" : {
@@ -934,7 +974,7 @@ ul.nav-tabs {
     }
   }
 };
-    defs["_internal_api_http_dto.ExamplePostResponse"] = {
+    defs["_internal_api_dto.ExamplePostResponse"] = {
   "required" : [ "code", "data", "msg", "traceId" ],
   "type" : "object",
   "properties" : {
@@ -944,7 +984,7 @@ ul.nav-tabs {
       "example" : 1
     },
     "data" : {
-      "$ref" : "#/components/schemas/_internal_api_http_dto.UserPortraitData"
+      "$ref" : "#/components/schemas/_internal_api_dto.UserPortraitData"
     },
     "msg" : {
       "type" : "string",
@@ -957,7 +997,31 @@ ul.nav-tabs {
     }
   }
 };
-    defs["_internal_api_http_dto.UserPortraitData"] = {
+    defs["_internal_api_dto.GroupDeliveryTaskAddResponse"] = {
+  "required" : [ "code", "data", "msg", "traceId" ],
+  "type" : "object",
+  "properties" : {
+    "code" : {
+      "type" : "integer",
+      "description" : "code:  0 成功; 非0失败;",
+      "example" : 1
+    },
+    "data" : {
+      "type" : "object",
+      "description" : "数据data"
+    },
+    "msg" : {
+      "type" : "string",
+      "description" : "错误消息",
+      "example" : "success"
+    },
+    "traceId" : {
+      "type" : "string",
+      "description" : "traceId"
+    }
+  }
+};
+    defs["_internal_api_dto.UserPortraitData"] = {
   "type" : "object",
   "properties" : {
     "country" : {
@@ -1005,6 +1069,48 @@ ul.nav-tabs {
     }
   }
 };
+    defs["_internal_module_auth_application_service.AuthPayload"] = {
+  "type" : "object",
+  "properties" : {
+    "aud" : {
+      "type" : "string"
+    },
+    "audience" : {
+      "type" : "integer",
+      "description" : "Audience 当前时间"
+    },
+    "exp" : {
+      "type" : "integer"
+    },
+    "expiresAt" : {
+      "type" : "integer",
+      "description" : "ExpiresAt  token 过期时间"
+    },
+    "iat" : {
+      "type" : "integer"
+    },
+    "iss" : {
+      "type" : "string"
+    },
+    "jti" : {
+      "type" : "string"
+    },
+    "nbf" : {
+      "type" : "integer"
+    },
+    "sub" : {
+      "type" : "string"
+    },
+    "uid" : {
+      "type" : "string",
+      "description" : "UID 用户id"
+    },
+    "username" : {
+      "type" : "string",
+      "description" : "Username 用户名"
+    }
+  }
+};
 
     var errs = {};
   </script>
@@ -1026,6 +1132,17 @@ ul.nav-tabs {
                   <li class="nav-header" data-group=""><a href="#api-">API Methods - </a></li>
                     <li data-group="" data-name="v1CommonGenerateIdGet" class="">
                       <a href="#api--v1CommonGenerateIdGet">v1CommonGenerateIdGet</a>
+                    </li>
+                  <li class="nav-header" data-group="Asynq"><a href="#api-Asynq">API Methods - Asynq</a></li>
+                    <li data-group="Asynq" data-name="asynqV1AddAggTaskGet" class="">
+                      <a href="#api-Asynq-asynqV1AddAggTaskGet">asynqV1AddAggTaskGet</a>
+                    </li>
+                    <li data-group="Asynq" data-name="asynqV1AddTaskGet" class="">
+                      <a href="#api-Asynq-asynqV1AddTaskGet">asynqV1AddTaskGet</a>
+                    </li>
+                  <li class="nav-header" data-group="Auth"><a href="#api-Auth">API Methods - Auth</a></li>
+                    <li data-group="Auth" data-name="authV1TokenGenerateGet" class="">
+                      <a href="#api-Auth-authV1TokenGenerateGet">authV1TokenGenerateGet</a>
                     </li>
                   <li class="nav-header" data-group="Example"><a href="#api-Example">API Methods - Example</a></li>
                     <li data-group="Example" data-name="v1ExampleGetGet" class="">
@@ -1509,6 +1626,1178 @@ ID
                       </div>
                       <hr>
                   </section>
+                <section id="api-Asynq">
+                  <h1>Asynq</h1>
+                    <div id="api-Asynq-asynqV1AddAggTaskGet">
+                      <article id="api-Asynq-asynqV1AddAggTaskGet-0" data-group="User" data-name="asynqV1AddAggTaskGet" data-version="0">
+                        <div class="pull-left">
+                          <h1>asynqV1AddAggTaskGet</h1>
+                          <p>asynq-添加聚合任务</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">asynq-添加聚合任务</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/asynq/v1/addAggTask</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Asynq-asynqV1AddAggTaskGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddAggTaskGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddAggTaskGet-0-dart">Dart</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddAggTaskGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Asynq-asynqV1AddAggTaskGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Asynq-asynqV1AddAggTaskGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddAggTaskGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Asynq-asynqV1AddAggTaskGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Asynq-asynqV1AddAggTaskGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddAggTaskGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddAggTaskGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddAggTaskGet-0-python">Python</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddAggTaskGet-0-rust">Rust</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Asynq-asynqV1AddAggTaskGet-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET \
+ -H "Accept: */*" \
+ "http://127.0.0.1:3013/goodsCenterLogic/asynq/v1/addAggTask?env=env_example"
+</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Asynq-asynqV1AddAggTaskGet-0-java">
+                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.*;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.model.*;
+import org.openapitools.client.api.AsynqApi;
+
+import java.io.File;
+import java.util.*;
+
+public class AsynqApiExample {
+    public static void main(String[] args) {
+
+        // Create an instance of the API class
+        AsynqApi apiInstance = new AsynqApi();
+        String env = env_example; // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+        try {
+            _internal_api_dto.GroupDeliveryTaskAddResponse result = apiInstance.asynqV1AddAggTaskGet(env);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AsynqApi#asynqV1AddAggTaskGet");
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Asynq-asynqV1AddAggTaskGet-0-dart">
+                            <pre class="prettyprint"><code class="language-dart">import 'package:openapi/api.dart';
+
+final api_instance = DefaultApi();
+
+final String env = new String(); // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+try {
+    final result = await api_instance.asynqV1AddAggTaskGet(env);
+    print(result);
+} catch (e) {
+    print('Exception when calling DefaultApi->asynqV1AddAggTaskGet: $e\n');
+}
+
+</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Asynq-asynqV1AddAggTaskGet-0-android">
+                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.api.AsynqApi;
+
+public class AsynqApiExample {
+    public static void main(String[] args) {
+        AsynqApi apiInstance = new AsynqApi();
+        String env = env_example; // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+        try {
+            _internal_api_dto.GroupDeliveryTaskAddResponse result = apiInstance.asynqV1AddAggTaskGet(env);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AsynqApi#asynqV1AddAggTaskGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Asynq-asynqV1AddAggTaskGet-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddAggTaskGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">
+
+// Create an instance of the API class
+AsynqApi *apiInstance = [[AsynqApi alloc] init];
+String *env = env_example; // 环境变量,默认线上; sandbox 沙箱环境, production 生产环境 (optional) (default to null)
+
+// asynq-添加聚合任务
+[apiInstance asynqV1AddAggTaskGetWith:env
+              completionHandler: ^(_internal_api_dto.GroupDeliveryTaskAddResponse output, NSError* error) {
+    if (output) {
+        NSLog(@"%@", output);
+    }
+    if (error) {
+        NSLog(@"Error: %@", error);
+    }
+}];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddAggTaskGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var GinHttpApi = require('gin_http_api');
+
+// Create an instance of the API class
+var api = new GinHttpApi.AsynqApi()
+var opts = {
+  'env': env_example // {String} 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.asynqV1AddAggTaskGet(opts, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Asynq-asynqV1AddAggTaskGet-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddAggTaskGet-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class asynqV1AddAggTaskGetExample
+    {
+        public void main()
+        {
+
+            // Create an instance of the API class
+            var apiInstance = new AsynqApi();
+            var env = env_example;  // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境 (optional)  (default to null)
+
+            try {
+                // asynq-添加聚合任务
+                _internal_api_dto.GroupDeliveryTaskAddResponse result = apiInstance.asynqV1AddAggTaskGet(env);
+                Debug.WriteLine(result);
+            } catch (Exception e) {
+                Debug.Print("Exception when calling AsynqApi.asynqV1AddAggTaskGet: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddAggTaskGet-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Create an instance of the API class
+$api_instance = new OpenAPITools\Client\Api\AsynqApi();
+$env = env_example; // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+try {
+    $result = $api_instance->asynqV1AddAggTaskGet($env);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AsynqApi->asynqV1AddAggTaskGet: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddAggTaskGet-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::OPenAPIClient::Configuration;
+use WWW::OPenAPIClient::AsynqApi;
+
+# Create an instance of the API class
+my $api_instance = WWW::OPenAPIClient::AsynqApi->new();
+my $env = env_example; # String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+eval {
+    my $result = $api_instance->asynqV1AddAggTaskGet(env => $env);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling AsynqApi->asynqV1AddAggTaskGet: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddAggTaskGet-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = openapi_client.AsynqApi()
+env = env_example # String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境 (optional) (default to null)
+
+try:
+    # asynq-添加聚合任务
+    api_response = api_instance.asynq_v1_add_agg_task_get(env=env)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AsynqApi->asynqV1AddAggTaskGet: %s\n" % e)</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddAggTaskGet-0-rust">
+                              <pre class="prettyprint"><code class="language-rust">extern crate AsynqApi;
+
+pub fn main() {
+    let env = env_example; // String
+
+    let mut context = AsynqApi::Context::default();
+    let result = client.asynqV1AddAggTaskGet(env, &context).wait();
+
+    println!("{:?}", result);
+}
+</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Scopes</h2>
+                          <table>
+                            
+                          </table>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+                            <div class="methodsubtabletitle">Query parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">env</td>
+<td>
+
+
+    <div id="d2e199_asynqV1AddAggTaskGet_env">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                            </table>
+
+                          <h2>Responses</h2>
+                            <h3 id="examples-Asynq-asynqV1AddAggTaskGet-title-200"></h3>
+                            <p id="examples-Asynq-asynqV1AddAggTaskGet-description-200" class="marked"></p>
+                            <script>
+                              var responseAsynq200_description = `请求成功`;
+                              var responseAsynq200_description_break = responseAsynq200_description.indexOf('\n');
+                              if (responseAsynq200_description_break == -1) {
+                                $("#examples-Asynq-asynqV1AddAggTaskGet-title-200").text("Status: 200 - " + responseAsynq200_description);
+                              } else {
+                                $("#examples-Asynq-asynqV1AddAggTaskGet-title-200").text("Status: 200 - " + responseAsynq200_description.substring(0, responseAsynq200_description_break));
+                                $("#examples-Asynq-asynqV1AddAggTaskGet-description-200").html(responseAsynq200_description.substring(responseAsynq200_description_break));
+                              }
+                            </script>
+
+
+                            <ul id="responses-detail-Asynq-asynqV1AddAggTaskGet-200" class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-Asynq-asynqV1AddAggTaskGet-200-schema">Schema</a>
+                                </li>
+
+
+
+
+                            </ul>
+
+
+                            <div class="tab-content" id="responses-Asynq-asynqV1AddAggTaskGet-200-wrapper" style='margin-bottom: 10px;'>
+                              <div class="tab-pane active" id="responses-Asynq-asynqV1AddAggTaskGet-200-schema">
+                                <div id="responses-Asynq-asynqV1AddAggTaskGet-schema-200" class="exampleStyle">
+                                  <script>
+                                    $(document).ready(function() {
+                                      var schemaWrapper = {
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/_internal_api_dto.GroupDeliveryTaskAddResponse"
+      }
+    }
+  }
+};
+                                      var schema = findNode('schema',schemaWrapper).schema;
+                                      if (!schema) {
+                                        schema = schemaWrapper.schema;
+                                      }
+                                      if (schema == null) {
+                                        return;
+                                      }
+                                      if (schema.$ref != null) {
+                                        schema = defsParser.$refs.get(schema.$ref);
+                                        Object.keys(schema.properties).forEach( (item) => {
+                                          if (schema.properties[item].$ref != null) {
+                                            schema.properties[item] = defsParser.$refs.get(schema.properties[item].$ref);
+                                          }
+                                        });
+                                      } else if (schema.items != null && schema.items.$ref != null) {
+                                        schema.items = defsParser.$refs.get(schema.items.$ref);
+                                      } else {
+                                        schemaWrapper.definitions = Object.assign({}, defs);
+                                        $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                          console.log(err);
+                                        });
+                                      }
+
+                                      var view = new JSONSchemaView(schema, 3);
+                                      $('#responses-Asynq-asynqV1AddAggTaskGet-200-schema-data').val(JSON.stringify(schema));
+                                      var result = $('#responses-Asynq-asynqV1AddAggTaskGet-schema-200');
+                                      result.empty();
+                                      result.append(view.render());
+                                    });
+                                  </script>
+                                </div>
+                                <input id='responses-Asynq-asynqV1AddAggTaskGet-200-schema-data' type='hidden' value=''></input>
+                              </div>
+                            </div>
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Asynq-asynqV1AddTaskGet">
+                      <article id="api-Asynq-asynqV1AddTaskGet-0" data-group="User" data-name="asynqV1AddTaskGet" data-version="0">
+                        <div class="pull-left">
+                          <h1>asynqV1AddTaskGet</h1>
+                          <p>asynq-add异步任务</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">asynq-异步任务,可通过： http://localhost:7013/monitoring/ 查看dashbord报表</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/asynq/v1/addTask</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Asynq-asynqV1AddTaskGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddTaskGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddTaskGet-0-dart">Dart</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddTaskGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Asynq-asynqV1AddTaskGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Asynq-asynqV1AddTaskGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddTaskGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Asynq-asynqV1AddTaskGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Asynq-asynqV1AddTaskGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddTaskGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddTaskGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddTaskGet-0-python">Python</a></li>
+                          <li class=""><a href="#examples-Asynq-asynqV1AddTaskGet-0-rust">Rust</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Asynq-asynqV1AddTaskGet-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET \
+ -H "Accept: */*" \
+ "http://127.0.0.1:3013/goodsCenterLogic/asynq/v1/addTask?env=env_example"
+</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Asynq-asynqV1AddTaskGet-0-java">
+                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.*;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.model.*;
+import org.openapitools.client.api.AsynqApi;
+
+import java.io.File;
+import java.util.*;
+
+public class AsynqApiExample {
+    public static void main(String[] args) {
+
+        // Create an instance of the API class
+        AsynqApi apiInstance = new AsynqApi();
+        String env = env_example; // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+        try {
+            _internal_api_dto.AsynqEmailDeliveryTaskAddResponse result = apiInstance.asynqV1AddTaskGet(env);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AsynqApi#asynqV1AddTaskGet");
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Asynq-asynqV1AddTaskGet-0-dart">
+                            <pre class="prettyprint"><code class="language-dart">import 'package:openapi/api.dart';
+
+final api_instance = DefaultApi();
+
+final String env = new String(); // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+try {
+    final result = await api_instance.asynqV1AddTaskGet(env);
+    print(result);
+} catch (e) {
+    print('Exception when calling DefaultApi->asynqV1AddTaskGet: $e\n');
+}
+
+</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Asynq-asynqV1AddTaskGet-0-android">
+                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.api.AsynqApi;
+
+public class AsynqApiExample {
+    public static void main(String[] args) {
+        AsynqApi apiInstance = new AsynqApi();
+        String env = env_example; // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+        try {
+            _internal_api_dto.AsynqEmailDeliveryTaskAddResponse result = apiInstance.asynqV1AddTaskGet(env);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AsynqApi#asynqV1AddTaskGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Asynq-asynqV1AddTaskGet-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddTaskGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">
+
+// Create an instance of the API class
+AsynqApi *apiInstance = [[AsynqApi alloc] init];
+String *env = env_example; // 环境变量,默认线上; sandbox 沙箱环境, production 生产环境 (optional) (default to null)
+
+// asynq-add异步任务
+[apiInstance asynqV1AddTaskGetWith:env
+              completionHandler: ^(_internal_api_dto.AsynqEmailDeliveryTaskAddResponse output, NSError* error) {
+    if (output) {
+        NSLog(@"%@", output);
+    }
+    if (error) {
+        NSLog(@"Error: %@", error);
+    }
+}];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddTaskGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var GinHttpApi = require('gin_http_api');
+
+// Create an instance of the API class
+var api = new GinHttpApi.AsynqApi()
+var opts = {
+  'env': env_example // {String} 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.asynqV1AddTaskGet(opts, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Asynq-asynqV1AddTaskGet-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddTaskGet-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class asynqV1AddTaskGetExample
+    {
+        public void main()
+        {
+
+            // Create an instance of the API class
+            var apiInstance = new AsynqApi();
+            var env = env_example;  // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境 (optional)  (default to null)
+
+            try {
+                // asynq-add异步任务
+                _internal_api_dto.AsynqEmailDeliveryTaskAddResponse result = apiInstance.asynqV1AddTaskGet(env);
+                Debug.WriteLine(result);
+            } catch (Exception e) {
+                Debug.Print("Exception when calling AsynqApi.asynqV1AddTaskGet: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddTaskGet-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Create an instance of the API class
+$api_instance = new OpenAPITools\Client\Api\AsynqApi();
+$env = env_example; // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+try {
+    $result = $api_instance->asynqV1AddTaskGet($env);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AsynqApi->asynqV1AddTaskGet: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddTaskGet-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::OPenAPIClient::Configuration;
+use WWW::OPenAPIClient::AsynqApi;
+
+# Create an instance of the API class
+my $api_instance = WWW::OPenAPIClient::AsynqApi->new();
+my $env = env_example; # String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+eval {
+    my $result = $api_instance->asynqV1AddTaskGet(env => $env);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling AsynqApi->asynqV1AddTaskGet: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddTaskGet-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = openapi_client.AsynqApi()
+env = env_example # String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境 (optional) (default to null)
+
+try:
+    # asynq-add异步任务
+    api_response = api_instance.asynq_v1_add_task_get(env=env)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AsynqApi->asynqV1AddTaskGet: %s\n" % e)</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Asynq-asynqV1AddTaskGet-0-rust">
+                              <pre class="prettyprint"><code class="language-rust">extern crate AsynqApi;
+
+pub fn main() {
+    let env = env_example; // String
+
+    let mut context = AsynqApi::Context::default();
+    let result = client.asynqV1AddTaskGet(env, &context).wait();
+
+    println!("{:?}", result);
+}
+</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Scopes</h2>
+                          <table>
+                            
+                          </table>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+                            <div class="methodsubtabletitle">Query parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">env</td>
+<td>
+
+
+    <div id="d2e199_asynqV1AddTaskGet_env">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                            </table>
+
+                          <h2>Responses</h2>
+                            <h3 id="examples-Asynq-asynqV1AddTaskGet-title-200"></h3>
+                            <p id="examples-Asynq-asynqV1AddTaskGet-description-200" class="marked"></p>
+                            <script>
+                              var responseAsynq200_description = `请求成功`;
+                              var responseAsynq200_description_break = responseAsynq200_description.indexOf('\n');
+                              if (responseAsynq200_description_break == -1) {
+                                $("#examples-Asynq-asynqV1AddTaskGet-title-200").text("Status: 200 - " + responseAsynq200_description);
+                              } else {
+                                $("#examples-Asynq-asynqV1AddTaskGet-title-200").text("Status: 200 - " + responseAsynq200_description.substring(0, responseAsynq200_description_break));
+                                $("#examples-Asynq-asynqV1AddTaskGet-description-200").html(responseAsynq200_description.substring(responseAsynq200_description_break));
+                              }
+                            </script>
+
+
+                            <ul id="responses-detail-Asynq-asynqV1AddTaskGet-200" class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-Asynq-asynqV1AddTaskGet-200-schema">Schema</a>
+                                </li>
+
+
+
+
+                            </ul>
+
+
+                            <div class="tab-content" id="responses-Asynq-asynqV1AddTaskGet-200-wrapper" style='margin-bottom: 10px;'>
+                              <div class="tab-pane active" id="responses-Asynq-asynqV1AddTaskGet-200-schema">
+                                <div id="responses-Asynq-asynqV1AddTaskGet-schema-200" class="exampleStyle">
+                                  <script>
+                                    $(document).ready(function() {
+                                      var schemaWrapper = {
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/_internal_api_dto.AsynqEmailDeliveryTaskAddResponse"
+      }
+    }
+  }
+};
+                                      var schema = findNode('schema',schemaWrapper).schema;
+                                      if (!schema) {
+                                        schema = schemaWrapper.schema;
+                                      }
+                                      if (schema == null) {
+                                        return;
+                                      }
+                                      if (schema.$ref != null) {
+                                        schema = defsParser.$refs.get(schema.$ref);
+                                        Object.keys(schema.properties).forEach( (item) => {
+                                          if (schema.properties[item].$ref != null) {
+                                            schema.properties[item] = defsParser.$refs.get(schema.properties[item].$ref);
+                                          }
+                                        });
+                                      } else if (schema.items != null && schema.items.$ref != null) {
+                                        schema.items = defsParser.$refs.get(schema.items.$ref);
+                                      } else {
+                                        schemaWrapper.definitions = Object.assign({}, defs);
+                                        $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                          console.log(err);
+                                        });
+                                      }
+
+                                      var view = new JSONSchemaView(schema, 3);
+                                      $('#responses-Asynq-asynqV1AddTaskGet-200-schema-data').val(JSON.stringify(schema));
+                                      var result = $('#responses-Asynq-asynqV1AddTaskGet-schema-200');
+                                      result.empty();
+                                      result.append(view.render());
+                                    });
+                                  </script>
+                                </div>
+                                <input id='responses-Asynq-asynqV1AddTaskGet-200-schema-data' type='hidden' value=''></input>
+                              </div>
+                            </div>
+                        </article>
+                      </div>
+                      <hr>
+                  </section>
+                <section id="api-Auth">
+                  <h1>Auth</h1>
+                    <div id="api-Auth-authV1TokenGenerateGet">
+                      <article id="api-Auth-authV1TokenGenerateGet-0" data-group="User" data-name="authV1TokenGenerateGet" data-version="0">
+                        <div class="pull-left">
+                          <h1>authV1TokenGenerateGet</h1>
+                          <p>jwt-token生成及校验</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">jwt-token生成及校验</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/auth/v1/token/generate</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Auth-authV1TokenGenerateGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Auth-authV1TokenGenerateGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Auth-authV1TokenGenerateGet-0-dart">Dart</a></li>
+                          <li class=""><a href="#examples-Auth-authV1TokenGenerateGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Auth-authV1TokenGenerateGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Auth-authV1TokenGenerateGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Auth-authV1TokenGenerateGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Auth-authV1TokenGenerateGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Auth-authV1TokenGenerateGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Auth-authV1TokenGenerateGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Auth-authV1TokenGenerateGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Auth-authV1TokenGenerateGet-0-python">Python</a></li>
+                          <li class=""><a href="#examples-Auth-authV1TokenGenerateGet-0-rust">Rust</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Auth-authV1TokenGenerateGet-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET \
+ -H "Accept: */*" \
+ "http://127.0.0.1:3013/goodsCenterLogic/auth/v1/token/generate?env=env_example&userId=userId_example&userName=userName_example"
+</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Auth-authV1TokenGenerateGet-0-java">
+                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.*;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.model.*;
+import org.openapitools.client.api.AuthApi;
+
+import java.io.File;
+import java.util.*;
+
+public class AuthApiExample {
+    public static void main(String[] args) {
+
+        // Create an instance of the API class
+        AuthApi apiInstance = new AuthApi();
+        String userId = userId_example; // String | UserID 用户id
+        String userName = userName_example; // String | UserName 用户名  example:张三
+        String env = env_example; // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+        try {
+            _internal_api_dto.AppJwtTokenResponse result = apiInstance.authV1TokenGenerateGet(userId, userName, env);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AuthApi#authV1TokenGenerateGet");
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Auth-authV1TokenGenerateGet-0-dart">
+                            <pre class="prettyprint"><code class="language-dart">import 'package:openapi/api.dart';
+
+final api_instance = DefaultApi();
+
+final String userId = new String(); // String | UserID 用户id
+final String userName = new String(); // String | UserName 用户名  example:张三
+final String env = new String(); // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+try {
+    final result = await api_instance.authV1TokenGenerateGet(userId, userName, env);
+    print(result);
+} catch (e) {
+    print('Exception when calling DefaultApi->authV1TokenGenerateGet: $e\n');
+}
+
+</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Auth-authV1TokenGenerateGet-0-android">
+                            <pre class="prettyprint"><code class="language-java">import org.openapitools.client.api.AuthApi;
+
+public class AuthApiExample {
+    public static void main(String[] args) {
+        AuthApi apiInstance = new AuthApi();
+        String userId = userId_example; // String | UserID 用户id
+        String userName = userName_example; // String | UserName 用户名  example:张三
+        String env = env_example; // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+        try {
+            _internal_api_dto.AppJwtTokenResponse result = apiInstance.authV1TokenGenerateGet(userId, userName, env);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AuthApi#authV1TokenGenerateGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Auth-authV1TokenGenerateGet-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Auth-authV1TokenGenerateGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">
+
+// Create an instance of the API class
+AuthApi *apiInstance = [[AuthApi alloc] init];
+String *userId = userId_example; // UserID 用户id (default to null)
+String *userName = userName_example; // UserName 用户名  example:张三 (default to null)
+String *env = env_example; // 环境变量,默认线上; sandbox 沙箱环境, production 生产环境 (optional) (default to null)
+
+// jwt-token生成及校验
+[apiInstance authV1TokenGenerateGetWith:userId
+    userName:userName
+    env:env
+              completionHandler: ^(_internal_api_dto.AppJwtTokenResponse output, NSError* error) {
+    if (output) {
+        NSLog(@"%@", output);
+    }
+    if (error) {
+        NSLog(@"Error: %@", error);
+    }
+}];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Auth-authV1TokenGenerateGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var GinHttpApi = require('gin_http_api');
+
+// Create an instance of the API class
+var api = new GinHttpApi.AuthApi()
+var userId = userId_example; // {String} UserID 用户id
+var userName = userName_example; // {String} UserName 用户名  example:张三
+var opts = {
+  'env': env_example // {String} 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.authV1TokenGenerateGet(userId, userName, opts, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Auth-authV1TokenGenerateGet-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Auth-authV1TokenGenerateGet-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class authV1TokenGenerateGetExample
+    {
+        public void main()
+        {
+
+            // Create an instance of the API class
+            var apiInstance = new AuthApi();
+            var userId = userId_example;  // String | UserID 用户id (default to null)
+            var userName = userName_example;  // String | UserName 用户名  example:张三 (default to null)
+            var env = env_example;  // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境 (optional)  (default to null)
+
+            try {
+                // jwt-token生成及校验
+                _internal_api_dto.AppJwtTokenResponse result = apiInstance.authV1TokenGenerateGet(userId, userName, env);
+                Debug.WriteLine(result);
+            } catch (Exception e) {
+                Debug.Print("Exception when calling AuthApi.authV1TokenGenerateGet: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Auth-authV1TokenGenerateGet-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Create an instance of the API class
+$api_instance = new OpenAPITools\Client\Api\AuthApi();
+$userId = userId_example; // String | UserID 用户id
+$userName = userName_example; // String | UserName 用户名  example:张三
+$env = env_example; // String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+try {
+    $result = $api_instance->authV1TokenGenerateGet($userId, $userName, $env);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AuthApi->authV1TokenGenerateGet: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Auth-authV1TokenGenerateGet-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::OPenAPIClient::Configuration;
+use WWW::OPenAPIClient::AuthApi;
+
+# Create an instance of the API class
+my $api_instance = WWW::OPenAPIClient::AuthApi->new();
+my $userId = userId_example; # String | UserID 用户id
+my $userName = userName_example; # String | UserName 用户名  example:张三
+my $env = env_example; # String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+
+eval {
+    my $result = $api_instance->authV1TokenGenerateGet(userId => $userId, userName => $userName, env => $env);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling AuthApi->authV1TokenGenerateGet: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Auth-authV1TokenGenerateGet-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Create an instance of the API class
+api_instance = openapi_client.AuthApi()
+userId = userId_example # String | UserID 用户id (default to null)
+userName = userName_example # String | UserName 用户名  example:张三 (default to null)
+env = env_example # String | 环境变量,默认线上; sandbox 沙箱环境, production 生产环境 (optional) (default to null)
+
+try:
+    # jwt-token生成及校验
+    api_response = api_instance.auth_v1_token_generate_get(userId, userName, env=env)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthApi->authV1TokenGenerateGet: %s\n" % e)</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Auth-authV1TokenGenerateGet-0-rust">
+                              <pre class="prettyprint"><code class="language-rust">extern crate AuthApi;
+
+pub fn main() {
+    let userId = userId_example; // String
+    let userName = userName_example; // String
+    let env = env_example; // String
+
+    let mut context = AuthApi::Context::default();
+    let result = client.authV1TokenGenerateGet(userId, userName, env, &context).wait();
+
+    println!("{:?}", result);
+}
+</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Scopes</h2>
+                          <table>
+                            
+                          </table>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+                            <div class="methodsubtabletitle">Query parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">env</td>
+<td>
+
+
+    <div id="d2e199_authV1TokenGenerateGet_env">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                                <tr><td style="width:150px;">userId*</td>
+<td>
+
+
+    <div id="d2e199_authV1TokenGenerateGet_userId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+UserID 用户id
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                                <tr><td style="width:150px;">userName*</td>
+<td>
+
+
+    <div id="d2e199_authV1TokenGenerateGet_userName">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+UserName 用户名  example:张三
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                            </table>
+
+                          <h2>Responses</h2>
+                            <h3 id="examples-Auth-authV1TokenGenerateGet-title-200"></h3>
+                            <p id="examples-Auth-authV1TokenGenerateGet-description-200" class="marked"></p>
+                            <script>
+                              var responseAuth200_description = `请求成功`;
+                              var responseAuth200_description_break = responseAuth200_description.indexOf('\n');
+                              if (responseAuth200_description_break == -1) {
+                                $("#examples-Auth-authV1TokenGenerateGet-title-200").text("Status: 200 - " + responseAuth200_description);
+                              } else {
+                                $("#examples-Auth-authV1TokenGenerateGet-title-200").text("Status: 200 - " + responseAuth200_description.substring(0, responseAuth200_description_break));
+                                $("#examples-Auth-authV1TokenGenerateGet-description-200").html(responseAuth200_description.substring(responseAuth200_description_break));
+                              }
+                            </script>
+
+
+                            <ul id="responses-detail-Auth-authV1TokenGenerateGet-200" class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-Auth-authV1TokenGenerateGet-200-schema">Schema</a>
+                                </li>
+
+
+
+
+                            </ul>
+
+
+                            <div class="tab-content" id="responses-Auth-authV1TokenGenerateGet-200-wrapper" style='margin-bottom: 10px;'>
+                              <div class="tab-pane active" id="responses-Auth-authV1TokenGenerateGet-200-schema">
+                                <div id="responses-Auth-authV1TokenGenerateGet-schema-200" class="exampleStyle">
+                                  <script>
+                                    $(document).ready(function() {
+                                      var schemaWrapper = {
+  "description" : "请求成功",
+  "content" : {
+    "*/*" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/_internal_api_dto.AppJwtTokenResponse"
+      }
+    }
+  }
+};
+                                      var schema = findNode('schema',schemaWrapper).schema;
+                                      if (!schema) {
+                                        schema = schemaWrapper.schema;
+                                      }
+                                      if (schema == null) {
+                                        return;
+                                      }
+                                      if (schema.$ref != null) {
+                                        schema = defsParser.$refs.get(schema.$ref);
+                                        Object.keys(schema.properties).forEach( (item) => {
+                                          if (schema.properties[item].$ref != null) {
+                                            schema.properties[item] = defsParser.$refs.get(schema.properties[item].$ref);
+                                          }
+                                        });
+                                      } else if (schema.items != null && schema.items.$ref != null) {
+                                        schema.items = defsParser.$refs.get(schema.items.$ref);
+                                      } else {
+                                        schemaWrapper.definitions = Object.assign({}, defs);
+                                        $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                          console.log(err);
+                                        });
+                                      }
+
+                                      var view = new JSONSchemaView(schema, 3);
+                                      $('#responses-Auth-authV1TokenGenerateGet-200-schema-data').val(JSON.stringify(schema));
+                                      var result = $('#responses-Auth-authV1TokenGenerateGet-schema-200');
+                                      result.empty();
+                                      result.append(view.render());
+                                    });
+                                  </script>
+                                </div>
+                                <input id='responses-Auth-authV1TokenGenerateGet-200-schema-data' type='hidden' value=''></input>
+                              </div>
+                            </div>
+                        </article>
+                      </div>
+                      <hr>
+                  </section>
                 <section id="api-Example">
                   <h1>Example</h1>
                     <div id="api-Example-v1ExampleGetGet">
@@ -1569,7 +2858,7 @@ public class ExampleApiExample {
         String userId = userId_example; // String | user_id 用户id
 
         try {
-            _internal_api_http_dto.ExampleGetResponse result = apiInstance.v1ExampleGetGet(createTime, queryId, userId);
+            _internal_api_dto.ExampleGetResponse result = apiInstance.v1ExampleGetGet(createTime, queryId, userId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExampleApi#v1ExampleGetGet");
@@ -1610,7 +2899,7 @@ public class ExampleApiExample {
         String userId = userId_example; // String | user_id 用户id
 
         try {
-            _internal_api_http_dto.ExampleGetResponse result = apiInstance.v1ExampleGetGet(createTime, queryId, userId);
+            _internal_api_dto.ExampleGetResponse result = apiInstance.v1ExampleGetGet(createTime, queryId, userId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExampleApi#v1ExampleGetGet");
@@ -1636,7 +2925,7 @@ String *userId = userId_example; // user_id 用户id (default to null)
 [apiInstance v1ExampleGetGetWith:createTime
     queryId:queryId
     userId:userId
-              completionHandler: ^(_internal_api_http_dto.ExampleGetResponse output, NSError* error) {
+              completionHandler: ^(_internal_api_dto.ExampleGetResponse output, NSError* error) {
     if (output) {
         NSLog(@"%@", output);
     }
@@ -1692,7 +2981,7 @@ namespace Example
 
             try {
                 // get接口示例
-                _internal_api_http_dto.ExampleGetResponse result = apiInstance.v1ExampleGetGet(createTime, queryId, userId);
+                _internal_api_dto.ExampleGetResponse result = apiInstance.v1ExampleGetGet(createTime, queryId, userId);
                 Debug.WriteLine(result);
             } catch (Exception e) {
                 Debug.Print("Exception when calling ExampleApi.v1ExampleGetGet: " + e.Message );
@@ -1904,7 +3193,7 @@ user_id 用户id
   "content" : {
     "*/*" : {
       "schema" : {
-        "$ref" : "#/components/schemas/_internal_api_http_dto.ExampleGetResponse"
+        "$ref" : "#/components/schemas/_internal_api_dto.ExampleGetResponse"
       }
     }
   }
@@ -2004,7 +3293,7 @@ public class ExampleApiExample {
         String userId = userId_example; // String | user_id 用户id
 
         try {
-            _internal_api_http_dto.ExampleGetOneResponse result = apiInstance.v1ExampleGetOneGet(createTime, queryId, userId);
+            _internal_api_dto.ExampleGetOneResponse result = apiInstance.v1ExampleGetOneGet(createTime, queryId, userId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExampleApi#v1ExampleGetOneGet");
@@ -2045,7 +3334,7 @@ public class ExampleApiExample {
         String userId = userId_example; // String | user_id 用户id
 
         try {
-            _internal_api_http_dto.ExampleGetOneResponse result = apiInstance.v1ExampleGetOneGet(createTime, queryId, userId);
+            _internal_api_dto.ExampleGetOneResponse result = apiInstance.v1ExampleGetOneGet(createTime, queryId, userId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExampleApi#v1ExampleGetOneGet");
@@ -2071,7 +3360,7 @@ String *userId = userId_example; // user_id 用户id (default to null)
 [apiInstance v1ExampleGetOneGetWith:createTime
     queryId:queryId
     userId:userId
-              completionHandler: ^(_internal_api_http_dto.ExampleGetOneResponse output, NSError* error) {
+              completionHandler: ^(_internal_api_dto.ExampleGetOneResponse output, NSError* error) {
     if (output) {
         NSLog(@"%@", output);
     }
@@ -2127,7 +3416,7 @@ namespace Example
 
             try {
                 // getOne接口示例
-                _internal_api_http_dto.ExampleGetOneResponse result = apiInstance.v1ExampleGetOneGet(createTime, queryId, userId);
+                _internal_api_dto.ExampleGetOneResponse result = apiInstance.v1ExampleGetOneGet(createTime, queryId, userId);
                 Debug.WriteLine(result);
             } catch (Exception e) {
                 Debug.Print("Exception when calling ExampleApi.v1ExampleGetOneGet: " + e.Message );
@@ -2339,7 +3628,7 @@ user_id 用户id
   "content" : {
     "*/*" : {
       "schema" : {
-        "$ref" : "#/components/schemas/_internal_api_http_dto.ExampleGetOneResponse"
+        "$ref" : "#/components/schemas/_internal_api_dto.ExampleGetOneResponse"
       }
     }
   }
@@ -2444,10 +3733,10 @@ public class ExampleApiExample {
 
         // Create an instance of the API class
         ExampleApi apiInstance = new ExampleApi();
-        InternalApiHttpDtoExamplePostRequest body = ; // InternalApiHttpDtoExamplePostRequest | 
+        InternalApiDtoExamplePostRequest body = ; // InternalApiDtoExamplePostRequest | 
 
         try {
-            _internal_api_http_dto.ExamplePostResponse result = apiInstance.v1ExamplePostPost(body);
+            _internal_api_dto.ExamplePostResponse result = apiInstance.v1ExamplePostPost(body);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExampleApi#v1ExamplePostPost");
@@ -2463,7 +3752,7 @@ public class ExampleApiExample {
 
 final api_instance = DefaultApi();
 
-final InternalApiHttpDtoExamplePostRequest body = new InternalApiHttpDtoExamplePostRequest(); // InternalApiHttpDtoExamplePostRequest | 
+final InternalApiDtoExamplePostRequest body = new InternalApiDtoExamplePostRequest(); // InternalApiDtoExamplePostRequest | 
 
 try {
     final result = await api_instance.v1ExamplePostPost(body);
@@ -2481,10 +3770,10 @@ try {
 public class ExampleApiExample {
     public static void main(String[] args) {
         ExampleApi apiInstance = new ExampleApi();
-        InternalApiHttpDtoExamplePostRequest body = ; // InternalApiHttpDtoExamplePostRequest | 
+        InternalApiDtoExamplePostRequest body = ; // InternalApiDtoExamplePostRequest | 
 
         try {
-            _internal_api_http_dto.ExamplePostResponse result = apiInstance.v1ExamplePostPost(body);
+            _internal_api_dto.ExamplePostResponse result = apiInstance.v1ExamplePostPost(body);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExampleApi#v1ExamplePostPost");
@@ -2502,11 +3791,11 @@ public class ExampleApiExample {
 
 // Create an instance of the API class
 ExampleApi *apiInstance = [[ExampleApi alloc] init];
-InternalApiHttpDtoExamplePostRequest *body = ; // 
+InternalApiDtoExamplePostRequest *body = ; // 
 
 // post 接口 示例
 [apiInstance v1ExamplePostPostWith:body
-              completionHandler: ^(_internal_api_http_dto.ExamplePostResponse output, NSError* error) {
+              completionHandler: ^(_internal_api_dto.ExamplePostResponse output, NSError* error) {
     if (output) {
         NSLog(@"%@", output);
     }
@@ -2522,7 +3811,7 @@ InternalApiHttpDtoExamplePostRequest *body = ; //
 
 // Create an instance of the API class
 var api = new GinHttpApi.ExampleApi()
-var body = ; // {InternalApiHttpDtoExamplePostRequest} 
+var body = ; // {InternalApiDtoExamplePostRequest} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -2554,11 +3843,11 @@ namespace Example
 
             // Create an instance of the API class
             var apiInstance = new ExampleApi();
-            var body = new InternalApiHttpDtoExamplePostRequest(); // InternalApiHttpDtoExamplePostRequest | 
+            var body = new InternalApiDtoExamplePostRequest(); // InternalApiDtoExamplePostRequest | 
 
             try {
                 // post 接口 示例
-                _internal_api_http_dto.ExamplePostResponse result = apiInstance.v1ExamplePostPost(body);
+                _internal_api_dto.ExamplePostResponse result = apiInstance.v1ExamplePostPost(body);
                 Debug.WriteLine(result);
             } catch (Exception e) {
                 Debug.Print("Exception when calling ExampleApi.v1ExamplePostPost: " + e.Message );
@@ -2575,7 +3864,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Create an instance of the API class
 $api_instance = new OpenAPITools\Client\Api\ExampleApi();
-$body = ; // InternalApiHttpDtoExamplePostRequest | 
+$body = ; // InternalApiDtoExamplePostRequest | 
 
 try {
     $result = $api_instance->v1ExamplePostPost($body);
@@ -2593,7 +3882,7 @@ use WWW::OPenAPIClient::ExampleApi;
 
 # Create an instance of the API class
 my $api_instance = WWW::OPenAPIClient::ExampleApi->new();
-my $body = WWW::OPenAPIClient::Object::InternalApiHttpDtoExamplePostRequest->new(); # InternalApiHttpDtoExamplePostRequest | 
+my $body = WWW::OPenAPIClient::Object::InternalApiDtoExamplePostRequest->new(); # InternalApiDtoExamplePostRequest | 
 
 eval {
     my $result = $api_instance->v1ExamplePostPost(body => $body);
@@ -2613,7 +3902,7 @@ from pprint import pprint
 
 # Create an instance of the API class
 api_instance = openapi_client.ExampleApi()
-body =  # InternalApiHttpDtoExamplePostRequest | 
+body =  # InternalApiDtoExamplePostRequest | 
 
 try:
     # post 接口 示例
@@ -2627,7 +3916,7 @@ except ApiException as e:
                               <pre class="prettyprint"><code class="language-rust">extern crate ExampleApi;
 
 pub fn main() {
-    let body = ; // InternalApiHttpDtoExamplePostRequest
+    let body = ; // InternalApiDtoExamplePostRequest
 
     let mut context = ExampleApi::Context::default();
     let result = client.v1ExamplePostPost(body, &context).wait();
@@ -2663,7 +3952,7 @@ $(document).ready(function() {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/_internal_api_http_dto.ExamplePostRequest"
+        "$ref" : "#/components/schemas/_internal_api_dto.ExamplePostRequest"
       }
     }
   },
@@ -2756,7 +4045,7 @@ $(document).ready(function() {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/_internal_api_http_dto.ExamplePostResponse"
+        "$ref" : "#/components/schemas/_internal_api_dto.ExamplePostResponse"
       }
     }
   }

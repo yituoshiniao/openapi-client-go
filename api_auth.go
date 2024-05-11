@@ -16,80 +16,89 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 )
 
 
-// DefaultApiService DefaultApi service
-type DefaultApiService service
+// AuthAPIService AuthAPI service
+type AuthAPIService service
 
-type ApiV1CommonGenerateIdGetRequest struct {
+type ApiAuthV1TokenGenerateGetRequest struct {
 	ctx context.Context
-	ApiService *DefaultApiService
-	num *int32
-	id int32
-	authorization *string
+	ApiService *AuthAPIService
+	userId *string
+	userName *string
+	env *string
 }
 
-// 生成id数量 1-1000
-func (r ApiV1CommonGenerateIdGetRequest) Num(num int32) ApiV1CommonGenerateIdGetRequest {
-	r.num = &num
+// UserID 用户id
+func (r ApiAuthV1TokenGenerateGetRequest) UserId(userId string) ApiAuthV1TokenGenerateGetRequest {
+	r.userId = &userId
 	return r
 }
 
-// 认证信息 eg:xxxx-xxxx-xxxx-xxx
-func (r ApiV1CommonGenerateIdGetRequest) Authorization(authorization string) ApiV1CommonGenerateIdGetRequest {
-	r.authorization = &authorization
+// UserName 用户名  example:张三
+func (r ApiAuthV1TokenGenerateGetRequest) UserName(userName string) ApiAuthV1TokenGenerateGetRequest {
+	r.userName = &userName
 	return r
 }
 
-func (r ApiV1CommonGenerateIdGetRequest) Execute() (*InternalApiHttpServicev1HttpGenerateIDResponse, *http.Response, error) {
-	return r.ApiService.V1CommonGenerateIdGetExecute(r)
+// 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
+func (r ApiAuthV1TokenGenerateGetRequest) Env(env string) ApiAuthV1TokenGenerateGetRequest {
+	r.env = &env
+	return r
+}
+
+func (r ApiAuthV1TokenGenerateGetRequest) Execute() (*InternalApiDtoAppJwtTokenResponse, *http.Response, error) {
+	return r.ApiService.AuthV1TokenGenerateGetExecute(r)
 }
 
 /*
-V1CommonGenerateIdGet 雪花ID生成
+AuthV1TokenGenerateGet jwt-token生成及校验
 
-生成id-描述
+jwt-token生成及校验
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID
- @return ApiV1CommonGenerateIdGetRequest
+ @return ApiAuthV1TokenGenerateGetRequest
 */
-func (a *DefaultApiService) V1CommonGenerateIdGet(ctx context.Context, id int32) ApiV1CommonGenerateIdGetRequest {
-	return ApiV1CommonGenerateIdGetRequest{
+func (a *AuthAPIService) AuthV1TokenGenerateGet(ctx context.Context) ApiAuthV1TokenGenerateGetRequest {
+	return ApiAuthV1TokenGenerateGetRequest{
 		ApiService: a,
 		ctx: ctx,
-		id: id,
 	}
 }
 
 // Execute executes the request
-//  @return InternalApiHttpServicev1HttpGenerateIDResponse
-func (a *DefaultApiService) V1CommonGenerateIdGetExecute(r ApiV1CommonGenerateIdGetRequest) (*InternalApiHttpServicev1HttpGenerateIDResponse, *http.Response, error) {
+//  @return InternalApiDtoAppJwtTokenResponse
+func (a *AuthAPIService) AuthV1TokenGenerateGetExecute(r ApiAuthV1TokenGenerateGetRequest) (*InternalApiDtoAppJwtTokenResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InternalApiHttpServicev1HttpGenerateIDResponse
+		localVarReturnValue  *InternalApiDtoAppJwtTokenResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.V1CommonGenerateIdGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthAPIService.AuthV1TokenGenerateGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/common/generateId"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+	localVarPath := localBasePath + "/auth/v1/token/generate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.num == nil {
-		return localVarReturnValue, nil, reportError("num is required and must be specified")
+	if r.userId == nil {
+		return localVarReturnValue, nil, reportError("userId is required and must be specified")
+	}
+	if r.userName == nil {
+		return localVarReturnValue, nil, reportError("userName is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "num", r.num, "")
+	if r.env != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "env", r.env, "")
+	}
+	parameterAddToHeaderOrQuery(localVarQueryParams, "userId", r.userId, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "userName", r.userName, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -106,9 +115,6 @@ func (a *DefaultApiService) V1CommonGenerateIdGetExecute(r ApiV1CommonGenerateId
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.authorization != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "Authorization", r.authorization, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

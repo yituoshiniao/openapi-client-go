@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## V1ExampleGetGet
 
-> InternalApiHttpDtoExampleGetResponse V1ExampleGetGet(ctx).CreateTime(createTime).QueryId(queryId).UserId(userId).Execute()
+> InternalApiDtoExampleGetResponse V1ExampleGetGet(ctx).CreateTime(createTime).QueryId(queryId).UserId(userId).Execute()
 
 get接口示例
 
@@ -42,7 +42,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExampleAPI.V1ExampleGetGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1ExampleGetGet`: InternalApiHttpDtoExampleGetResponse
+	// response from `V1ExampleGetGet`: InternalApiDtoExampleGetResponse
 	fmt.Fprintf(os.Stdout, "Response from `ExampleAPI.V1ExampleGetGet`: %v\n", resp)
 }
 ```
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InternalApiHttpDtoExampleGetResponse**](InternalApiHttpDtoExampleGetResponse.md)
+[**InternalApiDtoExampleGetResponse**](InternalApiDtoExampleGetResponse.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## V1ExampleGetOneGet
 
-> InternalApiHttpDtoExampleGetOneResponse V1ExampleGetOneGet(ctx).CreateTime(createTime).QueryId(queryId).UserId(userId).Execute()
+> InternalApiDtoExampleGetOneResponse V1ExampleGetOneGet(ctx).CreateTime(createTime).QueryId(queryId).UserId(userId).Execute()
 
 getOne接口示例
 
@@ -112,7 +112,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExampleAPI.V1ExampleGetOneGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1ExampleGetOneGet`: InternalApiHttpDtoExampleGetOneResponse
+	// response from `V1ExampleGetOneGet`: InternalApiDtoExampleGetOneResponse
 	fmt.Fprintf(os.Stdout, "Response from `ExampleAPI.V1ExampleGetOneGet`: %v\n", resp)
 }
 ```
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InternalApiHttpDtoExampleGetOneResponse**](InternalApiHttpDtoExampleGetOneResponse.md)
+[**InternalApiDtoExampleGetOneResponse**](InternalApiDtoExampleGetOneResponse.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ No authorization required
 
 ## V1ExamplePostPost
 
-> InternalApiHttpDtoExamplePostResponse V1ExamplePostPost(ctx).Body(body).Execute()
+> InternalApiDtoExamplePostResponse V1ExamplePostPost(ctx).Body(body).Execute()
 
 post 接口 示例
 
@@ -171,7 +171,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewInternalApiHttpDtoExamplePostRequest("AppId_example", "CVer_example", int32(1), "Fid_example", "Lang_example", "Question_example", "sdfsdsdfsd") // InternalApiHttpDtoExamplePostRequest | 请求参数
+	body := *openapiclient.NewInternalApiDtoExamplePostRequest("AppId_example", "CVer_example", int32(1), "Fid_example", "Lang_example", "Question_example", "sdfsdsdfsd") // InternalApiDtoExamplePostRequest | 请求参数
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExampleAPI.V1ExamplePostPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1ExamplePostPost`: InternalApiHttpDtoExamplePostResponse
+	// response from `V1ExamplePostPost`: InternalApiDtoExamplePostResponse
 	fmt.Fprintf(os.Stdout, "Response from `ExampleAPI.V1ExamplePostPost`: %v\n", resp)
 }
 ```
@@ -196,11 +196,11 @@ Other parameters are passed through a pointer to a apiV1ExamplePostPostRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InternalApiHttpDtoExamplePostRequest**](InternalApiHttpDtoExamplePostRequest.md) | 请求参数 | 
+ **body** | [**InternalApiDtoExamplePostRequest**](InternalApiDtoExamplePostRequest.md) | 请求参数 | 
 
 ### Return type
 
-[**InternalApiHttpDtoExamplePostResponse**](InternalApiHttpDtoExamplePostResponse.md)
+[**InternalApiDtoExamplePostResponse**](InternalApiDtoExamplePostResponse.md)
 
 ### Authorization
 

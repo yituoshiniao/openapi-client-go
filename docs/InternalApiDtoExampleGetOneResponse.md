@@ -1,109 +1,109 @@
-# InternalApiHttpDtoExamplePostResponse
+# InternalApiDtoExampleGetOneResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Code** | **int32** | code:  0 成功; 非0失败; | 
-**Data** | [**InternalApiHttpDtoUserPortraitData**](InternalApiHttpDtoUserPortraitData.md) |  | 
+**Data** | [**InternalApiDtoUserPortraitData**](InternalApiDtoUserPortraitData.md) |  | 
 **Msg** | **string** | 错误消息 | 
 **TraceId** | **string** | traceId | 
 
 ## Methods
 
-### NewInternalApiHttpDtoExamplePostResponse
+### NewInternalApiDtoExampleGetOneResponse
 
-`func NewInternalApiHttpDtoExamplePostResponse(code int32, data InternalApiHttpDtoUserPortraitData, msg string, traceId string, ) *InternalApiHttpDtoExamplePostResponse`
+`func NewInternalApiDtoExampleGetOneResponse(code int32, data InternalApiDtoUserPortraitData, msg string, traceId string, ) *InternalApiDtoExampleGetOneResponse`
 
-NewInternalApiHttpDtoExamplePostResponse instantiates a new InternalApiHttpDtoExamplePostResponse object
+NewInternalApiDtoExampleGetOneResponse instantiates a new InternalApiDtoExampleGetOneResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInternalApiHttpDtoExamplePostResponseWithDefaults
+### NewInternalApiDtoExampleGetOneResponseWithDefaults
 
-`func NewInternalApiHttpDtoExamplePostResponseWithDefaults() *InternalApiHttpDtoExamplePostResponse`
+`func NewInternalApiDtoExampleGetOneResponseWithDefaults() *InternalApiDtoExampleGetOneResponse`
 
-NewInternalApiHttpDtoExamplePostResponseWithDefaults instantiates a new InternalApiHttpDtoExamplePostResponse object
+NewInternalApiDtoExampleGetOneResponseWithDefaults instantiates a new InternalApiDtoExampleGetOneResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCode
 
-`func (o *InternalApiHttpDtoExamplePostResponse) GetCode() int32`
+`func (o *InternalApiDtoExampleGetOneResponse) GetCode() int32`
 
 GetCode returns the Code field if non-nil, zero value otherwise.
 
 ### GetCodeOk
 
-`func (o *InternalApiHttpDtoExamplePostResponse) GetCodeOk() (*int32, bool)`
+`func (o *InternalApiDtoExampleGetOneResponse) GetCodeOk() (*int32, bool)`
 
 GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCode
 
-`func (o *InternalApiHttpDtoExamplePostResponse) SetCode(v int32)`
+`func (o *InternalApiDtoExampleGetOneResponse) SetCode(v int32)`
 
 SetCode sets Code field to given value.
 
 
 ### GetData
 
-`func (o *InternalApiHttpDtoExamplePostResponse) GetData() InternalApiHttpDtoUserPortraitData`
+`func (o *InternalApiDtoExampleGetOneResponse) GetData() InternalApiDtoUserPortraitData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *InternalApiHttpDtoExamplePostResponse) GetDataOk() (*InternalApiHttpDtoUserPortraitData, bool)`
+`func (o *InternalApiDtoExampleGetOneResponse) GetDataOk() (*InternalApiDtoUserPortraitData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *InternalApiHttpDtoExamplePostResponse) SetData(v InternalApiHttpDtoUserPortraitData)`
+`func (o *InternalApiDtoExampleGetOneResponse) SetData(v InternalApiDtoUserPortraitData)`
 
 SetData sets Data field to given value.
 
 
 ### GetMsg
 
-`func (o *InternalApiHttpDtoExamplePostResponse) GetMsg() string`
+`func (o *InternalApiDtoExampleGetOneResponse) GetMsg() string`
 
 GetMsg returns the Msg field if non-nil, zero value otherwise.
 
 ### GetMsgOk
 
-`func (o *InternalApiHttpDtoExamplePostResponse) GetMsgOk() (*string, bool)`
+`func (o *InternalApiDtoExampleGetOneResponse) GetMsgOk() (*string, bool)`
 
 GetMsgOk returns a tuple with the Msg field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMsg
 
-`func (o *InternalApiHttpDtoExamplePostResponse) SetMsg(v string)`
+`func (o *InternalApiDtoExampleGetOneResponse) SetMsg(v string)`
 
 SetMsg sets Msg field to given value.
 
 
 ### GetTraceId
 
-`func (o *InternalApiHttpDtoExamplePostResponse) GetTraceId() string`
+`func (o *InternalApiDtoExampleGetOneResponse) GetTraceId() string`
 
 GetTraceId returns the TraceId field if non-nil, zero value otherwise.
 
 ### GetTraceIdOk
 
-`func (o *InternalApiHttpDtoExamplePostResponse) GetTraceIdOk() (*string, bool)`
+`func (o *InternalApiDtoExampleGetOneResponse) GetTraceIdOk() (*string, bool)`
 
 GetTraceIdOk returns a tuple with the TraceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTraceId
 
-`func (o *InternalApiHttpDtoExamplePostResponse) SetTraceId(v string)`
+`func (o *InternalApiDtoExampleGetOneResponse) SetTraceId(v string)`
 
 SetTraceId sets TraceId field to given value.
 

@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the InternalApiHttpDtoUserPortraitData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &InternalApiHttpDtoUserPortraitData{}
+// checks if the InternalApiDtoUserPortraitData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InternalApiDtoUserPortraitData{}
 
-// InternalApiHttpDtoUserPortraitData struct for InternalApiHttpDtoUserPortraitData
-type InternalApiHttpDtoUserPortraitData struct {
+// InternalApiDtoUserPortraitData struct for InternalApiDtoUserPortraitData
+type InternalApiDtoUserPortraitData struct {
 	// 国家
 	Country *string `json:"country,omitempty"`
 	// 上次登陆时间
@@ -29,25 +29,25 @@ type InternalApiHttpDtoUserPortraitData struct {
 	VipInfo *int32 `json:"vip_info,omitempty"`
 }
 
-// NewInternalApiHttpDtoUserPortraitData instantiates a new InternalApiHttpDtoUserPortraitData object
+// NewInternalApiDtoUserPortraitData instantiates a new InternalApiDtoUserPortraitData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInternalApiHttpDtoUserPortraitData() *InternalApiHttpDtoUserPortraitData {
-	this := InternalApiHttpDtoUserPortraitData{}
+func NewInternalApiDtoUserPortraitData() *InternalApiDtoUserPortraitData {
+	this := InternalApiDtoUserPortraitData{}
 	return &this
 }
 
-// NewInternalApiHttpDtoUserPortraitDataWithDefaults instantiates a new InternalApiHttpDtoUserPortraitData object
+// NewInternalApiDtoUserPortraitDataWithDefaults instantiates a new InternalApiDtoUserPortraitData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewInternalApiHttpDtoUserPortraitDataWithDefaults() *InternalApiHttpDtoUserPortraitData {
-	this := InternalApiHttpDtoUserPortraitData{}
+func NewInternalApiDtoUserPortraitDataWithDefaults() *InternalApiDtoUserPortraitData {
+	this := InternalApiDtoUserPortraitData{}
 	return &this
 }
 
 // GetCountry returns the Country field value if set, zero value otherwise.
-func (o *InternalApiHttpDtoUserPortraitData) GetCountry() string {
+func (o *InternalApiDtoUserPortraitData) GetCountry() string {
 	if o == nil || IsNil(o.Country) {
 		var ret string
 		return ret
@@ -57,7 +57,7 @@ func (o *InternalApiHttpDtoUserPortraitData) GetCountry() string {
 
 // GetCountryOk returns a tuple with the Country field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InternalApiHttpDtoUserPortraitData) GetCountryOk() (*string, bool) {
+func (o *InternalApiDtoUserPortraitData) GetCountryOk() (*string, bool) {
 	if o == nil || IsNil(o.Country) {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *InternalApiHttpDtoUserPortraitData) GetCountryOk() (*string, bool) {
 }
 
 // HasCountry returns a boolean if a field has been set.
-func (o *InternalApiHttpDtoUserPortraitData) HasCountry() bool {
+func (o *InternalApiDtoUserPortraitData) HasCountry() bool {
 	if o != nil && !IsNil(o.Country) {
 		return true
 	}
@@ -74,12 +74,12 @@ func (o *InternalApiHttpDtoUserPortraitData) HasCountry() bool {
 }
 
 // SetCountry gets a reference to the given string and assigns it to the Country field.
-func (o *InternalApiHttpDtoUserPortraitData) SetCountry(v string) {
+func (o *InternalApiDtoUserPortraitData) SetCountry(v string) {
 	o.Country = &v
 }
 
 // GetLastLogin returns the LastLogin field value if set, zero value otherwise.
-func (o *InternalApiHttpDtoUserPortraitData) GetLastLogin() string {
+func (o *InternalApiDtoUserPortraitData) GetLastLogin() string {
 	if o == nil || IsNil(o.LastLogin) {
 		var ret string
 		return ret
@@ -89,7 +89,7 @@ func (o *InternalApiHttpDtoUserPortraitData) GetLastLogin() string {
 
 // GetLastLoginOk returns a tuple with the LastLogin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InternalApiHttpDtoUserPortraitData) GetLastLoginOk() (*string, bool) {
+func (o *InternalApiDtoUserPortraitData) GetLastLoginOk() (*string, bool) {
 	if o == nil || IsNil(o.LastLogin) {
 		return nil, false
 	}
@@ -97,7 +97,7 @@ func (o *InternalApiHttpDtoUserPortraitData) GetLastLoginOk() (*string, bool) {
 }
 
 // HasLastLogin returns a boolean if a field has been set.
-func (o *InternalApiHttpDtoUserPortraitData) HasLastLogin() bool {
+func (o *InternalApiDtoUserPortraitData) HasLastLogin() bool {
 	if o != nil && !IsNil(o.LastLogin) {
 		return true
 	}
@@ -106,12 +106,12 @@ func (o *InternalApiHttpDtoUserPortraitData) HasLastLogin() bool {
 }
 
 // SetLastLogin gets a reference to the given string and assigns it to the LastLogin field.
-func (o *InternalApiHttpDtoUserPortraitData) SetLastLogin(v string) {
+func (o *InternalApiDtoUserPortraitData) SetLastLogin(v string) {
 	o.LastLogin = &v
 }
 
 // GetUserId returns the UserId field value if set, zero value otherwise.
-func (o *InternalApiHttpDtoUserPortraitData) GetUserId() string {
+func (o *InternalApiDtoUserPortraitData) GetUserId() string {
 	if o == nil || IsNil(o.UserId) {
 		var ret string
 		return ret
@@ -121,7 +121,7 @@ func (o *InternalApiHttpDtoUserPortraitData) GetUserId() string {
 
 // GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InternalApiHttpDtoUserPortraitData) GetUserIdOk() (*string, bool) {
+func (o *InternalApiDtoUserPortraitData) GetUserIdOk() (*string, bool) {
 	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
@@ -129,7 +129,7 @@ func (o *InternalApiHttpDtoUserPortraitData) GetUserIdOk() (*string, bool) {
 }
 
 // HasUserId returns a boolean if a field has been set.
-func (o *InternalApiHttpDtoUserPortraitData) HasUserId() bool {
+func (o *InternalApiDtoUserPortraitData) HasUserId() bool {
 	if o != nil && !IsNil(o.UserId) {
 		return true
 	}
@@ -138,12 +138,12 @@ func (o *InternalApiHttpDtoUserPortraitData) HasUserId() bool {
 }
 
 // SetUserId gets a reference to the given string and assigns it to the UserId field.
-func (o *InternalApiHttpDtoUserPortraitData) SetUserId(v string) {
+func (o *InternalApiDtoUserPortraitData) SetUserId(v string) {
 	o.UserId = &v
 }
 
 // GetVipInfo returns the VipInfo field value if set, zero value otherwise.
-func (o *InternalApiHttpDtoUserPortraitData) GetVipInfo() int32 {
+func (o *InternalApiDtoUserPortraitData) GetVipInfo() int32 {
 	if o == nil || IsNil(o.VipInfo) {
 		var ret int32
 		return ret
@@ -153,7 +153,7 @@ func (o *InternalApiHttpDtoUserPortraitData) GetVipInfo() int32 {
 
 // GetVipInfoOk returns a tuple with the VipInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InternalApiHttpDtoUserPortraitData) GetVipInfoOk() (*int32, bool) {
+func (o *InternalApiDtoUserPortraitData) GetVipInfoOk() (*int32, bool) {
 	if o == nil || IsNil(o.VipInfo) {
 		return nil, false
 	}
@@ -161,7 +161,7 @@ func (o *InternalApiHttpDtoUserPortraitData) GetVipInfoOk() (*int32, bool) {
 }
 
 // HasVipInfo returns a boolean if a field has been set.
-func (o *InternalApiHttpDtoUserPortraitData) HasVipInfo() bool {
+func (o *InternalApiDtoUserPortraitData) HasVipInfo() bool {
 	if o != nil && !IsNil(o.VipInfo) {
 		return true
 	}
@@ -170,11 +170,11 @@ func (o *InternalApiHttpDtoUserPortraitData) HasVipInfo() bool {
 }
 
 // SetVipInfo gets a reference to the given int32 and assigns it to the VipInfo field.
-func (o *InternalApiHttpDtoUserPortraitData) SetVipInfo(v int32) {
+func (o *InternalApiDtoUserPortraitData) SetVipInfo(v int32) {
 	o.VipInfo = &v
 }
 
-func (o InternalApiHttpDtoUserPortraitData) MarshalJSON() ([]byte, error) {
+func (o InternalApiDtoUserPortraitData) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -182,7 +182,7 @@ func (o InternalApiHttpDtoUserPortraitData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o InternalApiHttpDtoUserPortraitData) ToMap() (map[string]interface{}, error) {
+func (o InternalApiDtoUserPortraitData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Country) {
 		toSerialize["country"] = o.Country
@@ -199,38 +199,38 @@ func (o InternalApiHttpDtoUserPortraitData) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 
-type NullableInternalApiHttpDtoUserPortraitData struct {
-	value *InternalApiHttpDtoUserPortraitData
+type NullableInternalApiDtoUserPortraitData struct {
+	value *InternalApiDtoUserPortraitData
 	isSet bool
 }
 
-func (v NullableInternalApiHttpDtoUserPortraitData) Get() *InternalApiHttpDtoUserPortraitData {
+func (v NullableInternalApiDtoUserPortraitData) Get() *InternalApiDtoUserPortraitData {
 	return v.value
 }
 
-func (v *NullableInternalApiHttpDtoUserPortraitData) Set(val *InternalApiHttpDtoUserPortraitData) {
+func (v *NullableInternalApiDtoUserPortraitData) Set(val *InternalApiDtoUserPortraitData) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableInternalApiHttpDtoUserPortraitData) IsSet() bool {
+func (v NullableInternalApiDtoUserPortraitData) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableInternalApiHttpDtoUserPortraitData) Unset() {
+func (v *NullableInternalApiDtoUserPortraitData) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableInternalApiHttpDtoUserPortraitData(val *InternalApiHttpDtoUserPortraitData) *NullableInternalApiHttpDtoUserPortraitData {
-	return &NullableInternalApiHttpDtoUserPortraitData{value: val, isSet: true}
+func NewNullableInternalApiDtoUserPortraitData(val *InternalApiDtoUserPortraitData) *NullableInternalApiDtoUserPortraitData {
+	return &NullableInternalApiDtoUserPortraitData{value: val, isSet: true}
 }
 
-func (v NullableInternalApiHttpDtoUserPortraitData) MarshalJSON() ([]byte, error) {
+func (v NullableInternalApiDtoUserPortraitData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableInternalApiHttpDtoUserPortraitData) UnmarshalJSON(src []byte) error {
+func (v *NullableInternalApiDtoUserPortraitData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

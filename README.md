@@ -79,6 +79,9 @@ All URIs are relative to *http://127.0.0.1:3013/goodsCenterLogic*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultApi* | [**V1CommonGenerateIdGet**](docs/DefaultApi.md#v1commongenerateidget) | **Get** /v1/common/generateId | 雪花ID生成
+*AsynqAPI* | [**AsynqV1AddAggTaskGet**](docs/AsynqAPI.md#asynqv1addaggtaskget) | **Get** /asynq/v1/addAggTask | asynq-添加聚合任务
+*AsynqAPI* | [**AsynqV1AddTaskGet**](docs/AsynqAPI.md#asynqv1addtaskget) | **Get** /asynq/v1/addTask | asynq-add异步任务
+*AuthAPI* | [**AuthV1TokenGenerateGet**](docs/AuthAPI.md#authv1tokengenerateget) | **Get** /auth/v1/token/generate | jwt-token生成及校验
 *ExampleAPI* | [**V1ExampleGetGet**](docs/ExampleAPI.md#v1examplegetget) | **Get** /v1/exampleGet | get接口示例
 *ExampleAPI* | [**V1ExampleGetOneGet**](docs/ExampleAPI.md#v1examplegetoneget) | **Get** /v1/exampleGetOne | getOne接口示例
 *ExampleAPI* | [**V1ExamplePostPost**](docs/ExampleAPI.md#v1examplepostpost) | **Post** /v1/examplePost | post 接口 示例
@@ -86,12 +89,16 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [InternalApiHttpDtoExampleGetOneResponse](docs/InternalApiHttpDtoExampleGetOneResponse.md)
- - [InternalApiHttpDtoExampleGetResponse](docs/InternalApiHttpDtoExampleGetResponse.md)
- - [InternalApiHttpDtoExamplePostRequest](docs/InternalApiHttpDtoExamplePostRequest.md)
- - [InternalApiHttpDtoExamplePostResponse](docs/InternalApiHttpDtoExamplePostResponse.md)
- - [InternalApiHttpDtoUserPortraitData](docs/InternalApiHttpDtoUserPortraitData.md)
+ - [InternalApiDtoAppJwtTokenResponse](docs/InternalApiDtoAppJwtTokenResponse.md)
+ - [InternalApiDtoAsynqEmailDeliveryTaskAddResponse](docs/InternalApiDtoAsynqEmailDeliveryTaskAddResponse.md)
+ - [InternalApiDtoExampleGetOneResponse](docs/InternalApiDtoExampleGetOneResponse.md)
+ - [InternalApiDtoExampleGetResponse](docs/InternalApiDtoExampleGetResponse.md)
+ - [InternalApiDtoExamplePostRequest](docs/InternalApiDtoExamplePostRequest.md)
+ - [InternalApiDtoExamplePostResponse](docs/InternalApiDtoExamplePostResponse.md)
+ - [InternalApiDtoGroupDeliveryTaskAddResponse](docs/InternalApiDtoGroupDeliveryTaskAddResponse.md)
+ - [InternalApiDtoUserPortraitData](docs/InternalApiDtoUserPortraitData.md)
  - [InternalApiHttpServicev1HttpGenerateIDResponse](docs/InternalApiHttpServicev1HttpGenerateIDResponse.md)
+ - [InternalModuleAuthApplicationServiceAuthPayload](docs/InternalModuleAuthApplicationServiceAuthPayload.md)
 
 
 ## Documentation For Authorization
