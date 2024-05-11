@@ -71,7 +71,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/_internal_api_dto.AppJwtTokenResponse'
+                $ref: '#/components/schemas/_internal_api_dto.AppJwtTokenSwgResponse'
           description: 请求成功
       summary: jwt-token生成及校验
       tags:
@@ -209,6 +209,71 @@ paths:
       tags:
       - Example
       x-codegen-request-body-name: body
+  /v1/userScore/add:
+    post:
+      description: gorm 添加数据
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/_internal_api_http.ResponseData'
+          description: 请求成功
+      summary: 添加数据
+      tags:
+      - user_score
+  /v1/userScore/del:
+    post:
+      description: gorm 删除数据
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/_internal_api_http.ResponseData'
+          description: 请求成功
+      summary: 删除数据
+      tags:
+      - user_score
+  /v1/userScore/find:
+    get:
+      description: gorm 查询一条数据
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/_internal_api_dto.UserScoreFindResponse'
+          description: 请求成功
+      summary: 查询一条数据
+      tags:
+      - user_score
+  /v1/userScore/list:
+    get:
+      description: gorm 查询列表
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/_internal_api_dto.UserScoreListResponse'
+          description: 请求成功
+      summary: 查询列表
+      tags:
+      - user_score
+  /v1/userScore/update:
+    post:
+      description: gorm 更新数据
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/_internal_api_http.ResponseData'
+          description: 请求成功
+      summary: 更新数据
+      tags:
+      - user_score
 components:
   schemas:
     _internal_api_dto.AppJwtTokenResponse:
@@ -224,6 +289,34 @@ components:
         token:
           description: Token jwt token
           type: string
+      type: object
+    _internal_api_dto.AppJwtTokenSwgResponse:
+      example:
+        msg: success
+        traceId: traceId
+        code: 1
+        data:
+          jwtPayload: "{}"
+          token: token
+      properties:
+        code:
+          description: "code:  0 成功; 非0失败;"
+          example: 1
+          type: integer
+        data:
+          $ref: '#/components/schemas/_internal_api_dto.AppJwtTokenResponse'
+        msg:
+          description: 错误消息
+          example: success
+          type: string
+        traceId:
+          description: traceId
+          type: string
+      required:
+      - code
+      - data
+      - msg
+      - traceId
       type: object
     _internal_api_dto.AsynqEmailDeliveryTaskAddResponse:
       example:
@@ -437,6 +530,108 @@ components:
           description: 是否为VIP，0/1
           type: integer
       type: object
+    _internal_api_dto.UserScoreFindResponse:
+      example:
+        msg: success
+        traceId: traceId
+        code: 1
+        data:
+          score: 1
+          update_time: 5
+          create_time: 0
+          user_id: user_id
+          id: 6
+          zero_timestamp: 2
+          score_result: 5
+      properties:
+        code:
+          description: "code:  0 成功; 非0失败;"
+          example: 1
+          type: integer
+        data:
+          $ref: '#/components/schemas/_internal_module_mockv2_application_entity.UserScore'
+        msg:
+          description: 错误消息
+          example: success
+          type: string
+        traceId:
+          description: traceId
+          type: string
+      required:
+      - code
+      - data
+      - msg
+      - traceId
+      type: object
+    _internal_api_dto.UserScoreListResponse:
+      example:
+        msg: success
+        traceId: traceId
+        code: 1
+        data:
+        - score: 1
+          update_time: 5
+          create_time: 0
+          user_id: user_id
+          id: 6
+          zero_timestamp: 2
+          score_result: 5
+        - score: 1
+          update_time: 5
+          create_time: 0
+          user_id: user_id
+          id: 6
+          zero_timestamp: 2
+          score_result: 5
+      properties:
+        code:
+          description: "code:  0 成功; 非0失败;"
+          example: 1
+          type: integer
+        data:
+          items:
+            $ref: '#/components/schemas/_internal_module_mockv2_application_entity.UserScore'
+          type: array
+        msg:
+          description: 错误消息
+          example: success
+          type: string
+        traceId:
+          description: traceId
+          type: string
+      required:
+      - code
+      - data
+      - msg
+      - traceId
+      type: object
+    _internal_api_http.ResponseData:
+      example:
+        msg: success
+        traceId: traceId
+        code: 1
+        data: "{}"
+      properties:
+        code:
+          description: "code:  0 成功; 非0失败;"
+          example: 1
+          type: integer
+        data:
+          description: 数据data
+          type: object
+        msg:
+          description: 错误消息
+          example: success
+          type: string
+        traceId:
+          description: traceId
+          type: string
+      required:
+      - code
+      - data
+      - msg
+      - traceId
+      type: object
     _internal_module_auth_application_service.AuthPayload:
       properties:
         aud:
@@ -465,6 +660,31 @@ components:
         username:
           description: Username 用户名
           type: string
+      type: object
+    _internal_module_mockv2_application_entity.UserScore:
+      example:
+        score: 1
+        update_time: 5
+        create_time: 0
+        user_id: user_id
+        id: 6
+        zero_timestamp: 2
+        score_result: 5
+      properties:
+        create_time:
+          type: integer
+        id:
+          type: integer
+        score:
+          type: integer
+        score_result:
+          type: integer
+        update_time:
+          type: integer
+        user_id:
+          type: string
+        zero_timestamp:
+          type: integer
       type: object
     internal_api_http_servicev1.HttpGenerateIDResponse:
       example:

@@ -56,6 +56,8 @@ type APIClient struct {
 	AuthAPI *AuthAPIService
 
 	ExampleAPI *ExampleAPIService
+
+	UserScoreAPI *UserScoreAPIService
 }
 
 type service struct {
@@ -78,6 +80,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.AsynqAPI = (*AsynqAPIService)(&c.common)
 	c.AuthAPI = (*AuthAPIService)(&c.common)
 	c.ExampleAPI = (*ExampleAPIService)(&c.common)
+	c.UserScoreAPI = (*UserScoreAPIService)(&c.common)
 
 	return c
 }

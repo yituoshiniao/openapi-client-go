@@ -85,11 +85,17 @@ Class | Method | HTTP request | Description
 *ExampleAPI* | [**V1ExampleGetGet**](docs/ExampleAPI.md#v1examplegetget) | **Get** /v1/exampleGet | get接口示例
 *ExampleAPI* | [**V1ExampleGetOneGet**](docs/ExampleAPI.md#v1examplegetoneget) | **Get** /v1/exampleGetOne | getOne接口示例
 *ExampleAPI* | [**V1ExamplePostPost**](docs/ExampleAPI.md#v1examplepostpost) | **Post** /v1/examplePost | post 接口 示例
+*UserScoreAPI* | [**V1UserScoreAddPost**](docs/UserScoreAPI.md#v1userscoreaddpost) | **Post** /v1/userScore/add | 添加数据
+*UserScoreAPI* | [**V1UserScoreDelPost**](docs/UserScoreAPI.md#v1userscoredelpost) | **Post** /v1/userScore/del | 删除数据
+*UserScoreAPI* | [**V1UserScoreFindGet**](docs/UserScoreAPI.md#v1userscorefindget) | **Get** /v1/userScore/find | 查询一条数据
+*UserScoreAPI* | [**V1UserScoreListGet**](docs/UserScoreAPI.md#v1userscorelistget) | **Get** /v1/userScore/list | 查询列表
+*UserScoreAPI* | [**V1UserScoreUpdatePost**](docs/UserScoreAPI.md#v1userscoreupdatepost) | **Post** /v1/userScore/update | 更新数据
 
 
 ## Documentation For Models
 
  - [InternalApiDtoAppJwtTokenResponse](docs/InternalApiDtoAppJwtTokenResponse.md)
+ - [InternalApiDtoAppJwtTokenSwgResponse](docs/InternalApiDtoAppJwtTokenSwgResponse.md)
  - [InternalApiDtoAsynqEmailDeliveryTaskAddResponse](docs/InternalApiDtoAsynqEmailDeliveryTaskAddResponse.md)
  - [InternalApiDtoExampleGetOneResponse](docs/InternalApiDtoExampleGetOneResponse.md)
  - [InternalApiDtoExampleGetResponse](docs/InternalApiDtoExampleGetResponse.md)
@@ -97,8 +103,12 @@ Class | Method | HTTP request | Description
  - [InternalApiDtoExamplePostResponse](docs/InternalApiDtoExamplePostResponse.md)
  - [InternalApiDtoGroupDeliveryTaskAddResponse](docs/InternalApiDtoGroupDeliveryTaskAddResponse.md)
  - [InternalApiDtoUserPortraitData](docs/InternalApiDtoUserPortraitData.md)
+ - [InternalApiDtoUserScoreFindResponse](docs/InternalApiDtoUserScoreFindResponse.md)
+ - [InternalApiDtoUserScoreListResponse](docs/InternalApiDtoUserScoreListResponse.md)
+ - [InternalApiHttpResponseData](docs/InternalApiHttpResponseData.md)
  - [InternalApiHttpServicev1HttpGenerateIDResponse](docs/InternalApiHttpServicev1HttpGenerateIDResponse.md)
  - [InternalModuleAuthApplicationServiceAuthPayload](docs/InternalModuleAuthApplicationServiceAuthPayload.md)
+ - [InternalModuleMockv2ApplicationEntityUserScore](docs/InternalModuleMockv2ApplicationEntityUserScore.md)
 
 
 ## Documentation For Authorization

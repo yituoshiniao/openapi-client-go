@@ -48,7 +48,7 @@ func (r ApiAuthV1TokenGenerateGetRequest) Env(env string) ApiAuthV1TokenGenerate
 	return r
 }
 
-func (r ApiAuthV1TokenGenerateGetRequest) Execute() (*InternalApiDtoAppJwtTokenResponse, *http.Response, error) {
+func (r ApiAuthV1TokenGenerateGetRequest) Execute() (*InternalApiDtoAppJwtTokenSwgResponse, *http.Response, error) {
 	return r.ApiService.AuthV1TokenGenerateGetExecute(r)
 }
 
@@ -68,13 +68,13 @@ func (a *AuthAPIService) AuthV1TokenGenerateGet(ctx context.Context) ApiAuthV1To
 }
 
 // Execute executes the request
-//  @return InternalApiDtoAppJwtTokenResponse
-func (a *AuthAPIService) AuthV1TokenGenerateGetExecute(r ApiAuthV1TokenGenerateGetRequest) (*InternalApiDtoAppJwtTokenResponse, *http.Response, error) {
+//  @return InternalApiDtoAppJwtTokenSwgResponse
+func (a *AuthAPIService) AuthV1TokenGenerateGetExecute(r ApiAuthV1TokenGenerateGetRequest) (*InternalApiDtoAppJwtTokenSwgResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InternalApiDtoAppJwtTokenResponse
+		localVarReturnValue  *InternalApiDtoAppJwtTokenSwgResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthAPIService.AuthV1TokenGenerateGet")

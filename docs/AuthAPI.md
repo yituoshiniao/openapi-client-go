@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## AuthV1TokenGenerateGet
 
-> InternalApiDtoAppJwtTokenResponse AuthV1TokenGenerateGet(ctx).UserId(userId).UserName(userName).Env(env).Execute()
+> InternalApiDtoAppJwtTokenSwgResponse AuthV1TokenGenerateGet(ctx).UserId(userId).UserName(userName).Env(env).Execute()
 
 jwt-token生成及校验
 
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AuthAPI.AuthV1TokenGenerateGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AuthV1TokenGenerateGet`: InternalApiDtoAppJwtTokenResponse
+	// response from `AuthV1TokenGenerateGet`: InternalApiDtoAppJwtTokenSwgResponse
 	fmt.Fprintf(os.Stdout, "Response from `AuthAPI.AuthV1TokenGenerateGet`: %v\n", resp)
 }
 ```
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InternalApiDtoAppJwtTokenResponse**](InternalApiDtoAppJwtTokenResponse.md)
+[**InternalApiDtoAppJwtTokenSwgResponse**](InternalApiDtoAppJwtTokenSwgResponse.md)
 
 ### Authorization
 
