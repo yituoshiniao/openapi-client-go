@@ -21,7 +21,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/_internal_api_dto.GroupDeliveryTaskAddResponse'
+                $ref: '#/components/schemas/internal_api_dto.GroupDeliveryTaskAddResponse'
           description: 请求成功
       summary: asynq-添加聚合任务
       tags:
@@ -40,7 +40,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/_internal_api_dto.AsynqEmailDeliveryTaskAddResponse'
+                $ref: '#/components/schemas/internal_api_dto.AsynqEmailDeliveryTaskAddResponse'
           description: 请求成功
       summary: asynq-add异步任务
       tags:
@@ -71,7 +71,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/_internal_api_dto.AppJwtTokenSwgResponse'
+                $ref: '#/components/schemas/internal_api_dto.AppJwtTokenSwgResponse'
           description: 请求成功
       summary: jwt-token生成及校验
       tags:
@@ -134,7 +134,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/_internal_api_dto.ExampleGetResponse'
+                $ref: '#/components/schemas/internal_api_dto.ExampleGetResponse'
           description: 请求成功
       summary: get接口示例
       tags:
@@ -166,7 +166,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/_internal_api_dto.ExampleGetOneResponse'
+                $ref: '#/components/schemas/internal_api_dto.ExampleGetOneResponse'
           description: 请求成功
       summary: getOne接口示例
       tags:
@@ -182,7 +182,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/_internal_api_dto.ExamplePostRequest'
+              $ref: '#/components/schemas/internal_api_dto.ExamplePostRequest'
         description: 请求参数
         required: true
       responses:
@@ -190,7 +190,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/_internal_api_dto.ExamplePostResponse'
+                $ref: '#/components/schemas/internal_api_dto.ExamplePostResponse'
           description: 请求成功
           headers:
             Token:
@@ -217,7 +217,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/_internal_api_http.ResponseData'
+                $ref: '#/components/schemas/internal_api_http.ResponseData'
           description: 请求成功
       summary: 添加数据
       tags:
@@ -230,7 +230,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/_internal_api_http.ResponseData'
+                $ref: '#/components/schemas/internal_api_http.ResponseData'
           description: 请求成功
       summary: 删除数据
       tags:
@@ -243,7 +243,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/_internal_api_dto.UserScoreFindResponse'
+                $ref: '#/components/schemas/internal_api_dto.UserScoreFindResponse'
           description: 请求成功
       summary: 查询一条数据
       tags:
@@ -256,7 +256,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/_internal_api_dto.UserScoreListResponse'
+                $ref: '#/components/schemas/internal_api_dto.UserScoreListResponse'
           description: 请求成功
       summary: 查询列表
       tags:
@@ -269,28 +269,28 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/_internal_api_http.ResponseData'
+                $ref: '#/components/schemas/internal_api_http.ResponseData'
           description: 请求成功
       summary: 更新数据
       tags:
       - user_score
 components:
   schemas:
-    _internal_api_dto.AppJwtTokenResponse:
+    internal_api_dto.AppJwtTokenResponse:
       example:
         jwtPayload: "{}"
         token: token
       properties:
         jwtPayload:
           allOf:
-          - $ref: '#/components/schemas/_internal_module_auth_application_service.AuthPayload'
+          - $ref: '#/components/schemas/internal_module_auth_application_service.AuthPayload'
           description: token payload 信息
           type: object
         token:
           description: Token jwt token
           type: string
       type: object
-    _internal_api_dto.AppJwtTokenSwgResponse:
+    internal_api_dto.AppJwtTokenSwgResponse:
       example:
         msg: success
         traceId: traceId
@@ -304,7 +304,7 @@ components:
           example: 1
           type: integer
         data:
-          $ref: '#/components/schemas/_internal_api_dto.AppJwtTokenResponse'
+          $ref: '#/components/schemas/internal_api_dto.AppJwtTokenResponse'
         msg:
           description: 错误消息
           example: success
@@ -318,7 +318,7 @@ components:
       - msg
       - traceId
       type: object
-    _internal_api_dto.AsynqEmailDeliveryTaskAddResponse:
+    internal_api_dto.AsynqEmailDeliveryTaskAddResponse:
       example:
         msg: success
         traceId: traceId
@@ -345,7 +345,7 @@ components:
       - msg
       - traceId
       type: object
-    _internal_api_dto.ExampleGetOneResponse:
+    internal_api_dto.ExampleGetOneResponse:
       example:
         msg: success
         traceId: traceId
@@ -361,7 +361,7 @@ components:
           example: 1
           type: integer
         data:
-          $ref: '#/components/schemas/_internal_api_dto.UserPortraitData'
+          $ref: '#/components/schemas/internal_api_dto.UserPortraitData'
         msg:
           description: 错误消息
           example: success
@@ -375,7 +375,7 @@ components:
       - msg
       - traceId
       type: object
-    _internal_api_dto.ExampleGetResponse:
+    internal_api_dto.ExampleGetResponse:
       example:
         msg: success
         traceId: traceId
@@ -391,7 +391,7 @@ components:
           example: 1
           type: integer
         data:
-          $ref: '#/components/schemas/_internal_api_dto.UserPortraitData'
+          $ref: '#/components/schemas/internal_api_dto.UserPortraitData'
         msg:
           description: 错误消息
           example: success
@@ -405,7 +405,7 @@ components:
       - msg
       - traceId
       type: object
-    _internal_api_dto.ExamplePostRequest:
+    internal_api_dto.ExamplePostRequest:
       properties:
         app_id:
           description: AppID 应用id
@@ -453,7 +453,7 @@ components:
       - question
       - token
       type: object
-    _internal_api_dto.ExamplePostResponse:
+    internal_api_dto.ExamplePostResponse:
       example:
         msg: success
         traceId: traceId
@@ -469,7 +469,7 @@ components:
           example: 1
           type: integer
         data:
-          $ref: '#/components/schemas/_internal_api_dto.UserPortraitData'
+          $ref: '#/components/schemas/internal_api_dto.UserPortraitData'
         msg:
           description: 错误消息
           example: success
@@ -483,7 +483,7 @@ components:
       - msg
       - traceId
       type: object
-    _internal_api_dto.GroupDeliveryTaskAddResponse:
+    internal_api_dto.GroupDeliveryTaskAddResponse:
       example:
         msg: success
         traceId: traceId
@@ -510,7 +510,7 @@ components:
       - msg
       - traceId
       type: object
-    _internal_api_dto.UserPortraitData:
+    internal_api_dto.UserPortraitData:
       example:
         country: country
         vip_info: 0
@@ -530,7 +530,7 @@ components:
           description: 是否为VIP，0/1
           type: integer
       type: object
-    _internal_api_dto.UserScoreFindResponse:
+    internal_api_dto.UserScoreFindResponse:
       example:
         msg: success
         traceId: traceId
@@ -549,7 +549,7 @@ components:
           example: 1
           type: integer
         data:
-          $ref: '#/components/schemas/_internal_module_mockv2_application_entity.UserScore'
+          $ref: '#/components/schemas/internal_module_mockv2_application_entity.UserScore'
         msg:
           description: 错误消息
           example: success
@@ -563,7 +563,7 @@ components:
       - msg
       - traceId
       type: object
-    _internal_api_dto.UserScoreListResponse:
+    internal_api_dto.UserScoreListResponse:
       example:
         msg: success
         traceId: traceId
@@ -590,7 +590,7 @@ components:
           type: integer
         data:
           items:
-            $ref: '#/components/schemas/_internal_module_mockv2_application_entity.UserScore'
+            $ref: '#/components/schemas/internal_module_mockv2_application_entity.UserScore'
           type: array
         msg:
           description: 错误消息
@@ -605,7 +605,7 @@ components:
       - msg
       - traceId
       type: object
-    _internal_api_http.ResponseData:
+    internal_api_http.ResponseData:
       example:
         msg: success
         traceId: traceId
@@ -632,7 +632,7 @@ components:
       - msg
       - traceId
       type: object
-    _internal_module_auth_application_service.AuthPayload:
+    internal_module_auth_application_service.AuthPayload:
       properties:
         aud:
           type: string
@@ -661,7 +661,7 @@ components:
           description: Username 用户名
           type: string
       type: object
-    _internal_module_mockv2_application_entity.UserScore:
+    internal_module_mockv2_application_entity.UserScore:
       example:
         score: 1
         update_time: 5
