@@ -19,15 +19,14 @@ import (
 	"strings"
 )
 
-
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
 type ApiV1CommonGenerateIdGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultApiService
-	num *int32
-	id int32
+	ctx           context.Context
+	ApiService    *DefaultApiService
+	num           *int32
+	id            int32
 	authorization *string
 }
 
@@ -52,26 +51,27 @@ V1CommonGenerateIdGet 雪花ID生成
 
 生成id-描述
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID
- @return ApiV1CommonGenerateIdGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id ID
+	@return ApiV1CommonGenerateIdGetRequest
 */
 func (a *DefaultApiService) V1CommonGenerateIdGet(ctx context.Context, id int32) ApiV1CommonGenerateIdGetRequest {
 	return ApiV1CommonGenerateIdGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return InternalApiHttpServicev1HttpGenerateIDResponse
+//
+//	@return InternalApiHttpServicev1HttpGenerateIDResponse
 func (a *DefaultApiService) V1CommonGenerateIdGetExecute(r ApiV1CommonGenerateIdGetRequest) (*InternalApiHttpServicev1HttpGenerateIDResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InternalApiHttpServicev1HttpGenerateIDResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InternalApiHttpServicev1HttpGenerateIDResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultApiService.V1CommonGenerateIdGet")

@@ -11,8 +11,8 @@ API version: 1.0
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &InternalApiDtoExampleGetOneResponse{}
 // InternalApiDtoExampleGetOneResponse struct for InternalApiDtoExampleGetOneResponse
 type InternalApiDtoExampleGetOneResponse struct {
 	// code:  0 成功; 非0失败;
-	Code int32 `json:"code"`
+	Code int32                          `json:"code"`
 	Data InternalApiDtoUserPortraitData `json:"data"`
 	// 错误消息
 	Msg string `json:"msg"`
@@ -150,7 +150,7 @@ func (o *InternalApiDtoExampleGetOneResponse) SetTraceId(v string) {
 }
 
 func (o InternalApiDtoExampleGetOneResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -182,10 +182,10 @@ func (o *InternalApiDtoExampleGetOneResponse) UnmarshalJSON(data []byte) (err er
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -241,5 +241,3 @@ func (v *NullableInternalApiDtoExampleGetOneResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
