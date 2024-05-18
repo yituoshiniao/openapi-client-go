@@ -22,14 +22,14 @@ type InternalModuleAuthApplicationServiceAuthPayload struct {
 	Aud *string `json:"aud,omitempty"`
 	// Audience 当前时间
 	Audience *int32 `json:"audience,omitempty"`
-	Exp      *int32 `json:"exp,omitempty"`
+	Exp *int32 `json:"exp,omitempty"`
 	// ExpiresAt  token 过期时间
-	ExpiresAt *int32  `json:"expiresAt,omitempty"`
-	Iat       *int32  `json:"iat,omitempty"`
-	Iss       *string `json:"iss,omitempty"`
-	Jti       *string `json:"jti,omitempty"`
-	Nbf       *int32  `json:"nbf,omitempty"`
-	Sub       *string `json:"sub,omitempty"`
+	ExpiresAt *int32 `json:"expiresAt,omitempty"`
+	Iat *int32 `json:"iat,omitempty"`
+	Iss *string `json:"iss,omitempty"`
+	Jti *string `json:"jti,omitempty"`
+	Nbf *int32 `json:"nbf,omitempty"`
+	Sub *string `json:"sub,omitempty"`
 	// UID 用户id
 	Uid *string `json:"uid,omitempty"`
 	// Username 用户名
@@ -406,7 +406,7 @@ func (o *InternalModuleAuthApplicationServiceAuthPayload) SetUsername(v string) 
 }
 
 func (o InternalModuleAuthApplicationServiceAuthPayload) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -486,3 +486,5 @@ func (v *NullableInternalModuleAuthApplicationServiceAuthPayload) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -407,51 +407,19 @@ components:
       type: object
     internal_api_dto.ExamplePostRequest:
       properties:
+        Title:
+          description: 标题
+          type: string
         app_id:
-          description: AppID 应用id
-          type: string
-        c_ver:
-          description: CVer 客户端协议版本号
-          type: string
-        cmd_id:
-          description: |-
-            CmdId 功能类型枚举:
-            1 AUTH鉴权;
-            2 QA 问答；
-            4 总结SUMMARY;
-            5 KEYWORDS 关键词；
-            6 CLASSIFICATION 文档分类；
-            7 RENAME  重命名；
-            8 mindmap 思维导图；
-          example: 1
-          type: integer
-        fid:
-          description: Fid： 文档id
-          type: string
-        ignore_feature_prompt:
-          description: IgnoreFeaturePrompt 是否忽略功能检查  1 是； 0 否；
-          type: integer
-        lang:
-          description: Lang 语言
+          description: 应用id
           type: string
         question:
-          description: Question 问题
-          type: string
-        show_gpt_2:
-          description: show_gpt_2
-          type: string
-        token:
-          description: Token 鉴权token
-          example: sdfsdsdfsd
+          description: 问题
           type: string
       required:
+      - Title
       - app_id
-      - c_ver
-      - cmd_id
-      - fid
-      - lang
       - question
-      - token
       type: object
     internal_api_dto.ExamplePostResponse:
       example:

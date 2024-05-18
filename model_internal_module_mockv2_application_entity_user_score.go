@@ -19,13 +19,13 @@ var _ MappedNullable = &InternalModuleMockv2ApplicationEntityUserScore{}
 
 // InternalModuleMockv2ApplicationEntityUserScore struct for InternalModuleMockv2ApplicationEntityUserScore
 type InternalModuleMockv2ApplicationEntityUserScore struct {
-	CreateTime    *int32  `json:"create_time,omitempty"`
-	Id            *int32  `json:"id,omitempty"`
-	Score         *int32  `json:"score,omitempty"`
-	ScoreResult   *int32  `json:"score_result,omitempty"`
-	UpdateTime    *int32  `json:"update_time,omitempty"`
-	UserId        *string `json:"user_id,omitempty"`
-	ZeroTimestamp *int32  `json:"zero_timestamp,omitempty"`
+	CreateTime *int32 `json:"create_time,omitempty"`
+	Id *int32 `json:"id,omitempty"`
+	Score *int32 `json:"score,omitempty"`
+	ScoreResult *int32 `json:"score_result,omitempty"`
+	UpdateTime *int32 `json:"update_time,omitempty"`
+	UserId *string `json:"user_id,omitempty"`
+	ZeroTimestamp *int32 `json:"zero_timestamp,omitempty"`
 }
 
 // NewInternalModuleMockv2ApplicationEntityUserScore instantiates a new InternalModuleMockv2ApplicationEntityUserScore object
@@ -270,7 +270,7 @@ func (o *InternalModuleMockv2ApplicationEntityUserScore) SetZeroTimestamp(v int3
 }
 
 func (o InternalModuleMockv2ApplicationEntityUserScore) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -338,3 +338,5 @@ func (v *NullableInternalModuleMockv2ApplicationEntityUserScore) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

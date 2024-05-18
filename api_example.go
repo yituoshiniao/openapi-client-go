@@ -18,15 +18,16 @@ import (
 	"net/url"
 )
 
+
 // ExampleAPIService ExampleAPI service
 type ExampleAPIService service
 
 type ApiV1ExampleGetGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ExampleAPIService
 	createTime *int32
-	queryId    *string
-	userId     *string
+	queryId *string
+	userId *string
 }
 
 // create_time
@@ -56,25 +57,24 @@ V1ExampleGetGet get接口示例
 
 get接口示例
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiV1ExampleGetGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiV1ExampleGetGetRequest
 */
 func (a *ExampleAPIService) V1ExampleGetGet(ctx context.Context) ApiV1ExampleGetGetRequest {
 	return ApiV1ExampleGetGetRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return InternalApiDtoExampleGetResponse
+//  @return InternalApiDtoExampleGetResponse
 func (a *ExampleAPIService) V1ExampleGetGetExecute(r ApiV1ExampleGetGetRequest) (*InternalApiDtoExampleGetResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *InternalApiDtoExampleGetResponse
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *InternalApiDtoExampleGetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExampleAPIService.V1ExampleGetGet")
@@ -155,11 +155,11 @@ func (a *ExampleAPIService) V1ExampleGetGetExecute(r ApiV1ExampleGetGetRequest) 
 }
 
 type ApiV1ExampleGetOneGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ExampleAPIService
 	createTime *int32
-	queryId    *string
-	userId     *string
+	queryId *string
+	userId *string
 }
 
 // create_time
@@ -189,25 +189,24 @@ V1ExampleGetOneGet getOne接口示例
 
 getOne接口示例
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiV1ExampleGetOneGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiV1ExampleGetOneGetRequest
 */
 func (a *ExampleAPIService) V1ExampleGetOneGet(ctx context.Context) ApiV1ExampleGetOneGetRequest {
 	return ApiV1ExampleGetOneGetRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return InternalApiDtoExampleGetOneResponse
+//  @return InternalApiDtoExampleGetOneResponse
 func (a *ExampleAPIService) V1ExampleGetOneGetExecute(r ApiV1ExampleGetOneGetRequest) (*InternalApiDtoExampleGetOneResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *InternalApiDtoExampleGetOneResponse
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *InternalApiDtoExampleGetOneResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExampleAPIService.V1ExampleGetOneGet")
@@ -288,9 +287,9 @@ func (a *ExampleAPIService) V1ExampleGetOneGetExecute(r ApiV1ExampleGetOneGetReq
 }
 
 type ApiV1ExamplePostPostRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ExampleAPIService
-	body       *InternalApiDtoExamplePostRequest
+	body *InternalApiDtoExamplePostRequest
 }
 
 // 请求参数
@@ -306,33 +305,34 @@ func (r ApiV1ExamplePostPostRequest) Execute() (*InternalApiDtoExamplePostRespon
 /*
 V1ExamplePostPost post 接口 示例
 
-ios购买项类型 <a href="https://developer.apple.com/documentation/appstoreconnectapi/list_all_in-app_purchases_for_an_app"> 详情</a> </br>
 
-android订阅 <a href="https://developers.google.com/android-publisher/api-ref/rest/v3/monetization.subscriptions/list?hl=zh-cn"> 详情</a> </br>
+ios购买项类型 <a href="https://developer.apple.com/documentation/appstoreconnectapi/list_all_in-app_purchases_for_an_app"> 详情</a> </br> 
 
-android非订阅<a href="https://developers.google.com/android-publisher/api-ref/rest/v3/inappproducts/list?hl=zh-cn"> 详情</a> </br>
+
+android订阅 <a href="https://developers.google.com/android-publisher/api-ref/rest/v3/monetization.subscriptions/list?hl=zh-cn"> 详情</a> </br> 
+
+android非订阅<a href="https://developers.google.com/android-publisher/api-ref/rest/v3/inappproducts/list?hl=zh-cn"> 详情</a> </br> 
 
 android订阅产品的类型<a href="https://developers.google.com/android-publisher/api-ref/rest/v3/inappproducts?hl=zh-cn#PurchaseType"> 详情</a> </br>
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiV1ExamplePostPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiV1ExamplePostPostRequest
 */
 func (a *ExampleAPIService) V1ExamplePostPost(ctx context.Context) ApiV1ExamplePostPostRequest {
 	return ApiV1ExamplePostPostRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return InternalApiDtoExamplePostResponse
+//  @return InternalApiDtoExamplePostResponse
 func (a *ExampleAPIService) V1ExamplePostPostExecute(r ApiV1ExamplePostPostRequest) (*InternalApiDtoExamplePostResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *InternalApiDtoExamplePostResponse
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *InternalApiDtoExamplePostResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExampleAPIService.V1ExamplePostPost")

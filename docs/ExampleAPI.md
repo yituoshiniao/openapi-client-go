@@ -171,7 +171,7 @@ import (
 )
 
 func main() {
-	body := *openapiclient.NewInternalApiDtoExamplePostRequest("AppId_example", "CVer_example", int32(1), "Fid_example", "Lang_example", "Question_example", "sdfsdsdfsd") // InternalApiDtoExamplePostRequest | 请求参数
+	body := *openapiclient.NewInternalApiDtoExamplePostRequest("Title_example", "AppId_example", "Question_example") // InternalApiDtoExamplePostRequest | 请求参数
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

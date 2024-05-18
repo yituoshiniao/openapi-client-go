@@ -18,15 +18,16 @@ import (
 	"net/url"
 )
 
+
 // AuthAPIService AuthAPI service
 type AuthAPIService service
 
 type ApiAuthV1TokenGenerateGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AuthAPIService
-	userId     *string
-	userName   *string
-	env        *string
+	userId *string
+	userName *string
+	env *string
 }
 
 // UserID 用户id
@@ -56,25 +57,24 @@ AuthV1TokenGenerateGet jwt-token生成及校验
 
 jwt-token生成及校验
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiAuthV1TokenGenerateGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiAuthV1TokenGenerateGetRequest
 */
 func (a *AuthAPIService) AuthV1TokenGenerateGet(ctx context.Context) ApiAuthV1TokenGenerateGetRequest {
 	return ApiAuthV1TokenGenerateGetRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return InternalApiDtoAppJwtTokenSwgResponse
+//  @return InternalApiDtoAppJwtTokenSwgResponse
 func (a *AuthAPIService) AuthV1TokenGenerateGetExecute(r ApiAuthV1TokenGenerateGetRequest) (*InternalApiDtoAppJwtTokenSwgResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *InternalApiDtoAppJwtTokenSwgResponse
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *InternalApiDtoAppJwtTokenSwgResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthAPIService.AuthV1TokenGenerateGet")

@@ -18,13 +18,14 @@ import (
 	"net/url"
 )
 
+
 // AsynqAPIService AsynqAPI service
 type AsynqAPIService service
 
 type ApiAsynqV1AddAggTaskGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AsynqAPIService
-	env        *string
+	env *string
 }
 
 // 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
@@ -42,25 +43,24 @@ AsynqV1AddAggTaskGet asynq-添加聚合任务
 
 asynq-添加聚合任务
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiAsynqV1AddAggTaskGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiAsynqV1AddAggTaskGetRequest
 */
 func (a *AsynqAPIService) AsynqV1AddAggTaskGet(ctx context.Context) ApiAsynqV1AddAggTaskGetRequest {
 	return ApiAsynqV1AddAggTaskGetRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return InternalApiDtoGroupDeliveryTaskAddResponse
+//  @return InternalApiDtoGroupDeliveryTaskAddResponse
 func (a *AsynqAPIService) AsynqV1AddAggTaskGetExecute(r ApiAsynqV1AddAggTaskGetRequest) (*InternalApiDtoGroupDeliveryTaskAddResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *InternalApiDtoGroupDeliveryTaskAddResponse
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *InternalApiDtoGroupDeliveryTaskAddResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AsynqAPIService.AsynqV1AddAggTaskGet")
@@ -132,9 +132,9 @@ func (a *AsynqAPIService) AsynqV1AddAggTaskGetExecute(r ApiAsynqV1AddAggTaskGetR
 }
 
 type ApiAsynqV1AddTaskGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AsynqAPIService
-	env        *string
+	env *string
 }
 
 // 环境变量,默认线上; sandbox 沙箱环境, production 生产环境
@@ -152,25 +152,24 @@ AsynqV1AddTaskGet asynq-add异步任务
 
 asynq-异步任务,可通过： http://localhost:7013/monitoring/ 查看dashbord报表
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiAsynqV1AddTaskGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiAsynqV1AddTaskGetRequest
 */
 func (a *AsynqAPIService) AsynqV1AddTaskGet(ctx context.Context) ApiAsynqV1AddTaskGetRequest {
 	return ApiAsynqV1AddTaskGetRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return InternalApiDtoAsynqEmailDeliveryTaskAddResponse
+//  @return InternalApiDtoAsynqEmailDeliveryTaskAddResponse
 func (a *AsynqAPIService) AsynqV1AddTaskGetExecute(r ApiAsynqV1AddTaskGetRequest) (*InternalApiDtoAsynqEmailDeliveryTaskAddResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *InternalApiDtoAsynqEmailDeliveryTaskAddResponse
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *InternalApiDtoAsynqEmailDeliveryTaskAddResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AsynqAPIService.AsynqV1AddTaskGet")

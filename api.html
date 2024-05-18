@@ -954,46 +954,20 @@ ul.nav-tabs {
   }
 };
     defs["internal_api_dto.ExamplePostRequest"] = {
-  "required" : [ "app_id", "c_ver", "cmd_id", "fid", "lang", "question", "token" ],
+  "required" : [ "Title", "app_id", "question" ],
   "type" : "object",
   "properties" : {
+    "Title" : {
+      "type" : "string",
+      "description" : "标题"
+    },
     "app_id" : {
       "type" : "string",
-      "description" : "AppID 应用id"
-    },
-    "c_ver" : {
-      "type" : "string",
-      "description" : "CVer 客户端协议版本号"
-    },
-    "cmd_id" : {
-      "type" : "integer",
-      "description" : "CmdId 功能类型枚举:\n1 AUTH鉴权;\n2 QA 问答；\n4 总结SUMMARY;\n5 KEYWORDS 关键词；\n6 CLASSIFICATION 文档分类；\n7 RENAME  重命名；\n8 mindmap 思维导图；",
-      "example" : 1
-    },
-    "fid" : {
-      "type" : "string",
-      "description" : "Fid： 文档id"
-    },
-    "ignore_feature_prompt" : {
-      "type" : "integer",
-      "description" : "IgnoreFeaturePrompt 是否忽略功能检查  1 是； 0 否；"
-    },
-    "lang" : {
-      "type" : "string",
-      "description" : "Lang 语言"
+      "description" : "应用id"
     },
     "question" : {
       "type" : "string",
-      "description" : "Question 问题"
-    },
-    "show_gpt_2" : {
-      "type" : "string",
-      "description" : "show_gpt_2"
-    },
-    "token" : {
-      "type" : "string",
-      "description" : "Token 鉴权token",
-      "example" : "sdfsdsdfsd"
+      "description" : "问题"
     }
   }
 };

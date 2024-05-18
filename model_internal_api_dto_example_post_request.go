@@ -11,8 +11,8 @@ API version: 1.0
 package openapi
 
 import (
-	"bytes"
 	"encoding/json"
+	"bytes"
 	"fmt"
 )
 
@@ -21,24 +21,12 @@ var _ MappedNullable = &InternalApiDtoExamplePostRequest{}
 
 // InternalApiDtoExamplePostRequest struct for InternalApiDtoExamplePostRequest
 type InternalApiDtoExamplePostRequest struct {
-	// AppID 应用id
+	// 标题
+	Title string `json:"Title"`
+	// 应用id
 	AppId string `json:"app_id"`
-	// CVer 客户端协议版本号
-	CVer string `json:"c_ver"`
-	// CmdId 功能类型枚举: 1 AUTH鉴权; 2 QA 问答； 4 总结SUMMARY; 5 KEYWORDS 关键词； 6 CLASSIFICATION 文档分类； 7 RENAME  重命名； 8 mindmap 思维导图；
-	CmdId int32 `json:"cmd_id"`
-	// Fid： 文档id
-	Fid string `json:"fid"`
-	// IgnoreFeaturePrompt 是否忽略功能检查  1 是； 0 否；
-	IgnoreFeaturePrompt *int32 `json:"ignore_feature_prompt,omitempty"`
-	// Lang 语言
-	Lang string `json:"lang"`
-	// Question 问题
+	// 问题
 	Question string `json:"question"`
-	// show_gpt_2
-	ShowGpt2 *string `json:"show_gpt_2,omitempty"`
-	// Token 鉴权token
-	Token string `json:"token"`
 }
 
 type _InternalApiDtoExamplePostRequest InternalApiDtoExamplePostRequest
@@ -47,15 +35,11 @@ type _InternalApiDtoExamplePostRequest InternalApiDtoExamplePostRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInternalApiDtoExamplePostRequest(appId string, cVer string, cmdId int32, fid string, lang string, question string, token string) *InternalApiDtoExamplePostRequest {
+func NewInternalApiDtoExamplePostRequest(title string, appId string, question string) *InternalApiDtoExamplePostRequest {
 	this := InternalApiDtoExamplePostRequest{}
+	this.Title = title
 	this.AppId = appId
-	this.CVer = cVer
-	this.CmdId = cmdId
-	this.Fid = fid
-	this.Lang = lang
 	this.Question = question
-	this.Token = token
 	return &this
 }
 
@@ -65,6 +49,30 @@ func NewInternalApiDtoExamplePostRequest(appId string, cVer string, cmdId int32,
 func NewInternalApiDtoExamplePostRequestWithDefaults() *InternalApiDtoExamplePostRequest {
 	this := InternalApiDtoExamplePostRequest{}
 	return &this
+}
+
+// GetTitle returns the Title field value
+func (o *InternalApiDtoExamplePostRequest) GetTitle() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Title
+}
+
+// GetTitleOk returns a tuple with the Title field value
+// and a boolean to check if the value has been set.
+func (o *InternalApiDtoExamplePostRequest) GetTitleOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Title, true
+}
+
+// SetTitle sets field value
+func (o *InternalApiDtoExamplePostRequest) SetTitle(v string) {
+	o.Title = v
 }
 
 // GetAppId returns the AppId field value
@@ -91,134 +99,6 @@ func (o *InternalApiDtoExamplePostRequest) SetAppId(v string) {
 	o.AppId = v
 }
 
-// GetCVer returns the CVer field value
-func (o *InternalApiDtoExamplePostRequest) GetCVer() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CVer
-}
-
-// GetCVerOk returns a tuple with the CVer field value
-// and a boolean to check if the value has been set.
-func (o *InternalApiDtoExamplePostRequest) GetCVerOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CVer, true
-}
-
-// SetCVer sets field value
-func (o *InternalApiDtoExamplePostRequest) SetCVer(v string) {
-	o.CVer = v
-}
-
-// GetCmdId returns the CmdId field value
-func (o *InternalApiDtoExamplePostRequest) GetCmdId() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.CmdId
-}
-
-// GetCmdIdOk returns a tuple with the CmdId field value
-// and a boolean to check if the value has been set.
-func (o *InternalApiDtoExamplePostRequest) GetCmdIdOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CmdId, true
-}
-
-// SetCmdId sets field value
-func (o *InternalApiDtoExamplePostRequest) SetCmdId(v int32) {
-	o.CmdId = v
-}
-
-// GetFid returns the Fid field value
-func (o *InternalApiDtoExamplePostRequest) GetFid() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Fid
-}
-
-// GetFidOk returns a tuple with the Fid field value
-// and a boolean to check if the value has been set.
-func (o *InternalApiDtoExamplePostRequest) GetFidOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Fid, true
-}
-
-// SetFid sets field value
-func (o *InternalApiDtoExamplePostRequest) SetFid(v string) {
-	o.Fid = v
-}
-
-// GetIgnoreFeaturePrompt returns the IgnoreFeaturePrompt field value if set, zero value otherwise.
-func (o *InternalApiDtoExamplePostRequest) GetIgnoreFeaturePrompt() int32 {
-	if o == nil || IsNil(o.IgnoreFeaturePrompt) {
-		var ret int32
-		return ret
-	}
-	return *o.IgnoreFeaturePrompt
-}
-
-// GetIgnoreFeaturePromptOk returns a tuple with the IgnoreFeaturePrompt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InternalApiDtoExamplePostRequest) GetIgnoreFeaturePromptOk() (*int32, bool) {
-	if o == nil || IsNil(o.IgnoreFeaturePrompt) {
-		return nil, false
-	}
-	return o.IgnoreFeaturePrompt, true
-}
-
-// HasIgnoreFeaturePrompt returns a boolean if a field has been set.
-func (o *InternalApiDtoExamplePostRequest) HasIgnoreFeaturePrompt() bool {
-	if o != nil && !IsNil(o.IgnoreFeaturePrompt) {
-		return true
-	}
-
-	return false
-}
-
-// SetIgnoreFeaturePrompt gets a reference to the given int32 and assigns it to the IgnoreFeaturePrompt field.
-func (o *InternalApiDtoExamplePostRequest) SetIgnoreFeaturePrompt(v int32) {
-	o.IgnoreFeaturePrompt = &v
-}
-
-// GetLang returns the Lang field value
-func (o *InternalApiDtoExamplePostRequest) GetLang() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Lang
-}
-
-// GetLangOk returns a tuple with the Lang field value
-// and a boolean to check if the value has been set.
-func (o *InternalApiDtoExamplePostRequest) GetLangOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Lang, true
-}
-
-// SetLang sets field value
-func (o *InternalApiDtoExamplePostRequest) SetLang(v string) {
-	o.Lang = v
-}
-
 // GetQuestion returns the Question field value
 func (o *InternalApiDtoExamplePostRequest) GetQuestion() string {
 	if o == nil {
@@ -243,64 +123,8 @@ func (o *InternalApiDtoExamplePostRequest) SetQuestion(v string) {
 	o.Question = v
 }
 
-// GetShowGpt2 returns the ShowGpt2 field value if set, zero value otherwise.
-func (o *InternalApiDtoExamplePostRequest) GetShowGpt2() string {
-	if o == nil || IsNil(o.ShowGpt2) {
-		var ret string
-		return ret
-	}
-	return *o.ShowGpt2
-}
-
-// GetShowGpt2Ok returns a tuple with the ShowGpt2 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InternalApiDtoExamplePostRequest) GetShowGpt2Ok() (*string, bool) {
-	if o == nil || IsNil(o.ShowGpt2) {
-		return nil, false
-	}
-	return o.ShowGpt2, true
-}
-
-// HasShowGpt2 returns a boolean if a field has been set.
-func (o *InternalApiDtoExamplePostRequest) HasShowGpt2() bool {
-	if o != nil && !IsNil(o.ShowGpt2) {
-		return true
-	}
-
-	return false
-}
-
-// SetShowGpt2 gets a reference to the given string and assigns it to the ShowGpt2 field.
-func (o *InternalApiDtoExamplePostRequest) SetShowGpt2(v string) {
-	o.ShowGpt2 = &v
-}
-
-// GetToken returns the Token field value
-func (o *InternalApiDtoExamplePostRequest) GetToken() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Token
-}
-
-// GetTokenOk returns a tuple with the Token field value
-// and a boolean to check if the value has been set.
-func (o *InternalApiDtoExamplePostRequest) GetTokenOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Token, true
-}
-
-// SetToken sets field value
-func (o *InternalApiDtoExamplePostRequest) SetToken(v string) {
-	o.Token = v
-}
-
 func (o InternalApiDtoExamplePostRequest) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
+	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -309,19 +133,9 @@ func (o InternalApiDtoExamplePostRequest) MarshalJSON() ([]byte, error) {
 
 func (o InternalApiDtoExamplePostRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	toSerialize["Title"] = o.Title
 	toSerialize["app_id"] = o.AppId
-	toSerialize["c_ver"] = o.CVer
-	toSerialize["cmd_id"] = o.CmdId
-	toSerialize["fid"] = o.Fid
-	if !IsNil(o.IgnoreFeaturePrompt) {
-		toSerialize["ignore_feature_prompt"] = o.IgnoreFeaturePrompt
-	}
-	toSerialize["lang"] = o.Lang
 	toSerialize["question"] = o.Question
-	if !IsNil(o.ShowGpt2) {
-		toSerialize["show_gpt_2"] = o.ShowGpt2
-	}
-	toSerialize["token"] = o.Token
 	return toSerialize, nil
 }
 
@@ -330,13 +144,9 @@ func (o *InternalApiDtoExamplePostRequest) UnmarshalJSON(data []byte) (err error
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
+		"Title",
 		"app_id",
-		"c_ver",
-		"cmd_id",
-		"fid",
-		"lang",
 		"question",
-		"token",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -344,10 +154,10 @@ func (o *InternalApiDtoExamplePostRequest) UnmarshalJSON(data []byte) (err error
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err
+		return err;
 	}
 
-	for _, requiredProperty := range requiredProperties {
+	for _, requiredProperty := range(requiredProperties) {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -403,3 +213,5 @@ func (v *NullableInternalApiDtoExamplePostRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -18,11 +18,12 @@ import (
 	"net/url"
 )
 
+
 // UserScoreAPIService UserScoreAPI service
 type UserScoreAPIService service
 
 type ApiV1UserScoreAddPostRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *UserScoreAPIService
 }
 
@@ -35,25 +36,24 @@ V1UserScoreAddPost 添加数据
 
 gorm 添加数据
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiV1UserScoreAddPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiV1UserScoreAddPostRequest
 */
 func (a *UserScoreAPIService) V1UserScoreAddPost(ctx context.Context) ApiV1UserScoreAddPostRequest {
 	return ApiV1UserScoreAddPostRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return InternalApiHttpResponseData
+//  @return InternalApiHttpResponseData
 func (a *UserScoreAPIService) V1UserScoreAddPostExecute(r ApiV1UserScoreAddPostRequest) (*InternalApiHttpResponseData, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *InternalApiHttpResponseData
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *InternalApiHttpResponseData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserScoreAPIService.V1UserScoreAddPost")
@@ -122,7 +122,7 @@ func (a *UserScoreAPIService) V1UserScoreAddPostExecute(r ApiV1UserScoreAddPostR
 }
 
 type ApiV1UserScoreDelPostRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *UserScoreAPIService
 }
 
@@ -135,25 +135,24 @@ V1UserScoreDelPost 删除数据
 
 gorm 删除数据
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiV1UserScoreDelPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiV1UserScoreDelPostRequest
 */
 func (a *UserScoreAPIService) V1UserScoreDelPost(ctx context.Context) ApiV1UserScoreDelPostRequest {
 	return ApiV1UserScoreDelPostRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return InternalApiHttpResponseData
+//  @return InternalApiHttpResponseData
 func (a *UserScoreAPIService) V1UserScoreDelPostExecute(r ApiV1UserScoreDelPostRequest) (*InternalApiHttpResponseData, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *InternalApiHttpResponseData
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *InternalApiHttpResponseData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserScoreAPIService.V1UserScoreDelPost")
@@ -222,7 +221,7 @@ func (a *UserScoreAPIService) V1UserScoreDelPostExecute(r ApiV1UserScoreDelPostR
 }
 
 type ApiV1UserScoreFindGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *UserScoreAPIService
 }
 
@@ -235,25 +234,24 @@ V1UserScoreFindGet 查询一条数据
 
 gorm 查询一条数据
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiV1UserScoreFindGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiV1UserScoreFindGetRequest
 */
 func (a *UserScoreAPIService) V1UserScoreFindGet(ctx context.Context) ApiV1UserScoreFindGetRequest {
 	return ApiV1UserScoreFindGetRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return InternalApiDtoUserScoreFindResponse
+//  @return InternalApiDtoUserScoreFindResponse
 func (a *UserScoreAPIService) V1UserScoreFindGetExecute(r ApiV1UserScoreFindGetRequest) (*InternalApiDtoUserScoreFindResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *InternalApiDtoUserScoreFindResponse
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *InternalApiDtoUserScoreFindResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserScoreAPIService.V1UserScoreFindGet")
@@ -322,7 +320,7 @@ func (a *UserScoreAPIService) V1UserScoreFindGetExecute(r ApiV1UserScoreFindGetR
 }
 
 type ApiV1UserScoreListGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *UserScoreAPIService
 }
 
@@ -335,25 +333,24 @@ V1UserScoreListGet 查询列表
 
 gorm 查询列表
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiV1UserScoreListGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiV1UserScoreListGetRequest
 */
 func (a *UserScoreAPIService) V1UserScoreListGet(ctx context.Context) ApiV1UserScoreListGetRequest {
 	return ApiV1UserScoreListGetRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return InternalApiDtoUserScoreListResponse
+//  @return InternalApiDtoUserScoreListResponse
 func (a *UserScoreAPIService) V1UserScoreListGetExecute(r ApiV1UserScoreListGetRequest) (*InternalApiDtoUserScoreListResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *InternalApiDtoUserScoreListResponse
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *InternalApiDtoUserScoreListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserScoreAPIService.V1UserScoreListGet")
@@ -422,7 +419,7 @@ func (a *UserScoreAPIService) V1UserScoreListGetExecute(r ApiV1UserScoreListGetR
 }
 
 type ApiV1UserScoreUpdatePostRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *UserScoreAPIService
 }
 
@@ -435,25 +432,24 @@ V1UserScoreUpdatePost 更新数据
 
 gorm 更新数据
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiV1UserScoreUpdatePostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiV1UserScoreUpdatePostRequest
 */
 func (a *UserScoreAPIService) V1UserScoreUpdatePost(ctx context.Context) ApiV1UserScoreUpdatePostRequest {
 	return ApiV1UserScoreUpdatePostRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//
-//	@return InternalApiHttpResponseData
+//  @return InternalApiHttpResponseData
 func (a *UserScoreAPIService) V1UserScoreUpdatePostExecute(r ApiV1UserScoreUpdatePostRequest) (*InternalApiHttpResponseData, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *InternalApiHttpResponseData
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *InternalApiHttpResponseData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserScoreAPIService.V1UserScoreUpdatePost")
